@@ -1,0 +1,289 @@
+*-----  Dashrep language -- phrase definitions  -----*
+
+*------------------------------------------------------------
+See www.Dashrep.org for details about the Dashrep language.
+------------------------------------------------------------*
+
+
+*------------------------------------------------------------
+Vote-Info-Split-Join
+Dashrep definitions for numeric data, before calculations.
+------------------------------------------------------------*
+
+
+dashrep-definitions-begin
+
+
+*------------------------------------------------------------
+The names of these phrases probably need to be changed if the
+input XML code uses different tag names.
+However, these definitions probably do not need to be changed.
+------------------------------------------------------------*
+
+
+begin-xml:
+[-next-case-number = 1-]
+voteinfo-code-for-start-of-all-cases
+-----
+
+
+end-xml:
+voteinfo-code-for-end-of-all-cases
+-----
+
+
+begin-xml-voteinfoimport:
+[-case-number = [-next-case-number-]-]
+[-append-from-phrase-to-phrase: case-number list-of-cases-]
+[-auto-increment: next-case-number-]
+[-next-question-number = 1-]
+voteinfo-code-for-case-number
+new-line
+[-case-number-]
+-----
+
+
+end-xml-voteinfoimport:
+-----
+
+
+begin-xml-voteinfoimport-question:
+[-question-number = [-next-question-number-]-]
+[-auto-increment: next-question-number-]
+[-next-choice-number = 1-]
+voteinfo-code-for-question-number
+new-line
+[-question-number-]
+-----
+
+
+end-xml-voteinfoimport-question:
+voteinfo-code-for-number-of-choices
+new-line
+[-choice-number-]
+-----
+
+
+begin-xml-voteinfoimport-question-questiontype:
+capture-begin-here
+-----
+
+
+end-xml-voteinfoimport-question-questiontype:
+capture-end-here
+[-question-type = [-captured-text-]-]
+[-code-request-pairwise-counts-for-question-type-[-question-type-]-]
+-----
+
+
+code-request-pairwise-counts-for-question-type-rank:
+[-voteinfo-code-for-request-pairwise-counts-]
+new-line
+[-voteinfo-code-for-calculate-plurality-results-]
+-----
+
+
+code-request-pairwise-counts-for-question-type-plurality:
+[-voteinfo-code-for-calculate-plurality-results-]
+-----
+
+
+begin-xml-voteinfoimport-question-choicetext:
+[-dashrep_internal-capture-trace-on-or-off = on-]
+[-choice-number = [-next-choice-number-]-]
+[-auto-increment: next-choice-number-]
+ignore-begin-here
+-----
+
+
+end-xml-voteinfoimport-question-choicetext:
+ignore-end-here
+[-dashrep_internal-capture-trace-on-or-off = off-]
+-----
+
+
+begin-xml-voteinfoimport-voteinfo 
+-----
+
+
+end-xml-voteinfoimport-voteinfo:
+voteinfo-code-for-end-of-ballot
+-----
+
+
+begin-xml-voteinfoimport-voteinfo-question:
+voteinfo-code-for-question-number
+-----
+
+
+end-xml-voteinfoimport-voteinfo-question:
+-----
+
+
+begin-xml-voteinfoimport-voteinfo-count:
+voteinfo-code-for-ballot-count
+-----
+
+
+end-xml-voteinfoimport-voteinfo-count:
+-----
+
+
+begin-xml-voteinfoimport-voteinfo-sequence:
+-----
+
+
+end-xml-voteinfoimport-voteinfo-sequence:
+-----
+
+
+begin-xml-voteinfoimport-voteinfo-sequence-ch:
+-----
+
+
+end-xml-voteinfoimport-voteinfo-sequence-ch:
+-----
+
+
+begin-and-end-xml-voteinfoimport-voteinfo-sequence-tie:
+voteinfo-code-for-tie
+-----
+
+
+begin-xml-voteinfoimport-question-questiontext:
+ignore-begin-here
+-----
+
+
+end-xml-voteinfoimport-question-questiontext:
+ignore-end-here
+-----
+
+
+begin-xml-voteinfoimport-voteraccess:
+ignore-begin-here
+-----
+
+
+end-xml-voteinfoimport-voteraccess:
+ignore-end-here
+-----
+
+
+begin-xml-voteinfoimport-requireconfirmation:
+ignore-begin-here
+-----
+
+
+end-xml-voteinfoimport-requireconfirmation:
+ignore-end-here
+-----
+
+
+begin-xml-voteinfoimport-backgroundcolor:
+ignore-begin-here
+-----
+
+
+end-xml-voteinfoimport-backgroundcolor:
+ignore-end-here
+-----
+
+
+begin-xml-voteinfoimport-surveytitle:
+ignore-begin-here
+-----
+
+
+end-xml-voteinfoimport-surveytitle:
+ignore-end-here
+-----
+
+
+begin-xml-voteinfoimport-voterscaninvitevoters:
+ignore-begin-here
+-----
+
+
+end-xml-voteinfoimport-voterscaninvitevoters:
+ignore-end-here
+-----
+
+
+begin-xml-voteinfoimport-exiturl:
+ignore-begin-here
+-----
+
+
+end-xml-voteinfoimport-exiturl:
+ignore-end-here
+-----
+
+
+begin-xml-voteinfoimport-voteridrequired:
+ignore-begin-here
+-----
+
+
+end-xml-voteinfoimport-voteridrequired:
+ignore-end-here
+-----
+
+
+begin-xml-voteinfoimport-refertoas:
+ignore-begin-here
+-----
+
+
+end-xml-voteinfoimport-refertoas:
+ignore-end-here
+-----
+
+
+begin-xml-voteinfoimport-resultsaccess:
+ignore-begin-here
+-----
+
+
+end-xml-voteinfoimport-resultsaccess:
+ignore-end-here
+-----
+
+
+dashrep-definitions-end
+
+
+*------------------------------------------------------------
+AUTHOR
+
+Richard Fobes, "CPSolver" at GitHub.com
+
+
+BUGS
+
+Please report any bugs or feature requests to "CPSolver" at GitHub.com.
+
+
+ACKNOWLEDGEMENTS
+
+Richard Fobes wrote this software.  Richard Fobes is the author
+of the book titled The Creative Problem Solver's Toolbox.
+
+
+COPYRIGHT & LICENSE
+
+Copyright 2011 Richard Fobes at www.Dashrep.org, all rights reserved.
+
+You can redistribute and/or modify this software
+under the Perl Artistic license, a copy
+of which is included in the LICENSE file.
+
+Conversions of this code into other languages are also
+covered by the above license terms.
+
+The Dashrep (TM) name is trademarked by Richard Fobes at
+www.Dashrep.org to prevent the name from being co-opted.
+
+The Dashrep (TM) language is in the public domain.
+
+------------------------------------------------------------*

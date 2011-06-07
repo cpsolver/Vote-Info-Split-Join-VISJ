@@ -1,0 +1,236 @@
+*-----  Dashrep language -- phrase definitions  -----*
+
+*------------------------------------------------------------
+See www.Dashrep.org for details about the Dashrep language.
+------------------------------------------------------------*
+
+
+*------------------------------------------------------------
+Vote-Info-Split-Join, Dashrep definitions for result portion.
+------------------------------------------------------------*
+
+
+dashrep-definitions-begin
+
+
+*------------------------------------------------------------
+Usually these names and definitions do not need to be
+changed.
+------------------------------------------------------------*
+
+
+output-voteinfo-code-for-case-number:
+[-dashrep_internal-tracking-on-or-off = off-]
+[-insert-phrase-with-brackets-after-next-top-line  results-line-after-case-number-]
+capture-begin-here
+-----
+
+
+results-line-after-case-number:
+capture-end-here
+[-case-number = [-captured-text-]-]
+[-insert-text-dashrep-definitions-begin-for-case-[-zero-one-multiple: [-case-number-]-]-]
+-----
+
+
+insert-text-dashrep-definitions-begin-for-case-one:
+dashrep hyphen-here definitions hyphen-here begin
+new-line
+-----
+
+
+insert-text-dashrep-definitions-begin-for-case-zero:
+-----
+
+
+insert-text-dashrep-definitions-begin-for-case-multiple:
+-----
+
+
+output-voteinfo-code-for-question-number:
+[-dashrep_internal-tracking-on-or-off = off-]
+[-insert-phrase-with-brackets-after-next-top-line  results-line-after-question-number-]
+capture-begin-here
+-----
+
+
+results-line-after-question-number:
+capture-end-here
+[-question-number = [-captured-text-]-]
+results-for-case-[-case-number-]-question-[-question-number-]:
+-----
+
+
+output-voteinfo-code-for-start-of-tally-table-results:
+<tallytable>
+delayed-newline
+-----
+
+
+output-voteinfo-code-for-first-choice:
+[-insert-phrase-with-brackets-after-next-top-line  results-line-after-first-choice-]
+capture-begin-here
+-----
+
+
+results-line-after-first-choice:
+capture-end-here
+[-first-choice = [-captured-text-]-]
+<firstchoice>
+delayed-nospace
+[-first-choice-]
+delayed-nospace
+</firstchoice>
+delayed-nospace
+-----
+
+
+output-voteinfo-code-for-second-choice:
+[-insert-phrase-with-brackets-after-next-top-line  results-line-after-second-choice-]
+capture-begin-here
+-----
+
+
+results-line-after-second-choice:
+capture-end-here
+[-second-choice = [-captured-text-]-]
+<secondchoice>
+delayed-nospace
+[-second-choice-]
+delayed-nospace
+</secondchoice>
+delayed-nospace
+-----
+
+
+output-voteinfo-code-for-tally-first-over-second:
+[-insert-phrase-with-brackets-after-next-top-line  results-line-after-tally-first-over-second-]
+capture-begin-here
+-----
+
+
+results-line-after-tally-first-over-second:
+capture-end-here
+[-first-over-second = [-captured-text-]-]
+<firstoversecond>
+delayed-nospace
+[-first-over-second-]
+delayed-nospace
+</firstoversecond>
+delayed-nospace
+-----
+
+
+output-voteinfo-code-for-tally-second-over-first:
+[-insert-phrase-with-brackets-after-next-top-line  results-line-after-tally-second-over-first-]
+capture-begin-here
+-----
+
+
+results-line-after-tally-second-over-first:
+capture-end-here
+[-second-over-first = [-captured-text-]-]
+<secondoverfirst>
+delayed-nospace
+[-second-over-first-]
+delayed-nospace
+</secondoverfirst>
+delayed-newline
+-----
+
+
+output-voteinfo-code-for-end-of-tally-table-results:
+</tallytable>
+delayed-newline
+new-line
+[-dashed-line-]
+-----
+
+
+output-voteinfo-code-for-start-of-plurality-results:
+-----
+
+
+output-voteinfo-code-for-choice:
+[-insert-phrase-with-brackets-after-next-top-line  results-line-after-plurality-choice-]
+capture-begin-here
+-----
+
+
+results-line-after-plurality-choice:
+capture-end-here
+[-plurality-choice = [-captured-text-]-]
+-----
+
+
+output-voteinfo-code-for-plurality-count:
+[-insert-phrase-with-brackets-after-next-top-line  results-line-after-plurality-count-]
+capture-begin-here
+-----
+
+
+results-line-after-plurality-count:
+capture-end-here
+[-plurality-count = [-captured-text-]-]
+case-[-case-number-]-question-[-question-number-]-choice-[-plurality-choice-]-plurality-count:
+new-line
+delayed-nospace
+[-plurality-count-]
+delayed-nospace
+new-line
+[-dashed-line-]
+-----
+
+
+output-voteinfo-code-for-end-of-plurality-results:
+-----
+
+
+output-voteinfo-code-for-end-of-all-cases:
+dashrep hyphen-here definitions hyphen-here end
+-----
+
+
+dashed-line:
+hyphen-here hyphen-here hyphen-here hyphen-here hyphen-here
+-----
+
+
+dashrep-definitions-end
+
+
+
+*------------------------------------------------------------
+AUTHOR
+
+Richard Fobes, "CPSolver" at GitHub.com
+
+
+BUGS
+
+Please report any bugs or feature requests to "CPSolver" at GitHub.com.
+
+
+ACKNOWLEDGEMENTS
+
+Richard Fobes wrote this software.  Richard Fobes is the author
+of the book titled The Creative Problem Solver's Toolbox.
+
+
+COPYRIGHT & LICENSE
+
+Copyright 2011 Richard Fobes at www.Dashrep.org, all rights reserved.
+
+You can redistribute and/or modify this software
+under the Perl Artistic license, a copy
+of which is included in the LICENSE file.
+
+Conversions of this code into other languages are also
+covered by the above license terms.
+
+The Dashrep (TM) name is trademarked by Richard Fobes at
+www.Dashrep.org to prevent the name from being co-opted.
+
+The Dashrep (TM) language is in the public domain.
+
+------------------------------------------------------------*
