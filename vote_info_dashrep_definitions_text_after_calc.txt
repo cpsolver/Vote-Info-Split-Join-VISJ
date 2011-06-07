@@ -1,0 +1,217 @@
+*-----  Dashrep language -- phrase definitions  -----*
+
+*------------------------------------------------------------
+See www.Dashrep.org for details about the Dashrep language.
+------------------------------------------------------------*
+
+
+*------------------------------------------------------------
+Vote-Info-Split-Join
+Dashrep definitions for text, after calculations.
+------------------------------------------------------------*
+
+
+dashrep-definitions-begin
+
+
+*------------------------------------------------------------
+These first two definitions are the most likely ones that
+need to be changed -- to alter the XML output results.
+------------------------------------------------------------*
+
+
+arrangement-for-choice-specific-results:
+
+<choicenumber>
+delayed-nospace
+[-choice-number-for-[-parameter-case-and-question-and-choice-id-]-]
+delayed-nospace
+</choicenumber>
+delayed-nospace
+<choicename>
+delayed-nospace
+[-[-parameter-case-and-question-and-choice-id-]-choicetext-]
+delayed-nospace
+</choicename>
+delayed-nospace
+<pluralitycount>
+delayed-nospace
+[ hyphen-here [-parameter-case-and-question-and-choice-id-]-plurality-count hyphen-here ]
+delayed-nospace
+</pluralitycount>
+delayed-newline
+-----
+
+
+arrangement-for-question-specific-results:
+
+<questionnumber>
+delayed-nospace
+[-question-number-for-[-parameter-case-and-question-id-]-]
+delayed-nospace
+</questionnumber>
+delayed-newline
+
+<questiontext>
+delayed-nospace
+[-[-parameter-case-and-question-id-]-questiontext-]
+delayed-nospace
+</questiontext>
+delayed-newline
+
+<questiontype>
+delayed-nospace
+[-[-parameter-case-and-question-id-]-questiontype-]
+delayed-nospace
+</questiontype>
+delayed-newline
+
+<questionchoiceresults>
+delayed-newline
+[-items-in-list-named-choice-results-for-[-parameter-case-and-question-id-]-]
+</questionchoiceresults>
+delayed-newline
+
+results-for-[-parameter-case-and-question-id-]
+delayed-newline
+-----
+
+
+
+*------------------------------------------------------------
+Typically these definitions do not need to be changed.
+------------------------------------------------------------*
+
+
+
+entire-content:
+
+[-create-list-named: case-results-]
+[-create-list-named: question-results-]
+[-create-list-named: choice-results-]
+
+<xml>
+delayed-newline
+<voteinforesults>
+delayed-newline
+
+[-generated-list-named-case-results-]
+
+</voteinforesults>
+delayed-newline
+</xml>
+--------
+
+
+
+template-for-list-named-case-results:
+
+<case>[-parameter-case-id-]</case>
+delayed-newline
+
+<casetitle> delayed-nospace [-case-[-parameter-case-id-]-casetitle-] delayed-nospace </casetitle>
+delayed-newline
+
+<caseresults>
+delayed-newline
+[-items-in-list-named-question-results-for-[-parameter-case-id-]-]
+</caseresults>
+delayed-newline
+--------
+
+
+
+list-of-parameter-values-for-list-named-case-results:
+
+[-list-of-all-cases-]
+--------
+
+
+
+parameter-name-for-list-named-case-results:
+
+parameter-case-id
+--------
+
+
+
+template-for-list-named-question-results:
+
+[-arrangement-for-question-specific-results-]
+--------
+
+
+
+list-of-parameter-values-for-list-named-question-results:
+
+[-list-of-all-combinations-of-case-and-question-]
+--------
+
+
+
+parameter-name-for-list-named-question-results:
+
+parameter-case-and-question-id
+--------
+
+
+
+template-for-list-named-choice-results:
+
+[-arrangement-for-choice-specific-results-]
+--------
+
+
+
+list-of-parameter-values-for-list-named-choice-results:
+
+[-list-of-all-combinations-of-case-and-question-and-choice-]
+--------
+
+
+
+parameter-name-for-list-named-choice-results:
+
+parameter-case-and-question-and-choice-id
+--------
+
+
+
+dashrep-definitions-end
+
+
+
+*------------------------------------------------------------
+AUTHOR
+
+Richard Fobes, "CPSolver" at GitHub.com
+
+
+BUGS
+
+Please report any bugs or feature requests to "CPSolver" at GitHub.com.
+
+
+ACKNOWLEDGEMENTS
+
+Richard Fobes wrote this software.  Richard Fobes is the author
+of the book titled The Creative Problem Solver's Toolbox.
+
+
+COPYRIGHT & LICENSE
+
+Copyright 2011 Richard Fobes at www.Dashrep.org, all rights reserved.
+
+You can redistribute and/or modify this software
+under the Perl Artistic license, a copy
+of which is included in the LICENSE file.
+
+Conversions of this code into other languages are also
+covered by the above license terms.
+
+The Dashrep (TM) name is trademarked by Richard Fobes at
+www.Dashrep.org to prevent the name from being co-opted.
+
+The Dashrep (TM) language is in the public domain.
+
+------------------------------------------------------------*

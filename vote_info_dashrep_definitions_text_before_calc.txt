@@ -1,0 +1,278 @@
+*-----  Dashrep language -- phrase definitions  -----*
+
+*------------------------------------------------------------
+See www.Dashrep.org for details about the Dashrep language.
+------------------------------------------------------------*
+
+
+*------------------------------------------------------------
+Vote-Info-Split-Join
+Dashrep definitions for text, before calculations.
+------------------------------------------------------------*
+
+
+dashrep-definitions-begin
+
+
+*------------------------------------------------------------
+The names of these phrases probably need to be changed if the
+input XML code uses different tag names.
+However, these definitions probably do not need to be changed.
+------------------------------------------------------------*
+
+
+begin-xml:
+dashrep hyphen-here definitions hyphen-here begin
+new-line
+[-next-case-number = 1-]
+-----
+
+
+end-xml:
+list-of-all-cases:
+new-line
+[-list-of-all-cases-]
+new-line
+[-dashed-line-]
+new-line
+list-of-all-combinations-of-case-and-question:
+new-line
+[-list-of-all-combinations-of-case-and-question-]
+new-line
+[-dashed-line-]
+new-line
+list-of-all-combinations-of-case-and-question-and-choice:
+new-line
+[-list-of-all-combinations-of-case-and-question-and-choice-]
+new-line
+[-dashed-line-]
+new-line
+new-line
+dashrep hyphen-here definitions hyphen-here end
+-----
+
+
+begin-xml-voteinfoimport:
+[-case-number = [-next-case-number-]-]
+[-current-list-item = case-[-case-number-]-]
+[-append-from-phrase-to-phrase: current-list-item list-of-all-cases-]
+[-current-list-item = items-in-list-named-question-results-for-case-[-case-number-]-]
+[-append-from-phrase-to-phrase:  current-list-item  list-of-lists-to-export-]
+[-auto-increment: next-case-number-]
+[-next-question-number = 1-]
+-----
+
+
+begin-xml-voteinfoimport-surveytitle:
+case-[-case-number-]-casetitle:
+-----
+
+
+end-xml-voteinfoimport-surveytitle:
+[-dashed-line-]
+-----
+
+
+begin-xml-voteinfoimport-refertoas:
+case-[-case-number-]-refertoas:
+-----
+
+
+end-xml-voteinfoimport-refertoas:
+[-dashed-line-]
+-----
+
+
+begin-xml-voteinfoimport-question:
+[-question-number = [-next-question-number-]-]
+[-case-and-question = case-[-case-number-]-question-[-question-number-]-]
+[-append-from-phrase-to-phrase: case-and-question list-of-all-combinations-of-case-and-question-]
+[-question-number-for-case-[-case-number-]-question-[-question-number-] = [-question-number-]-]
+[-current-list-item = item-for-list-question-results-and-parameter-case-[-case-number-]-question-[-question-number-]-]
+[-append-from-phrase-to-phrase:  current-list-item  items-in-list-named-question-results-for-case-[-case-number-]-]
+[-current-list-item = items-in-list-named-choice-results-for-case-[-case-number-]-question-[-question-number-]-]
+[-append-from-phrase-to-phrase:  current-list-item  list-of-lists-to-export-]
+[-auto-increment: next-question-number-]
+[-next-choice-number = 1-]
+-----
+
+
+begin-xml-voteinfoimport-question-questiontype:
+case-[-case-number-]-question-[-question-number-]-questiontype:
+-----
+
+
+end-xml-voteinfoimport-question-questiontype:
+[-dashed-line-]
+-----
+
+
+begin-xml-voteinfoimport-question-questiontext:
+case-[-case-number-]-question-[-question-number-]-questiontext:
+-----
+
+
+end-xml-voteinfoimport-question-questiontext:
+[-dashed-line-]
+-----
+
+
+begin-xml-voteinfoimport-question-choicetext:
+[-choice-number = [-next-choice-number-]-]
+[-current-list-item = item-for-list-choice-results-and-parameter-case-[-case-number-]-question-[-question-number-]-choice-[-choice-number-]-]
+[-append-from-phrase-to-phrase:  current-list-item  items-in-list-named-choice-results-for-case-[-case-number-]-question-[-question-number-]-]
+[-case-and-question-and-choice = case-[-case-number-]-question-[-question-number-]-choice-[-choice-number-]-]
+[-append-from-phrase-to-phrase: case-and-question-and-choice  list-of-all-combinations-of-case-and-question-and-choice-]
+[-choice-number-for-case-[-case-number-]-question-[-question-number-]-choice-[-choice-number-] = [-choice-number-]-]
+[-auto-increment: next-choice-number-]
+choice-number-for-case-[-case-number-]-question-[-question-number-]-choice-[-choice-number-]:
+new-line
+[-choice-number-]
+new-line
+[-dashed-line-]
+new-line
+case-[-case-number-]-question-[-question-number-]-choice-[-choice-number-]-choicetext:
+-----
+
+
+end-xml-voteinfoimport-question-choicetext:
+[-dashed-line-]
+-----
+
+
+end-xml-voteinfoimport-question:
+-----
+
+
+end-xml-voteinfoimport:
+-----
+
+
+begin-xml-voteinfoimport-requireconfirmation:
+ignore-begin-here
+-----
+
+
+end-xml-voteinfoimport-requireconfirmation:
+ignore-end-here
+-----
+
+
+begin-xml-voteinfoimport-voterscaninvitevoters:
+ignore-begin-here
+-----
+
+
+end-xml-voteinfoimport-voterscaninvitevoters:
+ignore-end-here
+-----
+
+
+begin-xml-voteinfoimport-exiturl:
+ignore-begin-here
+-----
+
+
+end-xml-voteinfoimport-exiturl:
+ignore-end-here
+-----
+
+
+begin-xml-voteinfoimport-voteridrequired:
+ignore-begin-here
+-----
+
+
+end-xml-voteinfoimport-voteridrequired:
+ignore-end-here
+-----
+
+
+begin-xml-voteinfoimport-resultsaccess:
+ignore-begin-here
+-----
+
+
+end-xml-voteinfoimport-resultsaccess:
+ignore-end-here
+-----
+
+
+begin-xml-voteinfoimport-backgroundcolor:
+ignore-begin-here
+-----
+
+
+end-xml-voteinfoimport-backgroundcolor:
+ignore-end-here
+-----
+
+
+begin-xml-voteinfoimport-voteinfo:
+ignore-begin-here
+-----
+
+
+end-xml-voteinfoimport-voteinfo:
+ignore-end-here
+-----
+
+
+begin-xml-voteinfoimport-voteraccess:
+ignore-begin-here
+-----
+
+
+end-xml-voteinfoimport-voteraccess:
+ignore-end-here
+-----
+
+
+dashed-line:
+[-hyphen-here hyphen-here hyphen-here hyphen-here hyphen-here-]
+-----
+
+
+
+list-of-lists-to-export:
+-----
+
+
+dashrep-definitions-end
+
+
+
+*------------------------------------------------------------
+AUTHOR
+
+Richard Fobes, "CPSolver" at GitHub.com
+
+
+BUGS
+
+Please report any bugs or feature requests to "CPSolver" at GitHub.com.
+
+
+ACKNOWLEDGEMENTS
+
+Richard Fobes wrote this software.  Richard Fobes is the author
+of the book titled The Creative Problem Solver's Toolbox.
+
+
+COPYRIGHT & LICENSE
+
+Copyright 2011 Richard Fobes at www.Dashrep.org, all rights reserved.
+
+You can redistribute and/or modify this software
+under the Perl Artistic license, a copy
+of which is included in the LICENSE file.
+
+Conversions of this code into other languages are also
+covered by the above license terms.
+
+The Dashrep (TM) name is trademarked by Richard Fobes at
+www.Dashrep.org to prevent the name from being co-opted.
+
+The Dashrep (TM) language is in the public domain.
+
+------------------------------------------------------------*
