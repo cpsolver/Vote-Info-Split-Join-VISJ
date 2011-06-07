@@ -1,0 +1,87 @@
+*-----  Dashrep language -- top-level actions  -----*
+
+*------------------------------------------------------------
+See www.Dashrep.org for details about the Dashrep language.
+------------------------------------------------------------*
+
+
+*------------------------------------------------------------
+Vote-Info-Split-Join, Dashrep top-level actions for join.
+------------------------------------------------------------*
+
+
+clear-all-dashrep-phrases
+
+
+get-definitions-from-file  output_visj_stage_05_codes_from_vote_calc_sw.txt
+linewise-translate-from-file-to-file  output_visj_stage_06_vote_calc_results.txt  output_visj_stage_07.txt
+
+
+clear-all-dashrep-phrases
+
+[-dashrep_internal-linewise-trace-on-or-off = off-]
+
+get-definitions-from-file  vote_info_dashrep_definitions_numeric_after_calc.txt
+linewise-translate-from-file-to-file  output_visj_stage_07.txt  output_visj_stage_08.txt
+
+
+clear-all-dashrep-phrases
+
+[-dashrep_internal-linewise-trace-on-or-off = off-]
+
+get-definitions-from-file  vote_info_dashrep_definitions_text_after_calc.txt
+get-definitions-from-file  output_visj_stage_02.txt
+get-definitions-from-file  output_visj_stage_03.txt
+get-definitions-from-file  output_visj_stage_08.txt
+expand-phrase-to-file  entire-content  output_visj_stage_09.txt
+
+
+write-all-dashrep-definitions-to-file  output_debug_definitions_after_stage_09.txt
+
+
+clear-all-dashrep-phrases
+
+
+[-delayed-nospace = no-space-]
+[-delayed-newline = new-line-]
+linewise-translate-from-file-to-file  output_visj_stage_09.txt  output_visj_stage_10_final_results.txt
+
+
+If there are no error messages above,
+the final results are in the file named:  output_visj_stage_10_final_results.txt
+
+
+*------------------------------------------------------------
+AUTHOR
+
+Richard Fobes, "CPSolver" at GitHub.com
+
+
+BUGS
+
+Please report any bugs or feature requests to "CPSolver" at GitHub.com.
+
+
+ACKNOWLEDGEMENTS
+
+Richard Fobes wrote this software.  Richard Fobes is the author
+of the book titled The Creative Problem Solver's Toolbox.
+
+
+COPYRIGHT & LICENSE
+
+Copyright 2011 Richard Fobes at www.Dashrep.org, all rights reserved.
+
+You can redistribute and/or modify this software
+under the Perl Artistic license, a copy
+of which is included in the LICENSE file.
+
+Conversions of this code into other languages are also
+covered by the above license terms.
+
+The Dashrep (TM) name is trademarked by Richard Fobes at
+www.Dashrep.org to prevent the name from being co-opted.
+
+The Dashrep (TM) language is in the public domain.
+
+------------------------------------------------------------*
