@@ -11,7 +11,7 @@ The separation of ballot preferences from candidate names (and party names) make
 
 This software is easy to modify because it is written in the Dashrep (TM) language, which has only one special non-whitespace character, namely the dash or hyphen ("-").  Although the Dashrep language is trademarked to prevent the name from being co-opted, the Dashrep language is in the public domain.  The latest Dashrep engine is available as open-source software on GitHub (in the CPSolver area).  That software uses the minimal Perl interpreter, which is standard on Linux systems, and requires the presence of only two files (Perl.exe and Perlxxx.dll) for use on any Windows system.  The website at www.Dashrep.org contains details (including tutorials) about the Dashrep language.
 
-Currently the input format is in XML, but this can be changed easily (such as to accomodate JSON or other text-based formats).  Currently the output format is in XML, but this too can be changed easily, to accomodate XHTML or JSON or some other text-based format.
+Currently the input format is in XML, but this can be changed easily (such as to accomodate JSON or EML or other text-based formats).  Currently the output format is in XML, but this too can be changed easily, to accomodate XHTML or JSON or EML or some other text-based format.
 
 The connections between the numeric and text streams are done using sequential numbers.  Case numbers allow data from many different, unrelated elections or surveys or polls to be combined into a single batch.  Question numbers refer to the different races/elections that appear on the same ballot.  Choice numbers refer to the candidates or choices in each race or poll/survey question.
 
