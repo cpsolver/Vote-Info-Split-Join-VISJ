@@ -1,0 +1,57 @@
+*-----  Dashrep language -- phrase definitions  -----*
+
+*------------------------------------------------------------
+See www.Dashrep.org for details about the Dashrep language.
+------------------------------------------------------------*
+
+
+*------------------------------------------------------------
+Vote-Info-Split-Join, Dashrep definitions for conversion of
+exported definitions into HTML.
+------------------------------------------------------------*
+
+
+dashrep-definitions-begin
+
+
+*------------------------------------------------------------
+These definitions are not needed.
+They can be used to convert exported definitions into HTML
+format (from their normal text format).
+------------------------------------------------------------*
+
+
+export-defs-all-begin:
+<html>
+<head>
+</head>
+-----
+
+
+export-defs-all-end:
+</html>
+-----
+
+
+export-defs-phrase-begin:
+<h2> no-space
+-----
+
+
+export-defs-phrase-end:
+no-space </h2>
+-----
+
+
+export-defs-def-begin:
+<p> no-space
+-----
+
+
+export-defs-def-end:
+no-space </p>
+-----
+
+
+dashrep-definitions-end
+
