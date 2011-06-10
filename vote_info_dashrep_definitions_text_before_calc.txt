@@ -15,13 +15,18 @@ dashrep-definitions-begin
 
 
 *------------------------------------------------------------
-The names of these phrases probably need to be changed if the
-input XML code uses different tag names.
-However, these definitions probably do not need to be changed.
+If EML or any other XML-tag-naming conventions are used in
+the input file, add new phrases (and definitions) that are
+similar to the ones here that begin with
+"begin-xml-" and "end-xml-".
 ------------------------------------------------------------*
 
 
 begin-xml:
+[-begin-all-cases-]
+-----
+
+begin-all-cases:
 dashrep hyphen-here definitions hyphen-here begin
 new-line
 [-next-case-number = 1-]
@@ -29,6 +34,10 @@ new-line
 
 
 end-xml:
+[-end-all-cases-]
+-----
+
+end-all-cases:
 list-of-all-cases:
 new-line
 [-list-of-all-cases-]
@@ -53,6 +62,10 @@ dashrep hyphen-here definitions hyphen-here end
 
 
 begin-xml-voteinfoimport:
+[-begin-case-]
+-----
+
+begin-case:
 [-case-number = [-next-case-number-]-]
 [-current-list-item = case-[-case-number-]-]
 [-append-from-phrase-to-phrase: current-list-item list-of-all-cases-]
@@ -64,26 +77,47 @@ begin-xml-voteinfoimport:
 
 
 begin-xml-voteinfoimport-surveytitle:
+[-begin-surveytitle-]
+-----
+
+begin-surveytitle:
+begin-xml-voteinfoimport-surveytitle:
 case-[-case-number-]-casetitle:
 -----
 
 
 end-xml-voteinfoimport-surveytitle:
+[-end-surveytitle-]
+-----
+
+end-surveytitle:
 [-dashed-line-]
 -----
 
 
 begin-xml-voteinfoimport-refertoas:
+[-begin-refertoas-]
+-----
+
+begin-refertoas:
 case-[-case-number-]-refertoas:
 -----
 
 
 end-xml-voteinfoimport-refertoas:
+[-end-refertoas-]
+-----
+
+end-refertoas:
 [-dashed-line-]
 -----
 
 
 begin-xml-voteinfoimport-question:
+[-begin-question-]
+-----
+
+begin-question:
 [-question-number = [-next-question-number-]-]
 [-case-and-question = case-[-case-number-]-question-[-question-number-]-]
 [-append-from-phrase-to-phrase: case-and-question list-of-all-combinations-of-case-and-question-]
@@ -98,26 +132,46 @@ begin-xml-voteinfoimport-question:
 
 
 begin-xml-voteinfoimport-question-questiontype:
+[-begin-questiontype-]
+-----
+
+begin-questiontype:
 case-[-case-number-]-question-[-question-number-]-questiontype:
 -----
 
 
 end-xml-voteinfoimport-question-questiontype:
+[-end-questiontype-]
+-----
+
+end-questiontype:
 [-dashed-line-]
 -----
 
 
 begin-xml-voteinfoimport-question-questiontext:
+[-begin-questiontext-]
+-----
+
+begin-questiontext:
 case-[-case-number-]-question-[-question-number-]-questiontext:
 -----
 
 
 end-xml-voteinfoimport-question-questiontext:
+[-end-questiontext-]
+-----
+
+end-questiontext:
 [-dashed-line-]
 -----
 
 
 begin-xml-voteinfoimport-question-choicetext:
+[-begin-choicetext-]
+-----
+
+begin-choicetext:
 [-choice-number = [-next-choice-number-]-]
 [-current-list-item = item-for-list-choice-results-and-parameter-case-[-case-number-]-question-[-question-number-]-choice-[-choice-number-]-]
 [-append-from-phrase-to-phrase:  current-list-item  items-in-list-named-choice-results-for-case-[-case-number-]-question-[-question-number-]-]
@@ -136,95 +190,123 @@ case-[-case-number-]-question-[-question-number-]-choice-[-choice-number-]-choic
 
 
 end-xml-voteinfoimport-question-choicetext:
+[-end-choicetext-]
+-----
+
+end-choicetext:
 [-dashed-line-]
 -----
 
 
 end-xml-voteinfoimport-question:
+[-end-question-]
+-----
+
+end-question:
 -----
 
 
 end-xml-voteinfoimport:
+[-end-case-]
+-----
+
+end-case:
+-----
+
+
+
+*------------------------------------------------------------
+Specify which information to ignore.
+------------------------------------------------------------*
+
+
+begin-skip-info:
+ignore-begin-here
+-----
+
+
+end-skip-info:
+ignore-end-here
 -----
 
 
 begin-xml-voteinfoimport-requireconfirmation:
-ignore-begin-here
+[-begin-skip-info-]
 -----
 
 
 end-xml-voteinfoimport-requireconfirmation:
-ignore-end-here
+[-end-skip-info-]
 -----
 
 
 begin-xml-voteinfoimport-voterscaninvitevoters:
-ignore-begin-here
+[-begin-skip-info-]
 -----
 
 
 end-xml-voteinfoimport-voterscaninvitevoters:
-ignore-end-here
+[-end-skip-info-]
 -----
 
 
 begin-xml-voteinfoimport-exiturl:
-ignore-begin-here
+[-begin-skip-info-]
 -----
 
 
 end-xml-voteinfoimport-exiturl:
-ignore-end-here
+[-end-skip-info-]
 -----
 
 
 begin-xml-voteinfoimport-voteridrequired:
-ignore-begin-here
+[-begin-skip-info-]
 -----
 
 
 end-xml-voteinfoimport-voteridrequired:
-ignore-end-here
+[-end-skip-info-]
 -----
 
 
 begin-xml-voteinfoimport-resultsaccess:
-ignore-begin-here
+[-begin-skip-info-]
 -----
 
 
 end-xml-voteinfoimport-resultsaccess:
-ignore-end-here
+[-end-skip-info-]
 -----
 
 
 begin-xml-voteinfoimport-backgroundcolor:
-ignore-begin-here
+[-begin-skip-info-]
 -----
 
 
 end-xml-voteinfoimport-backgroundcolor:
-ignore-end-here
+[-end-skip-info-]
 -----
 
 
 begin-xml-voteinfoimport-voteinfo:
-ignore-begin-here
+[-begin-skip-info-]
 -----
 
 
 end-xml-voteinfoimport-voteinfo:
-ignore-end-here
+[-end-skip-info-]
 -----
 
 
 begin-xml-voteinfoimport-voteraccess:
-ignore-begin-here
+[-begin-skip-info-]
 -----
 
 
 end-xml-voteinfoimport-voteraccess:
-ignore-end-here
+[-end-skip-info-]
 -----
 
 
