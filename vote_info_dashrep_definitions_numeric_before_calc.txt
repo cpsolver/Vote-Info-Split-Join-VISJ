@@ -79,12 +79,12 @@ capture-end-here
 code-request-pairwise-counts-for-question-type-rank:
 [-voteinfo-code-for-request-pairwise-counts-]
 new-line
-[-voteinfo-code-for-calculate-plurality-results-]
+[-voteinfo-code-for-request-plurality-results-]
 -----
 
 
 code-request-pairwise-counts-for-question-type-plurality:
-[-voteinfo-code-for-calculate-plurality-results-]
+[-voteinfo-code-for-request-plurality-results-]
 -----
 
 
