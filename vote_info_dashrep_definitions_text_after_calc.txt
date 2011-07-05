@@ -86,6 +86,13 @@ Typically these definitions do not need to be changed.
 
 entire-content:
 
+[-content-if-error-message-[-empty-or-nonempty: [-output-error-message-]-]-]
+-----
+
+
+
+content-if-error-message-empty:
+
 [-create-list-named: case-results-]
 [-create-list-named: question-results-]
 [-create-list-named: choice-results-]
@@ -100,7 +107,16 @@ delayed-newline
 </voteinforesults>
 delayed-newline
 </xml>
---------
+-----
+
+
+
+content-if-error-message-nonempty:
+ERROR:
+new-line
+output-error-message
+new-line
+-----
 
 
 
@@ -117,63 +133,63 @@ delayed-newline
 [-items-in-list-named-question-results-for-[-parameter-case-id-]-]
 </caseresults>
 delayed-newline
---------
+-----
 
 
 
 list-of-parameter-values-for-list-named-case-results:
 
 [-list-of-all-cases-]
---------
+-----
 
 
 
 parameter-name-for-list-named-case-results:
 
 parameter-case-id
---------
+-----
 
 
 
 template-for-list-named-question-results:
 
 [-arrangement-for-question-specific-results-]
---------
+-----
 
 
 
 list-of-parameter-values-for-list-named-question-results:
 
 [-list-of-all-combinations-of-case-and-question-]
---------
+-----
 
 
 
 parameter-name-for-list-named-question-results:
 
 parameter-case-and-question-id
---------
+-----
 
 
 
 template-for-list-named-choice-results:
 
 [-arrangement-for-choice-specific-results-]
---------
+-----
 
 
 
 list-of-parameter-values-for-list-named-choice-results:
 
 [-list-of-all-combinations-of-case-and-question-and-choice-]
---------
+-----
 
 
 
 parameter-name-for-list-named-choice-results:
 
 parameter-case-and-question-and-choice-id
---------
+-----
 
 
 

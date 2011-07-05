@@ -15,24 +15,42 @@ dashrep-definitions-begin
 
 
 *------------------------------------------------------------
-The names of these phrases probably need to be changed if the
-input XML code uses different tag names.
-However, these definitions probably do not need to be changed.
+If EML or any other XML-tag-naming conventions are used in
+the input file, add new phrases (and definitions) that are
+similar to the ones here that begin with
+"begin-xml-" and "end-xml-".
 ------------------------------------------------------------*
 
 
 begin-xml:
+[-begin-all-cases-]
+-----
+
+
+begin-all-cases:
 [-next-case-number = 1-]
 voteinfo-code-for-start-of-all-cases
 -----
 
 
+
 end-xml:
+[-end-all-cases-]
+-----
+
+
+end-all-cases:
 voteinfo-code-for-end-of-all-cases
 -----
 
 
+
 begin-xml-voteinfoimport:
+[-begin-case-]
+-----
+
+
+begin-case:
 [-case-number = [-next-case-number-]-]
 [-append-from-phrase-to-phrase: case-number list-of-cases-]
 [-auto-increment: next-case-number-]
@@ -44,10 +62,21 @@ new-line
 
 
 end-xml-voteinfoimport:
+[-end-case-]
 -----
 
 
+end-case:
+-----
+
+
+
 begin-xml-voteinfoimport-question:
+[-begin-question-]
+-----
+
+
+begin-question:
 [-question-number = [-next-question-number-]-]
 [-auto-increment: next-question-number-]
 [-next-choice-number = 1-]
@@ -57,23 +86,42 @@ new-line
 -----
 
 
+
 end-xml-voteinfoimport-question:
+[-end-question-]
+-----
+
+
+end-question:
 voteinfo-code-for-number-of-choices
 new-line
 [-choice-number-]
 -----
 
 
+
 begin-xml-voteinfoimport-question-questiontype:
+[-begin-questiontype-]
+-----
+
+
+begin-questiontype:
 capture-begin-here
 -----
 
 
+
 end-xml-voteinfoimport-question-questiontype:
+[-end-questiontype-]
+-----
+
+
+end-questiontype:
 capture-end-here
 [-question-type = [-captured-text-]-]
 [-code-request-pairwise-counts-for-question-type-[-question-type-]-]
 -----
+
 
 
 code-request-pairwise-counts-for-question-type-rank:
@@ -83,12 +131,19 @@ new-line
 -----
 
 
+
 code-request-pairwise-counts-for-question-type-plurality:
 [-voteinfo-code-for-request-plurality-results-]
 -----
 
 
+
 begin-xml-voteinfoimport-question-choicetext:
+[-begin-choicetext-]
+-----
+
+
+begin-choicetext:
 [-dashrep_internal-capture-trace-on-or-off = on-]
 [-choice-number = [-next-choice-number-]-]
 [-auto-increment: next-choice-number-]
@@ -96,58 +151,130 @@ ignore-begin-here
 -----
 
 
+
 end-xml-voteinfoimport-question-choicetext:
+[-end-choicetext-]
+-----
+
+
+end-choicetext:
 ignore-end-here
 [-dashrep_internal-capture-trace-on-or-off = off-]
 -----
 
 
+
 begin-xml-voteinfoimport-voteinfo 
+[-begin-ballots-]
 -----
 
 
+begin-ballots:
+-----
+
+
+
 end-xml-voteinfoimport-voteinfo:
+[-end-ballots-]
+-----
+
+
+end-ballots:
 voteinfo-code-for-end-of-ballot
 -----
 
 
+
 begin-xml-voteinfoimport-voteinfo-question:
+[-begin-question-number-]
+-----
+
+
+begin-question-number:
 voteinfo-code-for-question-number
 -----
 
 
+
 end-xml-voteinfoimport-voteinfo-question:
+[-end-question-number-]
+-----
+
+
+end-question-number:
 -----
 
 
 begin-xml-voteinfoimport-voteinfo-count:
+[-begin-ballot-count-]
+-----
+
+
+begin-ballot-count:
 voteinfo-code-for-ballot-count
 -----
 
 
+
 end-xml-voteinfoimport-voteinfo-count:
+[-end-ballot-count-]
 -----
+
+
+end-ballot-count:
+-----
+
 
 
 begin-xml-voteinfoimport-voteinfo-sequence:
+[-begin-sequence-]
 -----
+
+
+begin-sequence:
+-----
+
 
 
 end-xml-voteinfoimport-voteinfo-sequence:
+[-end-sequence-]
 -----
+
+
+end-sequence:
+-----
+
 
 
 begin-xml-voteinfoimport-voteinfo-sequence-ch:
+[-begin-choice-number-]
 -----
+
+
+begin-choice-number:
+-----
+
 
 
 end-xml-voteinfoimport-voteinfo-sequence-ch:
+[-end-choice-number-]
 -----
+
+
+end-choice-number:
+-----
+
 
 
 begin-and-end-xml-voteinfoimport-voteinfo-sequence-tie:
+[-tie-here-]
+-----
+
+
+tie-here:
 voteinfo-code-for-tie
 -----
+
 
 
 dashrep-definitions-end

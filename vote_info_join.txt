@@ -42,13 +42,13 @@ write-all-dashrep-definitions-to-file  output_debug_definitions_after_stage_09.t
 clear-all-dashrep-phrases
 
 
+get-definitions-from-file  output_visj_stage_09a_possible_error_message.txt
 [-delayed-nospace = no-space-]
 [-delayed-newline = new-line-]
 linewise-translate-from-file-to-file  output_visj_stage_09.txt  output_visj_stage_10_final_results.txt
 
 
-If there are no error messages above,
-the final results are in the file named:  output_visj_stage_10_final_results.txt
+The final results are in the file named:  output_visj_stage_10_final_results.txt
 
 
 *------------------------------------------------------------
