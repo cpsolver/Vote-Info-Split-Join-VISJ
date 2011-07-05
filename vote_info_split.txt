@@ -33,6 +33,7 @@ write-all-dashrep-definitions-to-file  output_debug_definitions_after_stage_03.t
 clear-all-dashrep-phrases
 
 
+get-definitions-from-file  output_visj_stage_01a.txt
 get-definitions-from-file  vote_info_dashrep_definitions_numeric_before_calc.txt
 get-definitions-from-file  output_visj_stage_05_codes_from_vote_calc_sw.txt
 linewise-translate-from-file-to-file  output_visj_stage_01.txt  output_visj_stage_04_numeric_only.txt

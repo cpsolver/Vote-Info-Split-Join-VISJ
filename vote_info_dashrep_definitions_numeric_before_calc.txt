@@ -186,6 +186,15 @@ voteinfo-code-for-end-of-ballot
 
 
 begin-xml-voteinfoimport-voteinfo-question:
+voteinfo-code-for-ballot-count
+new-line
+1
+new-line
+[-begin-question-number-]
+-----
+
+
+begin-xml-voteinfoimport-voteinfo-sequence-question:
 [-begin-question-number-]
 -----
 
@@ -197,6 +206,11 @@ voteinfo-code-for-question-number
 
 
 end-xml-voteinfoimport-voteinfo-question:
+[-end-question-number-]
+-----
+
+
+end-xml-voteinfoimport-voteinfo-sequence-question:
 [-end-question-number-]
 -----
 
@@ -251,6 +265,11 @@ begin-xml-voteinfoimport-voteinfo-sequence-ch:
 -----
 
 
+begin-xml-voteinfoimport-voteinfo-ch:
+[-begin-choice-number-]
+-----
+
+
 begin-choice-number:
 -----
 
@@ -261,12 +280,22 @@ end-xml-voteinfoimport-voteinfo-sequence-ch:
 -----
 
 
+end-xml-voteinfoimport-voteinfo-ch:
+[-end-choice-number-]
+-----
+
+
 end-choice-number:
 -----
 
 
 
 begin-and-end-xml-voteinfoimport-voteinfo-sequence-tie:
+[-tie-here-]
+-----
+
+
+begin-and-end-xml-voteinfoimport-voteinfo-tie:
 [-tie-here-]
 -----
 
