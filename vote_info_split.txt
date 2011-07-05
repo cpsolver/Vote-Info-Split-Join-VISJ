@@ -14,7 +14,9 @@ Vote-Info-Split-Join, Dashrep top-level actions for split.
 linewise-translate-xml-tags-in-file-to-dashrep-phrases-in-file  input_vote_info.txt  output_visj_stage_01.txt
 
 
-clear-all-dashrep-phrases
+get-definitions-from-file  vote_info_dashrep_definitions_ignore_unneeded_info.txt
+expand-phrase-to-file  content-for-ignore-all-vote-info-definitions  output_visj_stage_01a.txt
+get-definitions-from-file  output_visj_stage_01a.txt
 
 
 get-definitions-from-file  vote_info_dashrep_definitions_text_before_calc.txt
