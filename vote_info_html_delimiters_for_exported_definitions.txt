@@ -15,9 +15,9 @@ dashrep-definitions-begin
 
 
 *------------------------------------------------------------
-These definitions are not needed.
-They can be used to convert exported definitions into HTML
-format (from their normal text format).
+Usually these definitions are not needed.
+They can be used to convert exported Dashrep definitions
+into HTML format (from their normal text format).
 ------------------------------------------------------------*
 
 

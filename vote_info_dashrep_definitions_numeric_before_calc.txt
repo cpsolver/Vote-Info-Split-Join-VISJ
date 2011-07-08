@@ -15,16 +15,8 @@ dashrep-definitions-begin
 
 
 *------------------------------------------------------------
-If EML or any other XML-tag-naming conventions are used in
-the input file, add new phrases (and definitions) that are
-similar to the ones here that begin with
-"begin-xml-" and "end-xml-".
+Typically these definitions do not need to be changed.
 ------------------------------------------------------------*
-
-
-begin-xml:
-[-begin-all-cases-]
------
 
 
 begin-all-cases:
@@ -33,20 +25,8 @@ voteinfo-code-for-start-of-all-cases
 -----
 
 
-
-end-xml:
-[-end-all-cases-]
------
-
-
 end-all-cases:
 voteinfo-code-for-end-of-all-cases
------
-
-
-
-begin-xml-voteinfoimport:
-[-begin-case-]
 -----
 
 
@@ -61,18 +41,7 @@ new-line
 -----
 
 
-end-xml-voteinfoimport:
-[-end-case-]
------
-
-
 end-case:
------
-
-
-
-begin-xml-voteinfoimport-question:
-[-begin-question-]
 -----
 
 
@@ -86,12 +55,6 @@ new-line
 -----
 
 
-
-end-xml-voteinfoimport-question:
-[-end-question-]
------
-
-
 end-question:
 voteinfo-code-for-number-of-choices
 new-line
@@ -99,20 +62,16 @@ new-line
 -----
 
 
+begin-question-number:
+-----
 
-begin-xml-voteinfoimport-question-questiontype:
-[-begin-questiontype-]
+
+end-question-number:
 -----
 
 
 begin-questiontype:
 capture-begin-here
------
-
-
-
-end-xml-voteinfoimport-question-questiontype:
-[-end-questiontype-]
 -----
 
 
@@ -123,7 +82,6 @@ capture-end-here
 -----
 
 
-
 code-request-pairwise-counts-for-question-type-rank:
 [-voteinfo-code-for-request-pairwise-counts-]
 new-line
@@ -131,15 +89,8 @@ new-line
 -----
 
 
-
 code-request-pairwise-counts-for-question-type-plurality:
 [-voteinfo-code-for-request-plurality-results-]
------
-
-
-
-begin-xml-voteinfoimport-question-choicetext:
-[-begin-choicetext-]
 -----
 
 
@@ -151,31 +102,13 @@ ignore-begin-here
 -----
 
 
-
-end-xml-voteinfoimport-question-choicetext:
-[-end-choicetext-]
------
-
-
 end-choicetext:
 ignore-end-here
 [-dashrep_internal-capture-trace-on-or-off = off-]
 -----
 
 
-
-begin-xml-voteinfoimport-voteinfo 
-[-begin-ballots-]
------
-
-
 begin-ballots:
------
-
-
-
-end-xml-voteinfoimport-voteinfo:
-[-end-ballots-]
 -----
 
 
@@ -184,8 +117,7 @@ voteinfo-code-for-end-of-ballot
 -----
 
 
-
-begin-xml-voteinfoimport-voteinfo-question:
+begin-question-number-in-ballot:
 voteinfo-code-for-ballot-count
 new-line
 1
@@ -194,33 +126,7 @@ new-line
 -----
 
 
-begin-xml-voteinfoimport-voteinfo-sequence-question:
-[-begin-question-number-]
------
-
-
-begin-question-number:
-voteinfo-code-for-question-number
------
-
-
-
-end-xml-voteinfoimport-voteinfo-question:
-[-end-question-number-]
------
-
-
-end-xml-voteinfoimport-voteinfo-sequence-question:
-[-end-question-number-]
------
-
-
-end-question-number:
------
-
-
-begin-xml-voteinfoimport-voteinfo-count:
-[-begin-ballot-count-]
+end-question-number-in-ballot
 -----
 
 
@@ -229,19 +135,7 @@ voteinfo-code-for-ballot-count
 -----
 
 
-
-end-xml-voteinfoimport-voteinfo-count:
-[-end-ballot-count-]
------
-
-
 end-ballot-count:
------
-
-
-
-begin-xml-voteinfoimport-voteinfo-sequence:
-[-begin-sequence-]
 -----
 
 
@@ -249,24 +143,7 @@ begin-sequence:
 -----
 
 
-
-end-xml-voteinfoimport-voteinfo-sequence:
-[-end-sequence-]
------
-
-
 end-sequence:
------
-
-
-
-begin-xml-voteinfoimport-voteinfo-sequence-ch:
-[-begin-choice-number-]
------
-
-
-begin-xml-voteinfoimport-voteinfo-ch:
-[-begin-choice-number-]
 -----
 
 
@@ -274,29 +151,7 @@ begin-choice-number:
 -----
 
 
-
-end-xml-voteinfoimport-voteinfo-sequence-ch:
-[-end-choice-number-]
------
-
-
-end-xml-voteinfoimport-voteinfo-ch:
-[-end-choice-number-]
------
-
-
 end-choice-number:
------
-
-
-
-begin-and-end-xml-voteinfoimport-voteinfo-sequence-tie:
-[-tie-here-]
------
-
-
-begin-and-end-xml-voteinfoimport-voteinfo-tie:
-[-tie-here-]
 -----
 
 

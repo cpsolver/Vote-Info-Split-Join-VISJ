@@ -15,8 +15,8 @@ dashrep-definitions-begin
 
 
 *------------------------------------------------------------
-These first two definitions are the most likely ones that
-need to be changed -- to alter the XML output results.
+These first two definitions can be changed to produce a
+different arrangement of XML (or EML) output results.
 ------------------------------------------------------------*
 
 

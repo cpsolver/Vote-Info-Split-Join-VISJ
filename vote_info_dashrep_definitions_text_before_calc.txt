@@ -15,16 +15,9 @@ dashrep-definitions-begin
 
 
 *------------------------------------------------------------
-If EML or any other XML-tag-naming conventions are used in
-the input file, add new phrases (and definitions) that are
-similar to the ones here that begin with
-"begin-xml-" and "end-xml-".
+Normally you can leave these definitions unchanged.
 ------------------------------------------------------------*
 
-
-begin-xml:
-[-begin-all-cases-]
------
 
 begin-all-cases:
 dashrep hyphen-here definitions hyphen-here begin
@@ -32,11 +25,6 @@ new-line
 [-next-case-number = 1-]
 -----
 
-
-
-end-xml:
-[-end-all-cases-]
------
 
 end-all-cases:
 list-of-all-cases:
@@ -64,11 +52,6 @@ dashrep hyphen-here definitions hyphen-here end
 -----
 
 
-
-begin-xml-voteinfoimport:
-[-begin-case-]
------
-
 begin-case:
 [-case-number = [-next-case-number-]-]
 [-current-list-item = case-[-case-number-]-]
@@ -80,20 +63,14 @@ begin-case:
 -----
 
 
-
-begin-xml-voteinfoimport-surveytitle:
-[-begin-surveytitle-]
+end-case:
 -----
+
 
 begin-surveytitle:
 case-[-case-number-]-casetitle:
 -----
 
-
-
-end-xml-voteinfoimport-surveytitle:
-[-end-surveytitle-]
------
 
 end-surveytitle:
 [-dashed-line-]
@@ -101,31 +78,16 @@ new-line
 -----
 
 
-
-begin-xml-voteinfoimport-refertoas:
-[-begin-refertoas-]
------
-
 begin-refertoas:
 case-[-case-number-]-refertoas:
 -----
 
-
-
-end-xml-voteinfoimport-refertoas:
-[-end-refertoas-]
------
 
 end-refertoas:
 [-dashed-line-]
 new-line
 -----
 
-
-
-begin-xml-voteinfoimport-question:
-[-begin-question-]
------
 
 begin-question:
 [-question-number = [-next-question-number-]-]
@@ -141,20 +103,14 @@ begin-question:
 -----
 
 
-
-begin-xml-voteinfoimport-question-questiontype:
-[-begin-questiontype-]
+end-question:
 -----
+
 
 begin-questiontype:
 case-[-case-number-]-question-[-question-number-]-questiontype:
 -----
 
-
-
-end-xml-voteinfoimport-question-questiontype:
-[-end-questiontype-]
------
 
 end-questiontype:
 [-dashed-line-]
@@ -162,31 +118,16 @@ new-line
 -----
 
 
-
-begin-xml-voteinfoimport-question-questiontext:
-[-begin-questiontext-]
------
-
 begin-questiontext:
 case-[-case-number-]-question-[-question-number-]-questiontext:
 -----
 
-
-
-end-xml-voteinfoimport-question-questiontext:
-[-end-questiontext-]
------
 
 end-questiontext:
 [-dashed-line-]
 new-line
 -----
 
-
-
-begin-xml-voteinfoimport-question-choicetext:
-[-begin-choicetext-]
------
 
 begin-choicetext:
 [-choice-number = [-next-choice-number-]-]
@@ -207,45 +148,25 @@ case-[-case-number-]-question-[-question-number-]-choice-[-choice-number-]-choic
 -----
 
 
-
-end-xml-voteinfoimport-question-choicetext:
-[-end-choicetext-]
------
-
 end-choicetext:
 [-dashed-line-]
 new-line
 -----
 
 
-
-end-xml-voteinfoimport-question:
-[-end-question-]
------
-
-end-question:
+begin-ballots:
+ignore-begin-here
 -----
 
 
-
-end-xml-voteinfoimport:
-[-end-case-]
+end-ballots:
+ignore-end-here
 -----
-
-end-case:
------
-
-
-
-*------------------------------------------------------------
-Leave these definitions unchanged.
-------------------------------------------------------------*
 
 
 dashed-line:
 [-hyphen-here-] [-hyphen-here-] [-hyphen-here-] [-hyphen-here-] [-hyphen-here-]
 -----
-
 
 
 list-of-lists-to-export:

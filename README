@@ -7,28 +7,30 @@ This approach of splitting and rejoining allows election-calculation programmers
 
 This software runs on both Linux and Windows.  
 
-The separation of ballot preferences from candidate names (and party names) makes it easy to verify that the official vote-counting software does not have access to candidate names or political-party affiliations.  The software can do batch processing for multiple unrelated elections, and each election can handle multiple races that use the same ballot.
+The separation of ballot preferences from candidate names (and party names) makes it easy to verify that the official vote-counting software does not have access to candidate names or political-party affiliations.
 
-This software is easy to modify because it is written in the Dashrep (TM) language, which has only one special non-whitespace character, namely the dash or hyphen ("-").  Although the Dashrep language is trademarked to prevent the name from being co-opted, the Dashrep language is in the public domain.  The latest Dashrep engine is available as open-source software on GitHub (in the CPSolver area).  That software uses the minimal Perl interpreter, which is standard on Linux systems, and requires the presence of only two files (Perl.exe and Perlxxx.dll) for use on any Windows system.  The website at www.Dashrep.org contains details (including tutorials) about the Dashrep language.
+This software is easy to modify because it is written in the Dashrep (TM) language, which has only one special non-whitespace character, namely the dash or hyphen ("-").  Although the Dashrep language is trademarked to prevent the name from being co-opted, the Dashrep language is in the public domain.  The latest Dashrep engine is available as open-source software on GitHub (in the CPSolver area).  That software uses the minimal Perl interpreter, which is standard on Linux systems, and requires the presence of only three files (perl.exe and perl512.dll and libgcc_s_sjlj-1.dll) for use on any Windows system.  The website at www.Dashrep.org contains details (including tutorials) about the Dashrep language.
 
-Currently the input format is in XML, but this can be changed easily (such as to accomodate JSON or EML or other text-based formats).  Currently the output format is in XML, but this too can be changed easily, to accomodate XHTML or JSON or EML or some other text-based format.
+Currently the input format is in XML, but this can be changed easily (such as to accomodate EML or JSON or other text-based formats).  Currently the output format is in XML, but this too can be changed easily, to accomodate XHTML or EML or JSON or some other text-based format.
 
-The connections between the numeric and text streams are done using sequential numbers.  Case numbers allow data from many different, unrelated elections or surveys or polls to be combined into a single batch.  Question numbers refer to the different races/elections that appear on the same ballot.  Choice numbers refer to the candidates or choices in each race or poll/survey question.
+The connections between the numeric and text streams are done using sequential numbers.  Case numbers allow data from many different, unrelated elections or surveys or polls to be combined into a single batch.  Question numbers refer to the different races/elections that appear on the same ballot.  Choice numbers refer to the candidates or choices in each race or poll or survey question.
 
 The numeric information that is supplied to the vote-counting and calculation software contains only numbers, with negative numbers being used to precede question numbers and case numbers and to indicate transitions such as the start of each new ballot and tied preferences (where the voter has marked both choices at the same preference level).  Your vote-counting software chooses which negative numbers are associated with the transitions/tags.  Your vote-counting software must produce a number-only output that also uses the same or similar negative numbers to identify transitions such as the beginning and the end of a winners list, tally-table counts, plurality counts and any other calculated information.
 
 
 
-Version 1.00
+Version 1.10
 
 
 RUNNING
 
 To run the code using the supplied (simple) example, run the following commands:
 
+    (your calculation software must generate file output_visj_step_06_codes_from_vote_calc_sw.txt)
+
     perl dashrep_do_translation.pl < vote_info_split.txt > output_split_messages.txt
 
-    your_numeric_calculation_software < output_visj_stage_04_numeric_only.txt > output_visj_stage_06_vote_calc_results.txt
+    (your_numeric_calculation_software < output_visj_step_05_data_numeric_only.txt > output_visj_step_06_vote_calc_results.txt)
 
     perl dashrep_do_translation.pl < vote_info_join.txt > output_join_messages.txt
 

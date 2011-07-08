@@ -30,12 +30,13 @@ results-line-after-case-number:
 capture-end-here
 [-case-number = [-captured-text-]-]
 [-insert-text-dashrep-definitions-begin-for-case-[-zero-one-multiple: [-case-number-]-]-]
+new-line
 -----
 
 
 insert-text-dashrep-definitions-begin-for-case-one:
+no-space
 dashrep hyphen-here definitions hyphen-here begin
-new-line
 -----
 
 
@@ -57,6 +58,7 @@ capture-begin-here
 results-line-after-question-number:
 capture-end-here
 [-question-number = [-captured-text-]-]
+no-space
 results-for-case-[-case-number-]-question-[-question-number-]:
 -----
 
@@ -76,6 +78,7 @@ capture-begin-here
 results-line-after-first-choice:
 capture-end-here
 [-first-choice = [-captured-text-]-]
+no-space
 <firstchoice>
 delayed-nospace
 [-first-choice-]
@@ -94,6 +97,7 @@ capture-begin-here
 results-line-after-second-choice:
 capture-end-here
 [-second-choice = [-captured-text-]-]
+no-space
 <secondchoice>
 delayed-nospace
 [-second-choice-]
@@ -112,6 +116,7 @@ capture-begin-here
 results-line-after-tally-first-over-second:
 capture-end-here
 [-first-over-second = [-captured-text-]-]
+no-space
 <firstoversecond>
 delayed-nospace
 [-first-over-second-]
@@ -130,6 +135,7 @@ capture-begin-here
 results-line-after-tally-second-over-first:
 capture-end-here
 [-second-over-first = [-captured-text-]-]
+no-space
 <secondoverfirst>
 delayed-nospace
 [-second-over-first-]
@@ -172,6 +178,7 @@ capture-begin-here
 results-line-after-plurality-count:
 capture-end-here
 [-plurality-count = [-captured-text-]-]
+no-space
 case-[-case-number-]-question-[-question-number-]-choice-[-plurality-choice-]-plurality-count:
 new-line
 delayed-nospace
@@ -191,8 +198,17 @@ dashrep hyphen-here definitions hyphen-here end
 -----
 
 
+output-voteinfo-code-for-start-of-votefair-popularity-ranking-results:
+-----
+
+
+output-voteinfo-code-for-end-of-votefair-popularity-ranking-results:
+-----
+
+
 dashed-line:
 hyphen-here hyphen-here hyphen-here hyphen-here hyphen-here
+new-line
 -----
 
 
