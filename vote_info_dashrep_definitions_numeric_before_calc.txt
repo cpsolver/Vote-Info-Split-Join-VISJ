@@ -122,7 +122,7 @@ voteinfo-code-for-ballot-count
 new-line
 1
 new-line
-[-begin-question-number-]
+voteinfo-code-for-question-number
 -----
 
 

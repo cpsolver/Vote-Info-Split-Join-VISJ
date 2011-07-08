@@ -97,6 +97,8 @@ content-if-error-message-empty:
 [-create-list-named: question-results-]
 [-create-list-named: choice-results-]
 
+[-warning-if-warning-message-[-empty-or-nonempty: [-output-warning-message-]-]-]
+
 <xml>
 delayed-newline
 <voteinforesults>
@@ -116,6 +118,24 @@ ERROR:
 new-line
 output-error-message
 new-line
+-----
+
+
+
+warning-if-warning-message-empty:
+-----
+
+
+
+warning-if-warning-message-nonempty:
+<warning>
+no-space
+output-warning-message
+no-space
+</warning>
+delayed-newline
+delayed-newline
+delayed-newline
 -----
 
 
