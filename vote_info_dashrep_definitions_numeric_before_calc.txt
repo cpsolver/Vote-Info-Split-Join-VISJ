@@ -90,8 +90,12 @@ code-request-pairwise-counts-for-question-type-plurality:
 -----
 
 
+code-request-pairwise-counts-for-question-type-nonranked:
+voteinfo-code-for-request-only-plurality-results
+-----
+
+
 begin-choicetext:
-[-dashrep_internal-capture-trace-on-or-off = on-]
 [-choice-number = [-next-choice-number-]-]
 [-auto-increment: next-choice-number-]
 ignore-begin-here
@@ -100,11 +104,22 @@ ignore-begin-here
 
 end-choicetext:
 ignore-end-here
-[-dashrep_internal-capture-trace-on-or-off = off-]
+[-first-ballot-yes-or-no = yes-]
 -----
 
 
 begin-ballots:
+[-code-at-first-ballot-[-first-ballot-yes-or-no-]-]
+[-first-ballot-yes-or-no = no-]
+-----
+
+
+code-at-first-ballot-yes:
+voteinfo-code-for-start-of-all-vote-info
+-----
+
+
+code-at-first-ballot-no:
 -----
 
 
@@ -114,10 +129,6 @@ voteinfo-code-for-end-of-ballot
 
 
 begin-question-number-in-ballot:
-voteinfo-code-for-ballot-count
-new-line
-1
-new-line
 voteinfo-code-for-question-number
 -----
 

@@ -86,7 +86,16 @@ Typically these definitions do not need to be changed.
 
 entire-content:
 
-[-content-if-error-message-[-empty-or-nonempty: [-output-error-message-]-]-]
+[-content-if-error-message-nonempty-]
+delayed-newline
+delayed-newline
+[-content-if-error-message-empty-]
+-----
+
+
+
+unused-original-for-above:
+[-content-if-error-message-[-empty-or-nonempty output-error-message-]-]
 -----
 
 
@@ -97,7 +106,7 @@ content-if-error-message-empty:
 [-create-list-named: question-results-]
 [-create-list-named: choice-results-]
 
-[-warning-if-warning-message-[-empty-or-nonempty: [-output-warning-message-]-]-]
+[-warning-if-warning-message-[-empty-or-nonempty output-warning-message-]-]
 
 <xml>
 delayed-newline
@@ -129,11 +138,12 @@ warning-if-warning-message-empty:
 
 warning-if-warning-message-nonempty:
 <warning>
-no-space
-output-warning-message
-no-space
-</warning>
 delayed-newline
+delayed-nospace
+[-output-warning-message-]
+delayed-nospace
+delayed-newline
+</warning>
 delayed-newline
 delayed-newline
 -----
