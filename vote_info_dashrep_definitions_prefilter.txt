@@ -52,6 +52,16 @@ end-question
 -----
 
 
+begin-xml-voteinfoimport-question-questiontext:
+begin-questiontext
+-----
+
+
+end-xml-voteinfoimport-question-questiontext:
+end-questiontext
+-----
+
+
 begin-xml-voteinfoimport-question-questiontype:
 begin-questiontype
 -----

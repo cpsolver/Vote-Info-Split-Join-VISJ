@@ -58,14 +58,23 @@ capture-begin-here
 results-line-after-question-number:
 capture-end-here
 [-question-number = [-captured-text-]-]
-no-space
-results-for-case-[-case-number-]-question-[-question-number-]:
+-----
+
+
+output-voteinfo-code-for-choice:
+[-insert-phrase-with-brackets-after-next-top-line  results-line-after-choice-number-]
+capture-begin-here
+-----
+
+
+results-line-after-choice-number:
+capture-end-here
+[-choice-number = [-captured-text-]-]
 -----
 
 
 output-voteinfo-code-for-start-of-tally-table-results:
-<tallytable>
-delayed-newline
+case-[-case-number-]-question-[-question-number-]-tally-table-results:
 -----
 
 
@@ -146,26 +155,11 @@ delayed-newline
 
 
 output-voteinfo-code-for-end-of-tally-table-results:
-</tallytable>
-delayed-newline
-new-line
 [-dashed-line-]
 -----
 
 
 output-voteinfo-code-for-start-of-plurality-results:
------
-
-
-output-voteinfo-code-for-choice:
-[-insert-phrase-with-brackets-after-next-top-line  results-line-after-plurality-choice-]
-capture-begin-here
------
-
-
-results-line-after-plurality-choice:
-capture-end-here
-[-plurality-choice = [-captured-text-]-]
 -----
 
 
@@ -179,11 +173,9 @@ results-line-after-plurality-count:
 capture-end-here
 [-plurality-count = [-captured-text-]-]
 no-space
-case-[-case-number-]-question-[-question-number-]-choice-[-plurality-choice-]-plurality-count:
+case-[-case-number-]-question-[-question-number-]-choice-[-choice-number-]-plurality-count:
 new-line
-delayed-nospace
 [-plurality-count-]
-delayed-nospace
 new-line
 [-dashed-line-]
 -----
@@ -193,16 +185,17 @@ output-voteinfo-code-for-end-of-plurality-results:
 -----
 
 
+output-voteinfo-code-for-skip-case:
+case-[-case-number-]-warning-message:
+new-line
+No calculations for this case for reason explained in warning message
+new-line
+[-dashed-line-]
+-----
+
+
 output-voteinfo-code-for-end-of-all-cases:
 dashrep hyphen-here definitions hyphen-here end
------
-
-
-output-voteinfo-code-for-start-of-votefair-popularity-ranking-results:
------
-
-
-output-voteinfo-code-for-end-of-votefair-popularity-ranking-results:
 -----
 
 
@@ -210,6 +203,7 @@ dashed-line:
 hyphen-here hyphen-here hyphen-here hyphen-here hyphen-here
 new-line
 -----
+
 
 
 dashrep-definitions-end

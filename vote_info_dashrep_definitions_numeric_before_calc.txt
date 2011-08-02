@@ -70,6 +70,16 @@ end-question-number:
 -----
 
 
+begin-questiontext:
+ignore-begin-here
+-----
+
+
+end-questiontext:
+ignore-end-here
+-----
+
+
 begin-questiontype:
 capture-begin-here
 -----
@@ -78,19 +88,25 @@ capture-begin-here
 end-questiontype:
 capture-end-here
 [-question-type = [-captured-text-]-]
-[-code-request-pairwise-counts-for-question-type-[-question-type-]-]
+[-code-request-for-question-type-[-question-type-]-]
 -----
 
 
-code-request-pairwise-counts-for-question-type-rank:
+code-request-for-question-type-rank:
 -----
 
 
-code-request-pairwise-counts-for-question-type-plurality:
+code-request-for-question-type-plurality:
+voteinfo-code-for-request-only-plurality-results
 -----
 
 
-code-request-pairwise-counts-for-question-type-nonranked:
+code-request-for-question-type-notranked:
+voteinfo-code-for-request-only-plurality-results
+-----
+
+
+code-request-for-question-type-nonranked:
 voteinfo-code-for-request-only-plurality-results
 -----
 
