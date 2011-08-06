@@ -27,31 +27,6 @@ new-line
 
 
 end-all-cases:
-list-of-all-cases:
-new-line
-[-list-of-all-cases-]
-new-line
-[-dashed-line-]
-new-line
-new-line
-new-line
-list-of-all-combinations-of-case-and-question:
-new-line
-[-list-of-all-combinations-of-case-and-question-]
-new-line
-[-dashed-line-]
-new-line
-new-line
-new-line
-list-of-all-combinations-of-case-and-question-and-choice:
-new-line
-[-list-of-all-combinations-of-case-and-question-and-choice-]
-new-line
-[-dashed-line-]
-new-line
-new-line
-new-line
-dashrep hyphen-here definitions hyphen-here end
 -----
 
 
@@ -59,9 +34,6 @@ begin-case:
 [-case-number = [-next-case-number-]-]
 [-current-list-item = case-[-case-number-]-]
 [-append-from-phrase-to-phrase: current-list-item list-of-all-cases-]
-[-current-list-item = case-[-case-number-]-number-]
-[-[-current-list-item-] = [-case-number-]-]
-[-append-from-phrase-to-phrase:  current-list-item  items-in-list-named-case-numbers-]
 [-current-list-item = items-in-list-named-question-results-for-case-[-case-number-]-]
 [-append-from-phrase-to-phrase:  current-list-item  list-of-lists-to-export-]
 case-[-case-number-]-case-number:
@@ -79,14 +51,16 @@ end-case:
 -----
 
 
-begin-surveytitle:
+begin-casetitle:
 case-[-case-number-]-casetitle:
 -----
 
 
-end-surveytitle:
+end-casetitle:
 [-dashed-line-]
 new-line
+[-current-list-item = case-[-case-number-]-casetitle-]
+[-append-from-phrase-to-phrase: current-list-item list-of-all-cases-]
 -----
 
 
@@ -187,6 +161,9 @@ dashed-line:
 
 
 list-of-lists-to-export:
+list-of-all-cases
+list-of-all-combinations-of-case-and-question
+list-of-all-combinations-of-case-and-question-and-choice
 -----
 
 

@@ -42,22 +42,22 @@ end-case
 -----
 
 
-text-begin-xml-voteinfoimport-surveytitle:
+begin-xml-voteinfoimport-surveytitle:
 begin-casetitle
 -----
 
 
-text-end-xml-voteinfoimport-surveytitle:
+end-xml-voteinfoimport-surveytitle:
 end-casetitle
 -----
 
 
-text-begin-xml-voteinfoimport-refertoas:
+begin-xml-voteinfoimport-refertoas:
 begin-refertoas
 -----
 
 
-text-end-xml-voteinfoimport-refertoas:
+end-xml-voteinfoimport-refertoas:
 end-refertoas
 -----
 
@@ -89,36 +89,6 @@ begin-questiontype
 
 end-xml-voteinfoimport-question-questiontype:
 end-questiontype
------
-
-
-unused-text-begin-xml-voteinfoimport-question-questiontype:
-begin-questiontype
------
-
-
-unused-text-end-xml-voteinfoimport-question-questiontype:
-end-questiontype
------
-
-
-unused-text-begin-xml-voteinfoimport-question-questiontext:
-begin-questiontext
------
-
-
-unused-text-end-xml-voteinfoimport-question-questiontext:
-end-questiontext
------
-
-
-unused-text-begin-xml-voteinfoimport-question-choicetext:
-begin-choicetext
------
-
-
-unused-text-end-xml-voteinfoimport-question-choicetext:
-end-choicetext
 -----
 
 

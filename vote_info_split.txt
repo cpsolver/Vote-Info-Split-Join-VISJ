@@ -62,7 +62,8 @@ clear-all-dashrep-phrases
 
 *------------------------------------------------------------
 Step 4:
-Split from the data the text-specific information.
+Split from the data the text-specific information (such as
+case names, question names, and choice names).
 ------------------------------------------------------------*
 
 get-definitions-from-file  vote_info_dashrep_definitions_text_before_calc.txt
