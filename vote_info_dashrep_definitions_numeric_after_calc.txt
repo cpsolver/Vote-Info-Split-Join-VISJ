@@ -31,6 +31,10 @@ capture-end-here
 [-case-number = [-captured-text-]-]
 [-insert-text-dashrep-definitions-begin-for-case-[-zero-one-multiple: [-case-number-]-]-]
 new-line
+ok-not-ok-for-case-[-case-number-]:
+ok
+new-line
+[-dashed-line-]
 -----
 
 

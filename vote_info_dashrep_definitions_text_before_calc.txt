@@ -59,8 +59,6 @@ case-[-case-number-]-casetitle:
 end-casetitle:
 [-dashed-line-]
 new-line
-[-current-list-item = case-[-case-number-]-casetitle-]
-[-append-from-phrase-to-phrase: current-list-item list-of-all-cases-]
 -----
 
 

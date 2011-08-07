@@ -45,6 +45,26 @@ end-case:
 -----
 
 
+begin-casetitle:
+ignore-begin-here
+-----
+
+
+end-casetitle:
+ignore-end-here
+-----
+
+
+begin-refertoas:
+ignore-begin-here
+-----
+
+
+end-refertoas:
+ignore-end-here
+-----
+
+
 begin-question:
 [-question-number = [-next-question-number-]-]
 [-auto-increment: next-question-number-]
