@@ -19,6 +19,38 @@ changed.
 ------------------------------------------------------------*
 
 
+insert-text-dashrep-definitions-begin-for-case-one:
+no-space
+dashrep hyphen-here definitions hyphen-here begin
+-----
+
+
+insert-text-dashrep-definitions-begin-for-case-zero:
+-----
+
+
+insert-text-dashrep-definitions-begin-for-case-multiple:
+-----
+
+
+output-voteinfo-code-for-skip-case:
+ok-not-ok-for-case-[-case-number-]:
+not-ok
+new-line
+[-dashed-line-]
+new-line
+-----
+
+
+output-voteinfo-code-for-skip-question:
+ok-not-ok-for-case-[-case-number-]-question-[-question-number-]:
+not-ok
+new-line
+[-dashed-line-]
+new-line
+-----
+
+
 output-voteinfo-code-for-case-number:
 [-dashrep_internal-tracking-on-or-off = off-]
 [-insert-phrase-with-brackets-after-next-top-line  results-line-after-case-number-]
@@ -35,20 +67,6 @@ ok-not-ok-for-case-[-case-number-]:
 ok
 new-line
 [-dashed-line-]
------
-
-
-insert-text-dashrep-definitions-begin-for-case-one:
-no-space
-dashrep hyphen-here definitions hyphen-here begin
------
-
-
-insert-text-dashrep-definitions-begin-for-case-zero:
------
-
-
-insert-text-dashrep-definitions-begin-for-case-multiple:
 -----
 
 

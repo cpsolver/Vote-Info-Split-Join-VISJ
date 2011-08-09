@@ -24,7 +24,7 @@ arrangement-for-choice-specific-results:
 
 <choicenumber>
 delayed-nospace
-[-choice-number-for-[-parameter-case-and-question-and-choice-id-]-]
+[-[-parameter-case-and-question-and-choice-id-]-choice-number-]
 delayed-nospace
 </choicenumber>
 delayed-nospace
@@ -36,10 +36,11 @@ delayed-nospace
 delayed-nospace
 <pluralitycount>
 delayed-nospace
-[ hyphen-here [-parameter-case-and-question-and-choice-id-]-plurality-count hyphen-here ]
+[-[-parameter-case-and-question-and-choice-id-]-plurality-count-]
 delayed-nospace
 </pluralitycount>
 delayed-newline
+new-line
 -----
 
 
@@ -47,10 +48,11 @@ arrangement-for-question-specific-results:
 
 <questionnumber>
 delayed-nospace
-[-question-number-for-[-parameter-case-and-question-id-]-]
+[-[-parameter-case-and-question-id-]-question-number-]
 delayed-nospace
 </questionnumber>
 delayed-newline
+new-line
 
 <questiontext>
 delayed-nospace
@@ -58,6 +60,7 @@ delayed-nospace
 delayed-nospace
 </questiontext>
 delayed-newline
+new-line
 
 <questiontype>
 delayed-nospace
@@ -65,15 +68,18 @@ delayed-nospace
 delayed-nospace
 </questiontype>
 delayed-newline
+new-line
 
 <questionchoiceresults>
 delayed-newline
 [-items-in-list-named-choice-results-for-[-parameter-case-and-question-id-]-]
 </questionchoiceresults>
 delayed-newline
+new-line
 
 results-for-[-parameter-case-and-question-id-]
 delayed-newline
+new-line
 -----
 
 
@@ -86,10 +92,9 @@ Typically these definitions do not need to be changed.
 
 entire-content:
 
-[-content-if-error-message-nonempty-]
+[-content-if-error-message-[-empty-or-nonempty-phrase output-error-message-]-]
 delayed-newline
-delayed-newline
-[-content-if-error-message-empty-]
+new-line
 -----
 
 
@@ -100,26 +105,32 @@ content-if-error-message-empty:
 [-create-list-named: question-results-]
 [-create-list-named: choice-results-]
 
-[-warning-if-warning-message-[-empty-or-nonempty output-warning-message-]-]
-
+[-warning-if-warning-message-[-empty-or-nonempty-phrase output-warning-message-]-]
 <xml>
 delayed-newline
+new-line
 <voteinforesults>
 delayed-newline
-
+new-line
 [-generated-list-named-case-results-]
-
 </voteinforesults>
 delayed-newline
+new-line
 </xml>
+new-line
 -----
 
 
 
 content-if-error-message-nonempty:
-ERROR:
+<error>
+delayed-nospace
 new-line
 output-error-message
+delayed-nospace
+new-line
+</error>
+delayed-newline
 new-line
 -----
 
@@ -133,29 +144,70 @@ warning-if-warning-message-empty:
 warning-if-warning-message-nonempty:
 <warning>
 delayed-newline
-delayed-nospace
+new-line
 [-output-warning-message-]
-delayed-nospace
+new-line
 delayed-newline
 </warning>
 delayed-newline
-delayed-newline
+new-line
 -----
 
 
 
 template-for-list-named-case-results:
+[-template-for-list-named-case-results-if-[-ok-not-ok-for-[-parameter-case-id-]-]-]
+-----
 
-<case>[-parameter-case-id-]</case>
+
+
+template-for-list-named-case-results-if-ok:
+[-case-heading-]
+items-in-list-named-question-results-for-[-parameter-case-id-]
+<p>&nbsp;</p>
+new-line
+new-line
+-----
+
+
+
+template-for-list-named-case-results-if-not-ok:
+[-case-heading-]
+<warning> delayed-nospace
+No calculations were done for this case.&nbsp; The reason is:&nbsp; [-[-parameter-case-id-]-warning-message-]
+delayed-nospace </warning>
+-----
+
+
+
+template-for-list-named-case-results-if-ok:
+<case>
 delayed-newline
-
-<casetitle> delayed-nospace [-case-[-parameter-case-id-]-casetitle-] delayed-nospace </casetitle>
+new-line
+[-case-heading-]
 delayed-newline
-
+new-line
 <caseresults>
 delayed-newline
+new-line
 [-items-in-list-named-question-results-for-[-parameter-case-id-]-]
+delayed-newline
+new-line
 </caseresults>
+delayed-newline
+new-line
+</case>
+delayed-newline
+new-line
+-----
+
+
+
+case-heading:
+<casenumber> delayed-nospace [-parameter-case-id-]-case-number delayed-nospace </casenumber>
+new-line
+<casetitle> delayed-nospace [-parameter-case-id-]-casetitle delayed-nospace </casetitle>
+new-line
 delayed-newline
 -----
 
