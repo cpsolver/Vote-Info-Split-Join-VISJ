@@ -269,7 +269,7 @@ parameter-case-and-question-and-choice-id
 
 
 
-dashrep_internal-endless-loop-counter-limit:
+dashrep-endless-loop-counter-limit:
 900000
 -----
 

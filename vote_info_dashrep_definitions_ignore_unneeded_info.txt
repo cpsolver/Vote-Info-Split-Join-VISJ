@@ -62,7 +62,7 @@ new-line
 
 list-of-parameter-values-for-list-named-definitions-that-ignore-all-vote-info:
 
-[-dashrep_internal-list-of-xml-phrases-]
+[-dashrep-list-of-xml-phrases-]
 --------
 
 

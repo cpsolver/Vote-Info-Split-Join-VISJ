@@ -52,7 +52,7 @@ new-line
 
 
 output-voteinfo-code-for-case-number:
-[-dashrep_internal-tracking-on-or-off = off-]
+[-dashrep-tracking-on-or-off = off-]
 [-insert-phrase-with-brackets-after-next-top-line  results-line-after-case-number-]
 capture-begin-here
 -----
@@ -71,7 +71,7 @@ new-line
 
 
 output-voteinfo-code-for-question-number:
-[-dashrep_internal-tracking-on-or-off = off-]
+[-dashrep-tracking-on-or-off = off-]
 [-insert-phrase-with-brackets-after-next-top-line  results-line-after-question-number-]
 capture-begin-here
 -----
