@@ -16,7 +16,7 @@ Need the following file that associates Dashrep hyphenated
 phrases with code numbers (which are used to tag the
 numeric-only data):
 
-    output_visj_step_06_codes_from_vote_calc_sw.txt
+    output_from_vote_calc_sw_visj_codes.txt
 
 ------------------------------------------------------------*
 
@@ -28,7 +28,7 @@ Convert the XML (or EML) tags into Dashrep phrases.
 ------------------------------------------------------------*
 
 [-dashrep-first-xml-tag-name = xml-]
-linewise-translate-xml-tags-in-file-to-dashrep-phrases-in-file  input_vote_info.txt  output_visj_step_01_data_raw_phrases.txt
+linewise-translate-xml-tags-in-file-to-dashrep-phrases-in-file  input_vote_info_shorter_version.txt  output_visj_step_01_data_raw_phrases.txt
 
 
 
@@ -67,7 +67,7 @@ case names, question names, and choice names).
 ------------------------------------------------------------*
 
 get-definitions-from-file  vote_info_dashrep_definitions_text_before_calc.txt
-get-definitions-from-file  output_visj_step_06_codes_from_vote_calc_sw.txt
+get-definitions-from-file  output_from_vote_calc_sw_visj_codes.txt
 linewise-translate-from-file-to-file  output_visj_step_03_data_prefiltered.txt  output_visj_step_04a_definitions_text_part_1.txt
 
 write-dashrep-definitions-listed-in-phrase-to-file  list-of-lists-to-export  output_visj_step_04b_definitions_text_part_2.txt
@@ -85,7 +85,7 @@ supplied to the vote-counting software).
 ------------------------------------------------------------*
 
 get-definitions-from-file  vote_info_dashrep_definitions_numeric_before_calc.txt
-get-definitions-from-file  output_visj_step_06_codes_from_vote_calc_sw.txt
+get-definitions-from-file  output_from_vote_calc_sw_visj_codes.txt
 linewise-translate-from-file-to-file  output_visj_step_03_data_prefiltered.txt  output_visj_step_05_data_numeric_only.txt
 
 write-all-dashrep-definitions-to-file  output_debug_definitions_after_step_05.txt

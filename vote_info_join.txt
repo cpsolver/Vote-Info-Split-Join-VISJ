@@ -17,7 +17,7 @@ which must have created the following files:
 
     output_visj_step_06_vote_calc_results.txt
     output_visj_step_06_possible_error_message.txt
-    output_visj_step_06_codes_from_vote_calc_sw.txt
+    output_from_vote_calc_sw_visj_codes.txt
 
 ------------------------------------------------------------*
 
@@ -28,7 +28,7 @@ Convert the number-specific Dashrep phrases into meaningful
 names.
 ------------------------------------------------------------*
 
-get-definitions-from-file  output_visj_step_06_codes_from_vote_calc_sw.txt
+get-definitions-from-file  output_from_vote_calc_sw_visj_codes.txt
 linewise-translate-from-file-to-file  output_visj_step_06_vote_calc_results.txt  output_visj_step_07_calc_data_as_list.txt
 
 clear-all-dashrep-phrases
