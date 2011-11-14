@@ -87,6 +87,12 @@ new-line
 new-line
 [-dashed-line-]
 new-line
+case-[-case-number-]-question-[-question-number-]-case-number:
+new-line
+[-case-number-]
+new-line
+[-dashed-line-]
+new-line
 [-auto-increment: next-question-number-]
 [-next-choice-number = 1-]
 -----

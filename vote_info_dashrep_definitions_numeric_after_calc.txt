@@ -22,6 +22,11 @@ changed.
 insert-text-dashrep-definitions-begin-for-case-one:
 no-space
 dashrep hyphen-here definitions hyphen-here begin
+[-extra-actions-at-beginning-of-case-]
+-----
+
+
+extra-actions-at-beginning-of-case:
 -----
 
 
