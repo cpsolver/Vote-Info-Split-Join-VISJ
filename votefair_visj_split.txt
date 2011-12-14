@@ -1,0 +1,145 @@
+*-----  Dashrep language -- top-level actions  -----*
+
+*------------------------------------------------------------
+See www.Dashrep.org for details about the Dashrep language.
+------------------------------------------------------------*
+
+
+*------------------------------------------------------------
+Vote-Info-Split-Join, Dashrep top-level actions for split
+------------------------------------------------------------*
+
+
+*------------------------------------------------------------
+Prerequisite:
+Need the following file that associates Dashrep hyphenated
+phrases with code numbers (which are used to tag the
+numeric-only data):
+
+    output_from_vote_calc_sw_visj_codes.txt
+
+------------------------------------------------------------*
+
+
+
+*------------------------------------------------------------
+Step 1:
+Convert the XML (or EML) tags into Dashrep phrases.
+------------------------------------------------------------*
+
+[-dashrep-first-xml-tag-name = xml-]
+linewise-translate-xml-tags-in-file-to-dashrep-phrases-in-file  input_vote_info.txt  output_visj_step_01_data_raw_phrases.txt
+
+
+*------------------------------------------------------------
+Step 2:
+For default purposes, generate definitions that would cause
+all the data to be ignored.
+------------------------------------------------------------*
+
+get-definitions-from-file  vote_info_dashrep_definitions_ignore_unneeded_info.txt
+expand-phrase-to-file  content-for-ignore-all-vote-info-definitions  output_visj_step_02_definitions_ignore_all.txt
+
+clear-all-dashrep-phrases
+
+
+
+*------------------------------------------------------------
+Step 3:
+Pre-filter the data so that only needed info is retained,
+and convert the XML-based Dashrep phrases into meaningful
+names.
+------------------------------------------------------------*
+
+get-definitions-from-file  output_visj_step_02_definitions_ignore_all.txt
+get-definitions-from-file  vote_info_dashrep_definitions_prefilter.txt
+
+write-all-dashrep-definitions-to-file  output_definitions_to_use_to_prefilter.txt
+
+linewise-translate-parameters-only-from-file-to-file  output_visj_step_01_data_raw_phrases.txt  output_visj_step_03a_prefiltered_with_ignore.txt
+
+clear-all-dashrep-phrases
+
+linewise-translate-special-phrases-only-from-file-to-file  output_visj_step_03a_prefiltered_with_ignore.txt  output_visj_step_03b_prefiltered_without_ignore.txt
+
+clear-all-dashrep-phrases
+
+
+*------------------------------------------------------------
+Step 4:
+Split from the data the text-specific information (such as
+case names, question names, and choice names).
+------------------------------------------------------------*
+
+get-definitions-from-file  vote_info_dashrep_definitions_text_before_calc.txt
+get-definitions-from-file  votefair_specific_visj_text_before_calc.txt
+get-definitions-from-file  output_from_vote_calc_sw_visj_codes.txt
+linewise-translate-from-file-to-file  output_visj_step_03b_prefiltered_without_ignore.txt  output_visj_step_04a_definitions_text_part_1.txt
+
+write-dashrep-definitions-listed-in-phrase-to-file  list-of-lists-to-export  output_visj_step_04b_definitions_text_part_2.txt
+
+write-all-dashrep-definitions-to-file  output_debug_definitions_after_step_04.txt
+
+clear-all-dashrep-phrases
+
+
+
+*------------------------------------------------------------
+Step 5:
+Split from the data the numeric-only information (which is
+supplied to the vote-counting software).
+------------------------------------------------------------*
+
+get-definitions-from-file  vote_info_dashrep_definitions_numeric_before_calc.txt
+get-definitions-from-file  votefair_specific_visj_numeric_before_calc.txt
+get-definitions-from-file  output_from_vote_calc_sw_visj_codes.txt
+linewise-translate-from-file-to-file  output_visj_step_03b_prefiltered_without_ignore.txt  output_visj_step_05_data_numeric_only.txt
+
+write-all-dashrep-definitions-to-file  output_debug_definitions_after_step_05.txt
+
+
+
+*------------------------------------------------------------
+Step 6:
+Need to run vote-counting software using the following file:
+
+    output_visj_step_05_data_numeric_only.txt
+
+------------------------------------------------------------*
+
+
+
+*------------------------------------------------------------
+AUTHOR
+
+Richard Fobes, "CPSolver" at GitHub.com
+
+
+BUGS
+
+Please report any bugs or feature requests to "CPSolver" at GitHub.com.
+
+
+ACKNOWLEDGEMENTS
+
+Richard Fobes wrote this software.  Richard Fobes is the author
+of the book titled The Creative Problem Solver's Toolbox.
+
+
+COPYRIGHT & LICENSE
+
+Copyright 2011 Richard Fobes at www.Dashrep.org, all rights reserved.
+
+You can redistribute and/or modify this software
+under the Perl Artistic license, a copy
+of which is included in the LICENSE file.
+
+Conversions of this code into other languages are also
+covered by the above license terms.
+
+The Dashrep (TM) name is trademarked by Richard Fobes at
+www.Dashrep.org to prevent the name from being co-opted.
+
+The Dashrep (TM) language is in the public domain.
+
+------------------------------------------------------------*

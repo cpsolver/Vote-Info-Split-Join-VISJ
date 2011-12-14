@@ -1,0 +1,194 @@
+*-------------------------------------------*
+*-------------------------------------------*
+*----------  Language-specific  ------------*
+*----------  replacements       ------------*
+*-------------------------------------------*
+*----------  Language: English (en)  -------*
+*-------------------------------------------*
+*-------------------------------------------*
+
+
+
+*--------------------------------------------------------
+          Copyright 2011 by Richard Fobes
+--------------------------------------------------------*
+
+
+words-copyright-notice:
+Copyright 2011 Richard Fobes at VoteFair.org
+-----
+
+
+word-case:
+case
+-----
+
+
+word-case-capitalized:
+Case
+-----
+
+
+word-question:
+question
+-----
+
+
+words-ballot-count-capitalized:
+Ballot count
+-----
+
+
+no-calculations-done-for-case:
+No calculations were done for this case
+-----
+
+
+reason-is:
+The reason is
+-----
+
+
+words-contains-no-questions:
+contains no questions
+-----
+
+
+words-contains-no-ballots:
+contains no ballots
+-----
+
+
+exceeds-limit-for-number-of-cases:
+exceeds the limit for the number of cases
+-----
+
+
+contains-question-number-less-than-one:
+contains a question number that is less than one
+-----
+
+
+has-too-many-questions-limit-is:
+has too many questions (limit is
+-----
+
+
+contains-choice-number-without-question-number:
+contains a choice number without first specifying a question number
+-----
+
+
+only-one-choice:
+contains only one choice for one of the questions
+-----
+
+
+contains-invalid-choice-count:
+contains an invalid choice count
+-----
+
+
+has-ballot-count-number-less-than-one:
+has a ballot-count number that is less than one
+-----
+
+
+choice-number-appears-before-number-of-choices-specified:
+contains a choice number without first specifying the number of choices in the question
+-----
+
+
+contains-choice-number:
+contains a choice number
+-----
+
+
+that-exceeds-number-of-choices:
+that exceeds the specified number of choices
+-----
+
+
+that-is-used-more-than-once-in-same-ballot:
+that is used more than once in the same ballot
+-----
+
+
+contains-invalid-nesting-of-tie-indicator:
+contains an invalid nesting of a tie (equal-preference) indicator
+-----
+
+
+has-no-choices:
+has no choices
+-----
+
+
+does-not-have-at-least-two-choices:
+does not have at least two choices, so vote calculations cannot be done
+-----
+
+
+does-not-specify-number-of-choices:
+does not specify the number of choices for one of its questions
+-----
+
+
+does-not-request-VoteFair-calculations-only-plurality-counts:
+does not request VoteFair calculations, only plurality counts
+-----
+
+
+has-too-many-choices-so-plurality-counting-done:
+has too many choices to handle for this version of the software, so only plurality counting and pairwise counting can be done
+-----
+
+
+has-too-many-choices-for-this-software-version-so-VoteFair-calculations-cannot-be-done:
+has too many choices for this software version, so VoteFair calculations cannot be done
+-----
+
+
+has-fewer-than-three-ballots-so-VoteFair-party-ranking-cannot-be-done:
+has fewer than three ballots, so VoteFair party ranking cannot be done
+-----
+
+
+does-not-have-at-least-two-choices-so-VoteFair-popularity-ranking-cannot-be-done:
+does not have at least two choices, so VoteFair popularity ranking cannot be done
+-----
+
+first-place-tie-in-VoteFair-party-ranking-so-tie-breaking-vote-needed:
+has a first-place tie in VoteFair party ranking, so a tie-breaking vote is needed before more ranking levels can be calculated
+-----
+
+
+contains-non-numeric-characters:
+contains non-numeric characters
+-----
+
+
+results-type-popularity-zero-only-values:
+The calculations for VoteFair popularity ranking were unable to even partially rank the choices
+-----
+
+
+results-type-representation-zero-only-values:
+The calculations for VoteFair representation ranking were unable to even partially rank the choices
+-----
+
+
+results-type-party-zero-only-values:
+The calculations for VoteFair party ranking were unable to even partially rank the choices
+-----
+
+
+not-at-least-two-ballots-so-no-representation-calculations-done
+There were not at least two ballots, so representation calculations could not be done
+-----
+
+
+triggered-program-bug:
+caused a software "bug" (flaw) to be encountered
+-----
+

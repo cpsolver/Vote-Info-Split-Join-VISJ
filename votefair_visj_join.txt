@@ -1,0 +1,130 @@
+*-----  Dashrep language -- top-level actions  -----*
+
+*------------------------------------------------------------
+See www.Dashrep.org for details about the Dashrep language.
+------------------------------------------------------------*
+
+
+*------------------------------------------------------------
+Vote-Info-Split-Join, Dashrep top-level actions for join
+------------------------------------------------------------*
+
+
+
+*------------------------------------------------------------
+Continue here after executing your vote-counting software,
+which must have created the following files:
+
+    output_from_vote_calc_sw_visj_results.txt
+    output_from_vote_calc_sw_visj_possible_error_message.txt
+    output_from_vote_calc_sw_visj_codes.txt
+
+------------------------------------------------------------*
+
+
+*------------------------------------------------------------
+Step 7:
+Convert the number-specific Dashrep phrases into meaningful
+names.
+------------------------------------------------------------*
+
+get-definitions-from-file  output_from_vote_calc_sw_visj_codes.txt
+linewise-translate-from-file-to-file  output_from_vote_calc_sw_visj_results.txt  output_visj_step_07_calc_data_as_list.txt
+
+clear-all-dashrep-phrases
+
+
+
+*------------------------------------------------------------
+Step 8:
+Convert the numeric results into dashrep definitions that
+associate each result data with a hyphenated phrase that
+includes the case number, question number, and choice
+number (where applicable).
+------------------------------------------------------------*
+
+get-definitions-from-file  vote_info_dashrep_definitions_numeric_after_calc.txt
+get-definitions-from-file  votefair_specific_visj_numeric_after_calc.txt
+linewise-translate-from-file-to-file  output_visj_step_07_calc_data_as_list.txt  output_visj_step_08_calc_results.txt
+
+clear-all-dashrep-phrases
+
+
+
+*------------------------------------------------------------
+Step 9:
+Merge the text with the numeric data, and merge the error
+and warning messages with the list of cases and questions.
+------------------------------------------------------------*
+
+get-definitions-from-file  votefair_specific_visj_language_en.txt
+get-definitions-from-file  vote_info_dashrep_definitions_text_after_calc.txt
+get-definitions-from-file  votefair_specific_visj_text_after_calc.txt
+get-definitions-from-file  output_visj_step_04a_definitions_text_part_1.txt
+get-definitions-from-file  output_visj_step_04b_definitions_text_part_2.txt
+get-definitions-from-file  output_from_vote_calc_sw_visj_possible_error_message.txt
+get-definitions-from-file  output_visj_step_08_calc_results.txt
+[-dashrep-endless-loop-counter-limit = 9000000-]
+expand-phrase-to-file  entire-content  output_visj_step_09_almost_final.txt
+
+write-all-dashrep-definitions-to-file  output_debug_definitions_after_step_09.txt
+
+clear-all-dashrep-phrases
+
+
+
+*------------------------------------------------------------
+Step 10:
+Handle the spaces and newlines that have been postponed.
+------------------------------------------------------------*
+
+[-delayed-nospace = no-space-]
+[-delayed-newline = new-line-]
+linewise-translate-phrases-only-from-file-to-file  output_visj_step_09_almost_final.txt  output_visj_step_10_final_results.html
+
+
+
+*------------------------------------------------------------
+All done.
+The final results are in the file named:
+
+    output_visj_step_10_final_results.html
+
+------------------------------------------------------------*
+
+
+
+*------------------------------------------------------------
+AUTHOR
+
+Richard Fobes, "CPSolver" at GitHub.com
+
+
+BUGS
+
+Please report any bugs or feature requests to "CPSolver" at GitHub.com.
+
+
+ACKNOWLEDGEMENTS
+
+Richard Fobes wrote this software.  Richard Fobes is the author
+of the book titled The Creative Problem Solver's Toolbox.
+
+
+COPYRIGHT & LICENSE
+
+Copyright 2011 Richard Fobes at www.Dashrep.org, all rights reserved.
+
+You can redistribute and/or modify this software
+under the Perl Artistic license, a copy
+of which is included in the LICENSE file.
+
+Conversions of this code into other languages are also
+covered by the above license terms.
+
+The Dashrep (TM) name is trademarked by Richard Fobes at
+www.Dashrep.org to prevent the name from being co-opted.
+
+The Dashrep (TM) language is in the public domain.
+
+------------------------------------------------------------*
