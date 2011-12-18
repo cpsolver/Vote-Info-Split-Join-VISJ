@@ -44,7 +44,7 @@ content-if-error-message-empty:
 [-create-list-named: question-results-]
 [-create-list-named: choice-results-]
 
-<h1>VoteFair Ranking Results</h1>
+<h1> no-space word-votefair word-ranking-capitalized word-results-capitalized no-space </h1>
 new-line
 [-warning-if-warning-message-[-empty-or-nonempty-phrase: output-warning-message-]-]
 new-line
@@ -54,7 +54,7 @@ new-line
 
 
 content-if-error-message-nonempty:
-<h1>ERROR</h1>
+<h1> no-space word-error-all-caps no-space </h1>
 <p> delayed-nospace
 new-line
 output-error-message
@@ -64,14 +64,12 @@ delayed-nospace <p>
 -----
 
 
-
 warning-if-warning-message-empty:
 -----
 
 
-
 warning-if-warning-message-nonempty:
-<h1>Warning(s)</h1>
+<h1> no-space word-warnings-capitalized no-space </h1>
 begin-preserve-line-breaks
 delayed-nospace
 [-output-warning-message-]
@@ -117,7 +115,7 @@ new-line
 
 
 case-heading:
-<h2>Case [-parameter-case-id-]-case-number delayed-nospace :&nbsp; [-parameter-case-id-]-casetitle delayed-nospace </h2>
+<h2> no-space word-case-capitalized [-parameter-case-id-]-case-number delayed-nospace :&nbsp; [-parameter-case-id-]-casetitle delayed-nospace </h2>
 delayed-newline
 -----
 
@@ -136,7 +134,7 @@ delayed-nospace </b></p>
 
 
 arrangement-for-question-specific-results:
-<h3>Question [-parameter-case-and-question-id-]-question-number delayed-nospace :&nbsp; [-parameter-case-and-question-id-]-questiontext delayed-nospace </h3>
+<h3> no-space word-question-capitalized [-parameter-case-and-question-id-]-question-number delayed-nospace :&nbsp; [-parameter-case-and-question-id-]-questiontext delayed-nospace </h3>
 [-template-for-question-results-if-skip-[-empty-or-nonempty-phrase: [-ok-not-ok-for-[-parameter-case-and-question-id-]-]-]-]
 -----
 
@@ -153,17 +151,17 @@ new-line
 
 <table border="2" cellpadding="5">
 new-line
-<td><b>Choice<br />number</b></td>
+<td><b> no-space word-choice-capitalized no-space <br /> no-space word-number no-space </b></td>
 new-line
-<td><b>Choice</b></td>
+<td><b> no-space word-choice-capitalized  no-space </b></td>
 new-line
-<td><b>Plurality<br />count</b></td>
+<td><b> no-space word-plurality-capitalized no-space <br /> no-space word-count no-space </b></td>
 new-line
-<td><b>Popularity<br />rank</b></td>
+<td><b> no-space word-popularity-capitalized no-space <br /> no-space word-rank no-space </b></td>
 new-line
-<td><b>Representation<br />rank</b></td>
+<td><b> no-space word-representation-capitalized no-space <br /> no-space word-rank no-space </b></td>
 new-line
-<td><b>Party<br />rank</b></td>
+<td><b> no-space word-party-capitalized no-space <br /> no-space word-rank no-space </b></td>
 new-line
 items-in-list-named-choice-results-for-[-parameter-case-and-question-id-]
 </table>
@@ -175,23 +173,23 @@ new-line
 
 
 template-for-question-results-if-skip-nonempty:
-<p>No calculations done for this question for the reason explained above</p>
+<p> no-space no-calculations-done-for-question-for-reason-explained-above no-space </p>
 new-line
 <p>Question type: [-parameter-case-and-question-id-]-questiontype delayed-nospace </p>
 new-line
 <table border="2" cellpadding="5">
 new-line
-<td><b>Choice<br />number</b></td>
+<td><b> no-space word-choice-capitalized no-space <br /> no-space word-number no-space </b></td>
 new-line
-<td><b>Choice</b></td>
+<td><b> no-space word-choice-capitalized no-space </b></td>
 new-line
-<td><b>Plurality<br />count</b></td>
+<td><b> no-space word-plurality-capitalized no-space <br /> no-space word-count no-space </b></td>
 new-line
-<td><b>Popularity<br />rank</b></td>
+<td><b> no-space word-popularity-capitalized no-space <br /> no-space word-rank no-space </b></td>
 new-line
-<td><b>Representation<br />rank</b></td>
+<td><b> no-space word-representation-capitalized no-space <br /> no-space word-rank no-space </b></td>
 new-line
-<td><b>Party<br />rank</b></td>
+<td><b> no-space word-party-capitalized no-space <br /> no-space word-rank no-space </b></td>
 new-line
 delayed-newline
 items-in-list-named-choice-results-for-[-parameter-case-and-question-id-]
@@ -257,13 +255,13 @@ empty-html-line
 new-line
 <tr>
 new-line
-<td><b>First<br />choice</b></td>
+<td><b> no-space word-first-capitalized no-space <br /> no-space word-choice no-space </b></td>
 new-line
-<td><b>Second<br />choice</b></td>
+<td><b> no-space word-second-capitalized no-space <br /> no-space word-choice no-space </b></td>
 new-line
-<td><b>First<br />over<br />second</b></td>
+<td><b> no-space word-first-capitalized no-space <br /> no-space word-over no-space <br /> no-space word-second no-space </b></td>
 new-line
-<td><b>Second<br />over<br />first</b></td>
+<td><b> no-space word-second-capitalized no-space <br /> no-space word-over no-space <br /> no-space word-first no-space </b></td>
 new-line
 </tr>
 new-line

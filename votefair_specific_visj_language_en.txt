@@ -19,6 +19,26 @@ Copyright 2011 Richard Fobes at VoteFair.org
 -----
 
 
+word-votefair:
+VoteFair
+-----
+
+
+word-ranking:
+ranking
+-----
+
+
+word-ranking-capitalized:
+Ranking
+-----
+
+
+word-results-capitalized:
+Results
+-----
+
+
 word-case:
 case
 -----
@@ -34,13 +54,103 @@ question
 -----
 
 
+word-question-capitalized:
+Question
+-----
+
+
+word-first:
+first
+-----
+
+
+word-first-capitalized:
+First
+-----
+
+
+word-second:
+second
+-----
+
+
+word-second-capitalized:
+Second
+-----
+
+
+word-choice:
+choice
+-----
+
+
+word-choice-capitalized:
+Choice
+-----
+
+
+word-plurality-capitalized:
+Plurality
+-----
+
+
+word-popularity-capitalized:
+Popularity
+-----
+
+
+word-representation-capitalized:
+Representation
+-----
+
+
+word-party-capitalized:
+Party
+-----
+
+
+word-number:
+number
+-----
+
+
+word-count:
+count
+-----
+
+
+word-rank:
+rank
+-----
+
+
+word-over:
+over
+-----
+
+
+word-warnings-capitalized:
+Warning(s)
+-----
+
+
 words-ballot-count-capitalized:
 Ballot count
 -----
 
 
+word-error-all-caps:
+ERROR
+-----
+
+
 no-calculations-done-for-case:
 No calculations were done for this case
+-----
+
+
+no-calculations-done-for-question-for-reason-explained-above:
+No calculations done for this question for the reason explained above
 -----
 
 
