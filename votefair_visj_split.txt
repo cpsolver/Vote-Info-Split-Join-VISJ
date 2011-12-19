@@ -28,7 +28,7 @@ Convert the XML (or EML) tags into Dashrep phrases.
 ------------------------------------------------------------*
 
 [-dashrep-first-xml-tag-name = xml-]
-linewise-translate-xml-tags-in-file-to-dashrep-phrases-in-file  input_vote_info.txt  output_visj_step_01_data_raw_phrases.txt
+linewise-translate-xml-tags-in-file-to-dashrep-phrases-in-file  input_vote_info_sample_data.txt  output_visj_step_01_data_raw_phrases.txt
 
 
 *------------------------------------------------------------
