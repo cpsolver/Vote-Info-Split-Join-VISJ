@@ -1,0 +1,164 @@
+<xml>
+<voteinfoimport>
+<voteraccess>open</voteraccess>
+<requireconfirmation>yes</requireconfirmation>
+<backgroundcolor>green</backgroundcolor>
+<surveytitle>Sample Poll One</surveytitle>
+<voterscaninvitevoters>yes</voterscaninvitevoters>
+<exiturl></exiturl>
+<voteridrequired>no</voteridrequired>
+<refertoas>poll</refertoas>
+<resultsaccess>viewonly</resultsaccess>
+
+<question>
+    <questiontype>rank</questiontype>
+    <questiontext>Who is your favorite, second-favorite, etc., singer?</questiontext>
+    <choicetext>Singer 1</choicetext>
+    <choicetext>Singer 2</choicetext>
+    <choicetext>Singer 3</choicetext>
+    <choicetext>Singer 4</choicetext>
+    <choicetext>Singer 5</choicetext>
+    <choicetext>Singer 6</choicetext>
+</question>
+
+<voteinfo> <count>1</count><question>1</question><sequence><ch>6</ch><ch>5</ch><ch>2</ch><ch>1</ch><ch>3</ch><ch>4</ch></sequence> </voteinfo>
+<voteinfo> <count>1</count><question>1</question><sequence><ch>4</ch><ch>6</ch><ch>2</ch><ch>3</ch><ch>5</ch><ch>1</ch></sequence> </voteinfo>
+<voteinfo> <count>1</count><question>1</question><sequence><ch>6</ch><ch>1</ch><tie /><ch>2</ch><tie /><ch>3</ch><tie /><ch>4</ch><tie /><ch>5</ch></sequence> </voteinfo>
+<voteinfo> <count>1</count><question>1</question><sequence><ch>3</ch><ch>1</ch><ch>5</ch><ch>2</ch><tie /><ch>4</ch><tie /><ch>6</ch></sequence> </voteinfo>
+<voteinfo> <count>1</count><question>1</question><sequence><ch>1</ch><ch>6</ch><ch>2</ch><ch>5</ch><ch>4</ch><ch>3</ch></sequence> </voteinfo>
+<voteinfo> <count>1</count><question>1</question><sequence><ch>6</ch><ch>2</ch><ch>1</ch><ch>4</ch><ch>5</ch><ch>3</ch></sequence> </voteinfo>
+<voteinfo> <count>1</count><question>1</question><sequence><ch>6</ch><ch>3</ch><ch>1</ch><tie /><ch>2</ch><tie /><ch>4</ch><tie /><ch>5</ch></sequence> </voteinfo>
+<voteinfo> <count>1</count><question>1</question><sequence><ch>1</ch><ch>6</ch><ch>5</ch><ch>2</ch><ch>3</ch><ch>4</ch></sequence> </voteinfo>
+<voteinfo> <count>1</count><question>1</question><sequence><ch>5</ch><ch>6</ch><ch>3</ch><ch>2</ch><ch>1</ch><ch>4</ch></sequence> </voteinfo>
+<voteinfo> <count>1</count><question>1</question><sequence><ch>6</ch><ch>2</ch><ch>1</ch><ch>5</ch><ch>4</ch><ch>3</ch></sequence> </voteinfo>
+<voteinfo> <count>1</count><question>1</question><sequence><ch>5</ch><ch>1</ch><ch>2</ch><ch>3</ch><ch>6</ch><ch>4</ch></sequence> </voteinfo>
+<voteinfo> <count>1</count><question>1</question><sequence><ch>3</ch><ch>6</ch><ch>5</ch><ch>1</ch><tie /><ch>2</ch><tie /><ch>4</ch></sequence> </voteinfo>
+<voteinfo> <count>1</count><question>1</question><sequence><ch>3</ch><ch>5</ch><ch>4</ch><ch>1</ch><tie /><ch>2</ch><tie /><ch>6</ch></sequence> </voteinfo>
+<voteinfo> <count>1</count><question>1</question><sequence><ch>1</ch><ch>5</ch><ch>6</ch><ch>2</ch><ch>3</ch><tie /><ch>4</ch></sequence> </voteinfo>
+<voteinfo> <count>1</count><question>1</question><sequence><ch>4</ch><ch>3</ch><ch>5</ch><ch>2</ch><ch>1</ch><ch>6</ch></sequence> </voteinfo>
+<voteinfo> <count>1</count><question>1</question><sequence><ch>3</ch><ch>1</ch><ch>4</ch><ch>5</ch><ch>6</ch><ch>2</ch></sequence> </voteinfo>
+<voteinfo> <count>1</count><question>1</question><sequence><ch>2</ch><ch>1</ch><ch>3</ch><ch>4</ch><tie /><ch>5</ch><tie /><ch>6</ch></sequence> </voteinfo>
+<voteinfo> <count>1</count><question>1</question><sequence><ch>2</ch><ch>1</ch><ch>3</ch><ch>4</ch><tie /><ch>5</ch><tie /><ch>6</ch></sequence> </voteinfo>
+<voteinfo> <count>1</count><question>1</question><sequence><ch>1</ch><ch>4</ch><ch>6</ch><ch>2</ch><tie /><ch>3</ch><tie /><ch>5</ch></sequence> </voteinfo>
+<voteinfo> <count>1</count><question>1</question><sequence><ch>5</ch><ch>2</ch><ch>4</ch><ch>1</ch><ch>3</ch><tie /><ch>6</ch></sequence> </voteinfo>
+<voteinfo> <count>1</count><question>1</question><sequence><ch>4</ch><ch>3</ch><ch>5</ch><ch>1</ch><ch>2</ch><ch>6</ch></sequence> </voteinfo>
+<voteinfo> <count>1</count><question>1</question><sequence><ch>3</ch><ch>6</ch><ch>5</ch><ch>1</ch><tie /><ch>2</ch><tie /><ch>4</ch></sequence> </voteinfo>
+<voteinfo> <count>1</count><question>1</question><sequence><ch>6</ch><ch>3</ch><ch>1</ch><ch>2</ch><ch>5</ch><ch>4</ch></sequence> </voteinfo>
+<voteinfo> <count>1</count><question>1</question><sequence><ch>1</ch><ch>3</ch><ch>6</ch><ch>5</ch><ch>2</ch><ch>4</ch></sequence> </voteinfo>
+<voteinfo> <count>1</count><question>1</question><sequence><ch>3</ch><ch>2</ch><ch>5</ch><ch>6</ch><ch>1</ch><ch>4</ch></sequence> </voteinfo>
+<voteinfo> <count>1</count><question>1</question><sequence><ch>6</ch><ch>5</ch><ch>1</ch><ch>2</ch><ch>3</ch><tie /><ch>4</ch></sequence> </voteinfo>
+<voteinfo> <count>1</count><question>1</question><sequence><ch>6</ch><ch>1</ch><ch>2</ch><ch>5</ch><ch>3</ch><ch>4</ch></sequence> </voteinfo>
+<voteinfo> <count>1</count><question>1</question><sequence><ch>3</ch><ch>1</ch><ch>4</ch><ch>2</ch><tie /><ch>5</ch><tie /><ch>6</ch></sequence> </voteinfo>
+<voteinfo> <count>1</count><question>1</question><sequence><ch>3</ch><ch>1</ch><tie /><ch>2</ch><tie /><ch>4</ch><tie /><ch>5</ch><tie /><ch>6</ch></sequence> </voteinfo>
+<voteinfo> <count>1</count><question>1</question><sequence><ch>5</ch><ch>1</ch><ch>2</ch><ch>3</ch><tie /><ch>4</ch><tie /><ch>6</ch></sequence> </voteinfo>
+<voteinfo> <count>1</count><question>1</question><sequence><ch>1</ch><ch>3</ch><ch>5</ch><ch>2</ch><ch>6</ch><ch>4</ch></sequence> </voteinfo>
+<voteinfo> <count>1</count><question>1</question><sequence><ch>2</ch><ch>6</ch><ch>5</ch><ch>1</ch><ch>3</ch><ch>4</ch></sequence> </voteinfo>
+<voteinfo> <count>1</count><question>1</question><sequence><ch>3</ch><ch>5</ch><ch>1</ch><ch>6</ch><ch>2</ch><ch>4</ch></sequence> </voteinfo>
+<voteinfo> <count>1</count><question>1</question><sequence><ch>1</ch><ch>2</ch><tie /><ch>3</ch><tie /><ch>4</ch><tie /><ch>5</ch><tie /><ch>6</ch></sequence> </voteinfo>
+<voteinfo> <count>1</count><question>1</question><sequence><ch>3</ch><ch>6</ch><ch>2</ch><ch>4</ch><ch>5</ch><ch>1</ch></sequence> </voteinfo>
+<voteinfo> <count>1</count><question>1</question><sequence><ch>1</ch><ch>5</ch><ch>6</ch><ch>2</ch><ch>3</ch><tie /><ch>4</ch></sequence> </voteinfo>
+<voteinfo> <count>1</count><question>1</question><sequence><ch>6</ch><ch>2</ch><ch>5</ch><ch>1</ch><tie /><ch>3</ch><tie /><ch>4</ch></sequence> </voteinfo>
+<voteinfo> <count>1</count><question>1</question><sequence><ch>4</ch><ch>1</ch><tie /><ch>2</ch><tie /><ch>3</ch><tie /><ch>5</ch><tie /><ch>6</ch></sequence> </voteinfo>
+<voteinfo> <count>1</count><question>1</question><sequence><ch>5</ch><ch>3</ch><ch>1</ch><tie /><ch>2</ch><tie /><ch>4</ch><tie /><ch>6</ch></sequence> </voteinfo>
+<voteinfo> <count>1</count><question>1</question><sequence><ch>1</ch><ch>6</ch><ch>5</ch><ch>2</ch><ch>3</ch><tie /><ch>4</ch></sequence> </voteinfo>
+<voteinfo> <count>1</count><question>1</question><sequence><ch>1</ch><ch>6</ch><ch>5</ch><ch>2</ch><ch>3</ch><tie /><ch>4</ch></sequence> </voteinfo>
+<voteinfo> <count>1</count><question>1</question><sequence><ch>3</ch><ch>1</ch><ch>2</ch><tie /><ch>4</ch><tie /><ch>5</ch><tie /><ch>6</ch></sequence> </voteinfo>
+<voteinfo> <count>1</count><question>1</question><sequence><ch>3</ch><ch>4</ch><ch>1</ch><tie /><ch>2</ch><tie /><ch>5</ch><tie /><ch>6</ch></sequence> </voteinfo>
+<voteinfo> <count>1</count><question>1</question><sequence><ch>6</ch><ch>1</ch><tie /><ch>2</ch><tie /><ch>3</ch><tie /><ch>4</ch><tie /><ch>5</ch></sequence> </voteinfo>
+<voteinfo> <count>1</count><question>1</question><sequence><ch>3</ch><ch>1</ch><ch>5</ch><ch>6</ch><ch>2</ch><tie /><ch>4</ch></sequence> </voteinfo>
+<voteinfo> <count>1</count><question>1</question><sequence><ch>5</ch><ch>6</ch><ch>1</ch><ch>2</ch><tie /><ch>3</ch><tie /><ch>4</ch></sequence> </voteinfo>
+<voteinfo> <count>1</count><question>1</question><sequence><ch>3</ch><ch>2</ch><ch>1</ch><tie /><ch>4</ch><tie /><ch>5</ch><tie /><ch>6</ch></sequence> </voteinfo>
+<voteinfo> <count>1</count><question>1</question><sequence><ch>4</ch><ch>5</ch><ch>1</ch><ch>2</ch><tie /><ch>3</ch><tie /><ch>6</ch></sequence> </voteinfo>
+<voteinfo> <count>1</count><question>1</question><sequence><ch>1</ch><ch>3</ch><ch>2</ch><tie /><ch>4</ch><tie /><ch>5</ch><tie /><ch>6</ch></sequence> </voteinfo>
+<voteinfo> <count>1</count><question>1</question><sequence><ch>3</ch><ch>1</ch><ch>2</ch><ch>5</ch><ch>4</ch><tie /><ch>6</ch></sequence> </voteinfo>
+<voteinfo> <count>1</count><question>1</question><sequence><ch>4</ch><ch>5</ch><ch>2</ch><ch>1</ch><ch>6</ch><ch>3</ch></sequence> </voteinfo>
+<voteinfo> <count>1</count><question>1</question><sequence><ch>1</ch><ch>2</ch><ch>5</ch><ch>3</ch><ch>6</ch><ch>4</ch></sequence> </voteinfo>
+<voteinfo> <count>1</count><question>1</question><sequence><ch>2</ch><ch>3</ch><ch>1</ch><ch>5</ch><ch>4</ch><tie /><ch>6</ch></sequence> </voteinfo>
+<voteinfo> <count>1</count><question>1</question><sequence><ch>2</ch><ch>1</ch><ch>6</ch><ch>3</ch><tie /><ch>4</ch><tie /><ch>5</ch></sequence> </voteinfo>
+
+</voteinfoimport>
+
+
+
+
+
+
+<voteinfoimport>
+<voteraccess>open</voteraccess>
+<requireconfirmation>yes</requireconfirmation>
+<backgroundcolor>green</backgroundcolor>
+<surveytitle>Sample Poll Two</surveytitle>
+<voterscaninvitevoters>yes</voterscaninvitevoters>
+<exiturl></exiturl>
+<voteridrequired>no</voteridrequired>
+<refertoas>poll</refertoas>
+<resultsaccess>viewonly</resultsaccess>
+
+<question>
+    <questiontype>rank</questiontype>
+    <questiontext>Who is your favorite, second-favorite, etc., singer?</questiontext>
+    <choicetext>Singer 1</choicetext>
+    <choicetext>Singer 2</choicetext>
+    <choicetext>Singer 3</choicetext>
+    <choicetext>Singer 4</choicetext>
+    <choicetext>Singer 5</choicetext>
+    <choicetext>Singer 6</choicetext>
+</question>
+
+<voteinfo> <count>1</count><question>1</question><sequence><ch>6</ch><ch>5</ch><ch>2</ch><ch>1</ch><ch>3</ch><ch>4</ch></sequence> </voteinfo>
+<voteinfo> <count>1</count><question>1</question><sequence><ch>4</ch><ch>6</ch><ch>2</ch><ch>3</ch><ch>5</ch><ch>1</ch></sequence> </voteinfo>
+<voteinfo> <count>1</count><question>1</question><sequence><ch>6</ch><ch>1</ch><tie /><ch>2</ch><tie /><ch>3</ch><tie /><ch>4</ch><tie /><ch>5</ch></sequence> </voteinfo>
+<voteinfo> <count>1</count><question>1</question><sequence><ch>3</ch><ch>1</ch><ch>5</ch><ch>2</ch><tie /><ch>4</ch><tie /><ch>6</ch></sequence> </voteinfo>
+<voteinfo> <count>1</count><question>1</question><sequence><ch>1</ch><ch>6</ch><ch>2</ch><ch>5</ch><ch>4</ch><ch>3</ch></sequence> </voteinfo>
+<voteinfo> <count>1</count><question>1</question><sequence><ch>6</ch><ch>2</ch><ch>1</ch><ch>4</ch><ch>5</ch><ch>3</ch></sequence> </voteinfo>
+<voteinfo> <count>1</count><question>1</question><sequence><ch>6</ch><ch>3</ch><ch>1</ch><tie /><ch>2</ch><tie /><ch>4</ch><tie /><ch>5</ch></sequence> </voteinfo>
+<voteinfo> <count>1</count><question>1</question><sequence><ch>1</ch><ch>6</ch><ch>5</ch><ch>2</ch><ch>3</ch><ch>4</ch></sequence> </voteinfo>
+<voteinfo> <count>1</count><question>1</question><sequence><ch>5</ch><ch>6</ch><ch>3</ch><ch>2</ch><ch>1</ch><ch>4</ch></sequence> </voteinfo>
+<voteinfo> <count>1</count><question>1</question><sequence><ch>6</ch><ch>2</ch><ch>1</ch><ch>5</ch><ch>4</ch><ch>3</ch></sequence> </voteinfo>
+<voteinfo> <count>1</count><question>1</question><sequence><ch>5</ch><ch>1</ch><ch>2</ch><ch>3</ch><ch>6</ch><ch>4</ch></sequence> </voteinfo>
+<voteinfo> <count>1</count><question>1</question><sequence><ch>3</ch><ch>6</ch><ch>5</ch><ch>1</ch><tie /><ch>2</ch><tie /><ch>4</ch></sequence> </voteinfo>
+<voteinfo> <count>1</count><question>1</question><sequence><ch>3</ch><ch>5</ch><ch>4</ch><ch>1</ch><tie /><ch>2</ch><tie /><ch>6</ch></sequence> </voteinfo>
+<voteinfo> <count>1</count><question>1</question><sequence><ch>1</ch><ch>5</ch><ch>6</ch><ch>2</ch><ch>3</ch><tie /><ch>4</ch></sequence> </voteinfo>
+<voteinfo> <count>1</count><question>1</question><sequence><ch>4</ch><ch>3</ch><ch>5</ch><ch>2</ch><ch>1</ch><ch>6</ch></sequence> </voteinfo>
+<voteinfo> <count>1</count><question>1</question><sequence><ch>3</ch><ch>1</ch><ch>4</ch><ch>5</ch><ch>6</ch><ch>2</ch></sequence> </voteinfo>
+<voteinfo> <count>1</count><question>1</question><sequence><ch>2</ch><ch>1</ch><ch>3</ch><ch>4</ch><tie /><ch>5</ch><tie /><ch>6</ch></sequence> </voteinfo>
+<voteinfo> <count>1</count><question>1</question><sequence><ch>2</ch><ch>1</ch><ch>3</ch><ch>4</ch><tie /><ch>5</ch><tie /><ch>6</ch></sequence> </voteinfo>
+<voteinfo> <count>1</count><question>1</question><sequence><ch>1</ch><ch>4</ch><ch>6</ch><ch>2</ch><tie /><ch>3</ch><tie /><ch>5</ch></sequence> </voteinfo>
+<voteinfo> <count>1</count><question>1</question><sequence><ch>5</ch><ch>2</ch><ch>4</ch><ch>1</ch><ch>3</ch><tie /><ch>6</ch></sequence> </voteinfo>
+<voteinfo> <count>1</count><question>1</question><sequence><ch>4</ch><ch>3</ch><ch>5</ch><ch>1</ch><ch>2</ch><ch>6</ch></sequence> </voteinfo>
+<voteinfo> <count>1</count><question>1</question><sequence><ch>3</ch><ch>6</ch><ch>5</ch><ch>1</ch><tie /><ch>2</ch><tie /><ch>4</ch></sequence> </voteinfo>
+<voteinfo> <count>1</count><question>1</question><sequence><ch>6</ch><ch>3</ch><ch>1</ch><ch>2</ch><ch>5</ch><ch>4</ch></sequence> </voteinfo>
+<voteinfo> <count>1</count><question>1</question><sequence><ch>1</ch><ch>3</ch><ch>6</ch><ch>5</ch><ch>2</ch><ch>4</ch></sequence> </voteinfo>
+<voteinfo> <count>1</count><question>1</question><sequence><ch>3</ch><ch>2</ch><ch>5</ch><ch>6</ch><ch>1</ch><ch>4</ch></sequence> </voteinfo>
+<voteinfo> <count>1</count><question>1</question><sequence><ch>6</ch><ch>5</ch><ch>1</ch><ch>2</ch><ch>3</ch><tie /><ch>4</ch></sequence> </voteinfo>
+<voteinfo> <count>1</count><question>1</question><sequence><ch>6</ch><ch>1</ch><ch>2</ch><ch>5</ch><ch>3</ch><ch>4</ch></sequence> </voteinfo>
+<voteinfo> <count>1</count><question>1</question><sequence><ch>3</ch><ch>1</ch><ch>4</ch><ch>2</ch><tie /><ch>5</ch><tie /><ch>6</ch></sequence> </voteinfo>
+<voteinfo> <count>1</count><question>1</question><sequence><ch>3</ch><ch>1</ch><tie /><ch>2</ch><tie /><ch>4</ch><tie /><ch>5</ch><tie /><ch>6</ch></sequence> </voteinfo>
+<voteinfo> <count>1</count><question>1</question><sequence><ch>5</ch><ch>1</ch><ch>2</ch><ch>3</ch><tie /><ch>4</ch><tie /><ch>6</ch></sequence> </voteinfo>
+<voteinfo> <count>1</count><question>1</question><sequence><ch>1</ch><ch>3</ch><ch>5</ch><ch>2</ch><ch>6</ch><ch>4</ch></sequence> </voteinfo>
+<voteinfo> <count>1</count><question>1</question><sequence><ch>2</ch><ch>6</ch><ch>5</ch><ch>1</ch><ch>3</ch><ch>4</ch></sequence> </voteinfo>
+<voteinfo> <count>1</count><question>1</question><sequence><ch>3</ch><ch>5</ch><ch>1</ch><ch>6</ch><ch>2</ch><ch>4</ch></sequence> </voteinfo>
+<voteinfo> <count>1</count><question>1</question><sequence><ch>1</ch><ch>2</ch><tie /><ch>3</ch><tie /><ch>4</ch><tie /><ch>5</ch><tie /><ch>6</ch></sequence> </voteinfo>
+<voteinfo> <count>1</count><question>1</question><sequence><ch>3</ch><ch>6</ch><ch>2</ch><ch>4</ch><ch>5</ch><ch>1</ch></sequence> </voteinfo>
+<voteinfo> <count>1</count><question>1</question><sequence><ch>1</ch><ch>5</ch><ch>6</ch><ch>2</ch><ch>3</ch><tie /><ch>4</ch></sequence> </voteinfo>
+<voteinfo> <count>1</count><question>1</question><sequence><ch>6</ch><ch>2</ch><ch>5</ch><ch>1</ch><tie /><ch>3</ch><tie /><ch>4</ch></sequence> </voteinfo>
+<voteinfo> <count>1</count><question>1</question><sequence><ch>4</ch><ch>1</ch><tie /><ch>2</ch><tie /><ch>3</ch><tie /><ch>5</ch><tie /><ch>6</ch></sequence> </voteinfo>
+<voteinfo> <count>1</count><question>1</question><sequence><ch>5</ch><ch>3</ch><ch>1</ch><tie /><ch>2</ch><tie /><ch>4</ch><tie /><ch>6</ch></sequence> </voteinfo>
+<voteinfo> <count>1</count><question>1</question><sequence><ch>1</ch><ch>6</ch><ch>5</ch><ch>2</ch><ch>3</ch><tie /><ch>4</ch></sequence> </voteinfo>
+<voteinfo> <count>1</count><question>1</question><sequence><ch>1</ch><ch>6</ch><ch>5</ch><ch>2</ch><ch>3</ch><tie /><ch>4</ch></sequence> </voteinfo>
+<voteinfo> <count>1</count><question>1</question><sequence><ch>3</ch><ch>1</ch><ch>2</ch><tie /><ch>4</ch><tie /><ch>5</ch><tie /><ch>6</ch></sequence> </voteinfo>
+<voteinfo> <count>1</count><question>1</question><sequence><ch>3</ch><ch>4</ch><ch>1</ch><tie /><ch>2</ch><tie /><ch>5</ch><tie /><ch>6</ch></sequence> </voteinfo>
+<voteinfo> <count>1</count><question>1</question><sequence><ch>6</ch><ch>1</ch><tie /><ch>2</ch><tie /><ch>3</ch><tie /><ch>4</ch><tie /><ch>5</ch></sequence> </voteinfo>
+<voteinfo> <count>1</count><question>1</question><sequence><ch>3</ch><ch>1</ch><ch>5</ch><ch>6</ch><ch>2</ch><tie /><ch>4</ch></sequence> </voteinfo>
+<voteinfo> <count>1</count><question>1</question><sequence><ch>5</ch><ch>6</ch><ch>1</ch><ch>2</ch><tie /><ch>3</ch><tie /><ch>4</ch></sequence> </voteinfo>
+<voteinfo> <count>1</count><question>1</question><sequence><ch>3</ch><ch>2</ch><ch>1</ch><tie /><ch>4</ch><tie /><ch>5</ch><tie /><ch>6</ch></sequence> </voteinfo>
+<voteinfo> <count>1</count><question>1</question><sequence><ch>4</ch><ch>5</ch><ch>1</ch><ch>2</ch><tie /><ch>3</ch><tie /><ch>6</ch></sequence> </voteinfo>
+<voteinfo> <count>1</count><question>1</question><sequence><ch>1</ch><ch>3</ch><ch>2</ch><tie /><ch>4</ch><tie /><ch>5</ch><tie /><ch>6</ch></sequence> </voteinfo>
+<voteinfo> <count>1</count><question>1</question><sequence><ch>3</ch><ch>1</ch><ch>2</ch><ch>5</ch><ch>4</ch><tie /><ch>6</ch></sequence> </voteinfo>
+<voteinfo> <count>1</count><question>1</question><sequence><ch>4</ch><ch>5</ch><ch>2</ch><ch>1</ch><ch>6</ch><ch>3</ch></sequence> </voteinfo>
+<voteinfo> <count>1</count><question>1</question><sequence><ch>1</ch><ch>2</ch><ch>5</ch><ch>3</ch><ch>6</ch><ch>4</ch></sequence> </voteinfo>
+<voteinfo> <count>1</count><question>1</question><sequence><ch>2</ch><ch>3</ch><ch>1</ch><ch>5</ch><ch>4</ch><tie /><ch>6</ch></sequence> </voteinfo>
+<voteinfo> <count>1</count><question>1</question><sequence><ch>2</ch><ch>1</ch><ch>6</ch><ch>3</ch><tie /><ch>4</ch><tie /><ch>5</ch></sequence> </voteinfo>
+
+</voteinfoimport>
+</xml>
