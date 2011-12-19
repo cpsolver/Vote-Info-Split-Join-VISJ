@@ -72,7 +72,6 @@ case names, question names, and choice names).
 ------------------------------------------------------------*
 
 get-definitions-from-file  vote_info_dashrep_definitions_text_before_calc.txt
-get-definitions-from-file  votefair_specific_visj_text_before_calc.txt
 get-definitions-from-file  output_from_vote_calc_sw_visj_codes.txt
 linewise-translate-from-file-to-file  output_visj_step_03b_prefiltered_without_ignore.txt  output_visj_step_04a_definitions_text_part_1.txt
 
