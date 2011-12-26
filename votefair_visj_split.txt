@@ -24,45 +24,29 @@ numeric-only data):
 
 *------------------------------------------------------------
 Step 1:
-Convert the XML (or EML) tags into Dashrep phrases.
+Convert the XML (or EML) tags into Dashrep phrases,
+and immediately convert the needed phrases into meaningful
+phrases, and ignore the unneeded XML-based phrases.
 ------------------------------------------------------------*
 
 [-dashrep-first-xml-tag-name = xml-]
-linewise-translate-xml-tags-in-file-to-dashrep-phrases-in-file  input_vote_info_sample_data.txt  output_visj_step_01_data_raw_phrases.txt
+get-definitions-from-file  vote_info_dashrep_definitions_prefilter.txt
+[-dashrep-xml-yes-ignore-if-no-tag-replacement = yes-]
+linewise-translate-xml-tags-in-file-to-dashrep-phrases-in-file  input_vote_info_sample_data.txt  output_visj_step_01_data_xml_based_phrases.txt
+
+clear-all-dashrep-phrases
 
 
 *------------------------------------------------------------
 Step 2:
-For default purposes, generate definitions that would cause
-all the data to be ignored.
+No longer needed ....
 ------------------------------------------------------------*
-
-get-definitions-from-file  vote_info_dashrep_definitions_ignore_unneeded_info.txt
-expand-phrase-to-file  content-for-ignore-all-vote-info-definitions  output_visj_step_02_definitions_ignore_all.txt
-
-clear-all-dashrep-phrases
-
 
 
 *------------------------------------------------------------
 Step 3:
-Pre-filter the data so that only needed info is retained,
-and convert the XML-based Dashrep phrases into meaningful
-names.
+No longer needed ....
 ------------------------------------------------------------*
-
-get-definitions-from-file  output_visj_step_02_definitions_ignore_all.txt
-get-definitions-from-file  vote_info_dashrep_definitions_prefilter.txt
-
-write-all-dashrep-definitions-to-file  output_definitions_to_use_to_prefilter.txt
-
-linewise-translate-parameters-only-from-file-to-file  output_visj_step_01_data_raw_phrases.txt  output_visj_step_03a_prefiltered_with_ignore.txt
-
-clear-all-dashrep-phrases
-
-linewise-translate-special-phrases-only-from-file-to-file  output_visj_step_03a_prefiltered_with_ignore.txt  output_visj_step_03b_prefiltered_without_ignore.txt
-
-clear-all-dashrep-phrases
 
 
 *------------------------------------------------------------
@@ -73,7 +57,7 @@ case names, question names, and choice names).
 
 get-definitions-from-file  vote_info_dashrep_definitions_text_before_calc.txt
 get-definitions-from-file  output_from_vote_calc_sw_visj_codes.txt
-linewise-translate-from-file-to-file  output_visj_step_03b_prefiltered_without_ignore.txt  output_visj_step_04a_definitions_text_part_1.txt
+linewise-translate-from-file-to-file  output_visj_step_01_data_xml_based_phrases.txt  output_visj_step_04a_definitions_text_part_1.txt
 
 write-dashrep-definitions-listed-in-phrase-to-file  list-of-lists-to-export  output_visj_step_04b_definitions_text_part_2.txt
 
@@ -92,7 +76,7 @@ supplied to the vote-counting software).
 get-definitions-from-file  vote_info_dashrep_definitions_numeric_before_calc.txt
 get-definitions-from-file  votefair_specific_visj_numeric_before_calc.txt
 get-definitions-from-file  output_from_vote_calc_sw_visj_codes.txt
-linewise-translate-from-file-to-file  output_visj_step_03b_prefiltered_without_ignore.txt  output_visj_step_05_data_numeric_only.txt
+linewise-translate-from-file-to-file  output_visj_step_01_data_xml_based_phrases.txt  output_visj_step_05_data_numeric_only.txt
 
 write-all-dashrep-definitions-to-file  output_debug_definitions_after_step_05.txt
 
