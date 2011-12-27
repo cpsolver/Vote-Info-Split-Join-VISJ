@@ -11,6 +11,16 @@ Vote-Info-Split-Join, Dashrep top-level actions for split
 
 
 *------------------------------------------------------------
+Version: 2.00  (2011-December-27)
+
+Requires:
+    version 2.33 of Language::Dashrep
+    version 5.01 of Voting::VoteFairRanking
+
+------------------------------------------------------------*
+
+
+*------------------------------------------------------------
 Prerequisite:
 Need the following file that associates Dashrep hyphenated
 phrases with code numbers (which are used to tag the
