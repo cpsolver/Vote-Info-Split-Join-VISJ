@@ -5,7 +5,7 @@ The Vote-Info-Split-Join (VISJ) software is open-source election software that s
 
 This approach of splitting and rejoining allows election-calculation programmers to concentrate on writing software that just calculates numeric results (based on ballot markings), without having to deal with candidate names or election titles or input/output formatting.
 
-This software runs on both Linux and Windows.  
+This software runs on both Linux and Windows.
 
 The separation of ballot preferences from candidate names (and party names) makes it easy to verify that the official vote-counting software does not have access to candidate names or political-party affiliations.
 
@@ -20,6 +20,10 @@ The numeric information that is supplied to the vote-counting and calculation so
 
 
 Version 2.00  (2011-December-27)
+
+(Note: The current version of the VISJ software is compatible with the same-date version of the Dashrep-language software,
+but might not be compatible with later/recent versions of the Dashrep-language software.)
+
 
 
 RUNNING
