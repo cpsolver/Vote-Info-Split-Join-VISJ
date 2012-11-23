@@ -27,6 +27,7 @@ Step 1:
 Convert the XML (or EML) tags into Dashrep phrases.
 ------------------------------------------------------------*
 
+[-dashrep-backwards-compatibility-keep-spaces-in-parameter-yes-or-no = yes-]
 [-dashrep-first-xml-tag-name = xml-]
 linewise-translate-xml-tags-in-file-to-dashrep-phrases-in-file  input_vote_info_shorter_version.txt  output_visj_step_01_data_raw_phrases.txt
 
@@ -42,6 +43,7 @@ get-definitions-from-file  vote_info_dashrep_definitions_ignore_unneeded_info.tx
 expand-phrase-to-file  content-for-ignore-all-vote-info-definitions  output_visj_step_02_definitions_ignore_all.txt
 
 clear-all-dashrep-phrases
+[-dashrep-backwards-compatibility-keep-spaces-in-parameter-yes-or-no = yes-]
 
 
 
@@ -57,6 +59,7 @@ get-definitions-from-file  vote_info_dashrep_definitions_prefilter.txt
 linewise-translate-from-file-to-file  output_visj_step_01_data_raw_phrases.txt  output_visj_step_03_data_prefiltered.txt
 
 clear-all-dashrep-phrases
+[-dashrep-backwards-compatibility-keep-spaces-in-parameter-yes-or-no = yes-]
 
 
 
@@ -75,6 +78,7 @@ write-dashrep-definitions-listed-in-phrase-to-file  list-of-lists-to-export  out
 write-all-dashrep-definitions-to-file  output_debug_definitions_after_step_04.txt
 
 clear-all-dashrep-phrases
+[-dashrep-backwards-compatibility-keep-spaces-in-parameter-yes-or-no = yes-]
 
 
 
