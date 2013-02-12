@@ -72,12 +72,16 @@ new-line
 
 <questionchoiceresults>
 delayed-newline
-[-items-in-list-named-choice-results-for-[-parameter-case-and-question-id-]-]
+[-content-choices-for-[-parameter-case-and-question-id-]-]
 </questionchoiceresults>
 delayed-newline
 new-line
 
-results-for-[-parameter-case-and-question-id-]
+<tallytable>
+delayed-newline
+new-line
+[-parameter-case-and-question-id-]-tally-table-results
+</tallytable>
 delayed-newline
 new-line
 -----
@@ -92,27 +96,27 @@ Typically these definitions do not need to be changed.
 
 entire-content:
 
-[-content-if-error-message-[-empty-or-nonempty-phrase output-error-message-]-]
+[-content-if-error-message-empty-[-yes-or-no-empty-phrase output-error-message-]-]
 delayed-newline
 new-line
 -----
 
 
 
-content-if-error-message-empty:
+content-if-error-message-empty-yes:
 
-[-create-list-named: case-results-]
-[-create-list-named: question-results-]
-[-create-list-named: choice-results-]
+[-use-template-and-parameters-to-create-full-list-with-name: template-for-list-named-case-results list-of-all-cases case-results-]
+[-use-template-and-parameters-to-create-full-list-with-name: template-for-list-named-question-results list-of-all-combinations-of-case-and-question question-results-]
+[-use-template-and-parameters-to-create-full-list-with-name: template-for-list-named-choice-results list-of-all-combinations-of-case-and-question-and-choice choice-results-]
 
-[-warning-if-warning-message-[-empty-or-nonempty-phrase output-warning-message-]-]
+[-warning-if-warning-message-empty-[-yes-or-no-empty-phrase output-warning-message-]-]
 <xml>
 delayed-newline
 new-line
 <voteinforesults>
 delayed-newline
 new-line
-[-generated-list-named-case-results-]
+content-for-all-cases
 </voteinforesults>
 delayed-newline
 new-line
@@ -122,7 +126,7 @@ new-line
 
 
 
-content-if-error-message-nonempty:
+content-if-error-message-empty-no:
 <error>
 delayed-nospace
 new-line
@@ -136,12 +140,12 @@ new-line
 
 
 
-warning-if-warning-message-empty:
+warning-if-warning-message-empty-yes:
 -----
 
 
 
-warning-if-warning-message-nonempty:
+warning-if-warning-message-empty-no:
 <warning>
 delayed-newline
 new-line
@@ -156,17 +160,8 @@ new-line
 
 
 template-for-list-named-case-results:
+[-copy-from-phrase-to-phrase createlist-parameter parameter-case-id-]
 [-template-for-list-named-case-results-if-[-ok-not-ok-for-[-parameter-case-id-]-]-]
------
-
-
-
-template-for-list-named-case-results-if-ok:
-[-case-heading-]
-items-in-list-named-question-results-for-[-parameter-case-id-]
-<p>&nbsp;</p>
-new-line
-new-line
 -----
 
 
@@ -174,29 +169,17 @@ new-line
 template-for-list-named-case-results-if-not-ok:
 [-case-heading-]
 <warning> delayed-nospace
-No calculations were done for this case.&nbsp; The reason is:&nbsp; [-[-parameter-case-id-]-warning-message-]
+no-calculations-done-for-case no-space &nbsp; reason-is no-space :&nbsp; [-[-parameter-case-id-]-warning-message-]
 delayed-nospace </warning>
 -----
 
 
 
 template-for-list-named-case-results-if-ok:
-<case>
-delayed-newline
-new-line
 [-case-heading-]
+content-questions-for-[-parameter-case-id-]
 delayed-newline
 new-line
-<caseresults>
-delayed-newline
-new-line
-[-items-in-list-named-question-results-for-[-parameter-case-id-]-]
-delayed-newline
-new-line
-</caseresults>
-delayed-newline
-new-line
-</case>
 delayed-newline
 new-line
 -----
@@ -213,58 +196,18 @@ delayed-newline
 
 
 
-list-of-parameter-values-for-list-named-case-results:
-
-[-list-of-all-cases-]
------
-
-
-
-parameter-name-for-list-named-case-results:
-
-parameter-case-id
------
-
-
-
 template-for-list-named-question-results:
 
+[-copy-from-phrase-to-phrase createlist-parameter parameter-case-and-question-id-]
 [-arrangement-for-question-specific-results-]
------
-
-
-
-list-of-parameter-values-for-list-named-question-results:
-
-[-list-of-all-combinations-of-case-and-question-]
------
-
-
-
-parameter-name-for-list-named-question-results:
-
-parameter-case-and-question-id
 -----
 
 
 
 template-for-list-named-choice-results:
 
+[-copy-from-phrase-to-phrase createlist-parameter parameter-case-and-question-and-choice-id-]
 [-arrangement-for-choice-specific-results-]
------
-
-
-
-list-of-parameter-values-for-list-named-choice-results:
-
-[-list-of-all-combinations-of-case-and-question-and-choice-]
------
-
-
-
-parameter-name-for-list-named-choice-results:
-
-parameter-case-and-question-and-choice-id
 -----
 
 
@@ -272,7 +215,6 @@ parameter-case-and-question-and-choice-id
 dashrep-endless-loop-counter-limit:
 900000
 -----
-
 
 
 

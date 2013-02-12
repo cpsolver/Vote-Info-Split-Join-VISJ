@@ -40,6 +40,7 @@ insert-text-dashrep-definitions-begin-for-case-multiple:
 
 output-voteinfo-code-for-skip-case:
 ok-not-ok-for-case-[-case-number-]:
+new-line
 not-ok
 new-line
 [-dashed-line-]
@@ -49,6 +50,7 @@ new-line
 
 output-voteinfo-code-for-skip-question:
 ok-not-ok-for-case-[-case-number-]-question-[-question-number-]:
+new-line
 not-ok
 new-line
 [-dashed-line-]
@@ -69,6 +71,7 @@ capture-end-here
 [-insert-text-dashrep-definitions-begin-for-case-[-zero-one-multiple: [-case-number-]-]-]
 new-line
 ok-not-ok-for-case-[-case-number-]:
+new-line
 ok
 new-line
 [-dashed-line-]
@@ -223,6 +226,24 @@ new-line
 
 output-voteinfo-code-for-end-of-all-cases:
 dashrep hyphen-here definitions hyphen-here end
+-----
+
+
+output-voteinfo-code-for-total-ballot-count:
+[-insert-phrase-with-brackets-after-next-top-line  results-line-after-total-ballot-count-]
+capture-begin-here
+-----
+
+
+results-line-after-total-ballot-count:
+capture-end-here
+[-total-ballot-count = [-captured-text-]-]
+no-space
+case-[-case-number-]-question-[-question-number-]-choice-[-choice-number-]-total-ballot-count:
+new-line
+[-total-ballot-count-]
+new-line
+[-dashed-line-]
 -----
 
 

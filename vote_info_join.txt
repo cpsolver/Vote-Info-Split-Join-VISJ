@@ -28,12 +28,10 @@ Convert the number-specific Dashrep phrases into meaningful
 names.
 ------------------------------------------------------------*
 
-[-dashrep-backwards-compatibility-keep-spaces-in-parameter-yes-or-no = yes-]
 get-definitions-from-file  output_from_vote_calc_sw_visj_codes.txt
 linewise-translate-from-file-to-file  output_from_vote_calc_sw_visj_results.txt  output_visj_step_07_calc_data_as_list.txt
 
 clear-all-dashrep-phrases
-[-dashrep-backwards-compatibility-keep-spaces-in-parameter-yes-or-no = yes-]
 
 
 
@@ -49,7 +47,6 @@ get-definitions-from-file  vote_info_dashrep_definitions_numeric_after_calc.txt
 linewise-translate-from-file-to-file  output_visj_step_07_calc_data_as_list.txt  output_visj_step_08_calc_results.txt
 
 clear-all-dashrep-phrases
-[-dashrep-backwards-compatibility-keep-spaces-in-parameter-yes-or-no = yes-]
 
 
 
@@ -58,6 +55,7 @@ Step 9:
 Join the results with the text.
 ------------------------------------------------------------*
 
+get-definitions-from-file  vote_info_dashrep_definitions_language_en.txt
 get-definitions-from-file  vote_info_dashrep_definitions_text_after_calc.txt
 get-definitions-from-file  output_visj_step_04a_definitions_text_part_1.txt
 get-definitions-from-file  output_visj_step_04b_definitions_text_part_2.txt
@@ -68,7 +66,6 @@ expand-phrase-to-file  entire-content  output_visj_step_09_almost_final.txt
 write-all-dashrep-definitions-to-file  output_debug_definitions_after_step_09.txt
 
 clear-all-dashrep-phrases
-[-dashrep-backwards-compatibility-keep-spaces-in-parameter-yes-or-no = yes-]
 
 
 

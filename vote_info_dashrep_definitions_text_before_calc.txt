@@ -33,16 +33,20 @@ end-all-cases:
 begin-case:
 [-case-number = [-next-case-number-]-]
 [-current-list-item = case-[-case-number-]-]
-[-append-from-phrase-to-phrase: current-list-item list-of-all-cases-]
-[-current-list-item = items-in-list-named-question-results-for-case-[-case-number-]-]
-[-append-from-phrase-to-phrase:  current-list-item  list-of-lists-to-export-]
-case-[-case-number-]-case-number:
+[-append-from-phrase-to-phrase  current-list-item list-of-all-cases-]
+[-current-list-item = item-for-list-named-case-results-and-parameter-case-[-case-number-]-]
+[-append-from-phrase-to-phrase  current-list-item  content-for-all-cases-]
+[-current-list-item = content-questions-for-case-[-case-number-]-]
+[-append-from-phrase-to-phrase  current-list-item  list-of-lists-to-export-]
+[-phrase-to-define = case-[-case-number-]-case-number-]
+[-phrase-to-define-]:
 new-line
 [-case-number-]
 new-line
 [-dashed-line-]
 new-line
-[-auto-increment: next-case-number-]
+[-append-from-phrase-to-phrase  phrase-to-define  list-of-lists-to-export-]
+[-auto-increment  next-case-number-]
 [-next-question-number = 1-]
 -----
 
@@ -76,12 +80,14 @@ new-line
 begin-question:
 [-question-number = [-next-question-number-]-]
 [-case-and-question = case-[-case-number-]-question-[-question-number-]-]
-[-append-from-phrase-to-phrase: case-and-question list-of-all-combinations-of-case-and-question-]
-[-current-list-item = item-for-list-question-results-and-parameter-case-[-case-number-]-question-[-question-number-]-]
-[-append-from-phrase-to-phrase:  current-list-item  items-in-list-named-question-results-for-case-[-case-number-]-]
-[-current-list-item = items-in-list-named-choice-results-for-case-[-case-number-]-question-[-question-number-]-]
-[-append-from-phrase-to-phrase:  current-list-item  list-of-lists-to-export-]
-case-[-case-number-]-question-[-question-number-]-question-number:
+[-append-from-phrase-to-phrase  case-and-question  list-of-all-combinations-of-case-and-question-]
+[-current-list-item = item-for-list-named-question-results-and-parameter-[-case-and-question-]-]
+[-target-list = content-questions-for-case-[-case-number-]-]
+[-append-from-phrase-to-phrase  current-list-item  [-target-list-]-]
+[-current-list-item = content-choices-for-[-case-and-question-]-]
+[-append-from-phrase-to-phrase  current-list-item  list-of-lists-to-export-]
+[-phrase-to-define = case-[-case-number-]-question-[-question-number-]-question-number-]
+[-phrase-to-define-]:
 new-line
 [-question-number-]
 new-line
@@ -93,7 +99,8 @@ new-line
 new-line
 [-dashed-line-]
 new-line
-[-auto-increment: next-question-number-]
+[-append-from-phrase-to-phrase  phrase-to-define  list-of-lists-to-export-]
+[-auto-increment  next-question-number-]
 [-next-choice-number = 1-]
 -----
 
@@ -126,20 +133,25 @@ new-line
 
 begin-choicetext:
 [-choice-number = [-next-choice-number-]-]
-[-current-list-item = item-for-list-choice-results-and-parameter-case-[-case-number-]-question-[-question-number-]-choice-[-choice-number-]-]
-[-append-from-phrase-to-phrase:  current-list-item  items-in-list-named-choice-results-for-case-[-case-number-]-question-[-question-number-]-]
 [-case-and-question-and-choice = case-[-case-number-]-question-[-question-number-]-choice-[-choice-number-]-]
-[-append-from-phrase-to-phrase: case-and-question-and-choice  list-of-all-combinations-of-case-and-question-and-choice-]
-[-choice-number-for-case-[-case-number-]-question-[-question-number-]-choice-[-choice-number-] = [-choice-number-]-]
-[-auto-increment: next-choice-number-]
-case-[-case-number-]-question-[-question-number-]-choice-[-choice-number-]-choice-number:
+[-append-from-phrase-to-phrase  case-and-question-and-choice  list-of-all-combinations-of-case-and-question-and-choice-]
+[-current-list-item = choice-number-for-[-case-and-question-and-choice-]-]
+[-[-current-list-item-] = [-choice-number-]-]
+[-append-from-phrase-to-phrase  current-list-item  list-of-lists-to-export-]
+[-current-list-item = item-for-list-named-choice-results-and-parameter-[-case-and-question-and-choice-]-]
+[-target-list = content-choices-for-case-[-case-number-]-question-[-question-number-]-]
+[-append-from-phrase-to-phrase  current-list-item  [-target-list-]-]
+[-phrase-to-define = case-[-case-number-]-question-[-question-number-]-choice-[-choice-number-]-choice-number-]
+[-phrase-to-define-]:
 new-line
 [-choice-number-]
 new-line
 [-dashed-line-]
 new-line
 new-line
+[-append-from-phrase-to-phrase  phrase-to-define  list-of-lists-to-export-]
 case-[-case-number-]-question-[-question-number-]-choice-[-choice-number-]-choicetext:
+[-auto-increment  next-choice-number-]
 -----
 
 
@@ -164,10 +176,17 @@ dashed-line:
 -----
 
 
+phrase-that-contains-new-line:
+delayed-newline
+new-line
+-----
+
+
 list-of-lists-to-export:
 list-of-all-cases
 list-of-all-combinations-of-case-and-question
 list-of-all-combinations-of-case-and-question-and-choice
+content-for-all-cases
 -----
 
 
