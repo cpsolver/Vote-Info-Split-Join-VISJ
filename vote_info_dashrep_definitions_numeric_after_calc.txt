@@ -38,6 +38,15 @@ insert-text-dashrep-definitions-begin-for-case-multiple:
 -----
 
 
+unused-output-voteinfo-code-for-skip-case:
+case-[-case-number-]-warning-message:
+new-line
+No calculations for this case for reason explained in warning message
+new-line
+[-dashed-line-]
+-----
+
+
 output-voteinfo-code-for-skip-case:
 ok-not-ok-for-case-[-case-number-]:
 new-line
@@ -212,15 +221,6 @@ new-line
 
 
 output-voteinfo-code-for-end-of-plurality-results:
------
-
-
-output-voteinfo-code-for-skip-case:
-case-[-case-number-]-warning-message:
-new-line
-No calculations for this case for reason explained in warning message
-new-line
-[-dashed-line-]
 -----
 
 
