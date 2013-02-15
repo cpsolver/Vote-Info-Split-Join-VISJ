@@ -24,19 +24,19 @@ arrangement-for-choice-specific-results:
 
 <choicenumber>
 delayed-nospace
-[-[-parameter-case-and-question-and-choice-id-]-choice-number-]
+[-[-parameter-case-and-question-and-choice-]-choice-number-]
 delayed-nospace
 </choicenumber>
 delayed-nospace
 <choicename>
 delayed-nospace
-[-[-parameter-case-and-question-and-choice-id-]-choicetext-]
+[-[-parameter-case-and-question-and-choice-]-choicetext-]
 delayed-nospace
 </choicename>
 delayed-nospace
 <pluralitycount>
 delayed-nospace
-[-[-parameter-case-and-question-and-choice-id-]-plurality-count-]
+[-[-parameter-case-and-question-and-choice-]-plurality-count-]
 delayed-nospace
 </pluralitycount>
 delayed-newline
@@ -48,7 +48,7 @@ arrangement-for-question-specific-results:
 
 <questionnumber>
 delayed-nospace
-[-[-parameter-case-and-question-id-]-question-number-]
+[-[-parameter-case-and-question-]-question-number-]
 delayed-nospace
 </questionnumber>
 delayed-newline
@@ -56,7 +56,7 @@ new-line
 
 <questiontext>
 delayed-nospace
-[-[-parameter-case-and-question-id-]-questiontext-]
+[-[-parameter-case-and-question-]-questiontext-]
 delayed-nospace
 </questiontext>
 delayed-newline
@@ -64,7 +64,7 @@ new-line
 
 <questiontype>
 delayed-nospace
-[-[-parameter-case-and-question-id-]-questiontype-]
+[-[-parameter-case-and-question-]-questiontype-]
 delayed-nospace
 </questiontype>
 delayed-newline
@@ -72,7 +72,7 @@ new-line
 
 <questionchoiceresults>
 delayed-newline
-[-content-choices-for-[-parameter-case-and-question-id-]-]
+[-content-choices-for-[-parameter-case-and-question-]-]
 </questionchoiceresults>
 delayed-newline
 new-line
@@ -80,7 +80,7 @@ new-line
 <tallytable>
 delayed-newline
 new-line
-[-parameter-case-and-question-id-]-tally-table-results
+[-parameter-case-and-question-]-tally-table-results
 </tallytable>
 delayed-newline
 new-line
@@ -104,11 +104,7 @@ new-line
 
 
 content-if-error-message-empty-yes:
-
-[-use-template-and-parameters-to-create-full-list-with-name: template-for-list-named-case-results list-of-all-cases case-results-]
-[-use-template-and-parameters-to-create-full-list-with-name: template-for-list-named-question-results list-of-all-combinations-of-case-and-question question-results-]
-[-use-template-and-parameters-to-create-full-list-with-name: template-for-list-named-choice-results list-of-all-combinations-of-case-and-question-and-choice choice-results-]
-
+[-generate-lists-of-cases-questions-choices-]
 [-warning-if-warning-message-empty-[-yes-or-no-empty-phrase output-warning-message-]-]
 <xml>
 delayed-newline
@@ -122,6 +118,14 @@ delayed-newline
 new-line
 </xml>
 new-line
+-----
+
+
+
+generate-lists-of-cases-questions-choices:
+[-use-template-and-parameters-to-create-full-list-with-name: template-for-list-named-case-results list-of-all-cases case-results-]
+[-use-template-and-parameters-to-create-full-list-with-name: template-for-list-named-question-results list-of-all-combinations-of-case-and-question question-results-]
+[-use-template-and-parameters-to-create-full-list-with-name: template-for-list-named-choice-results list-of-all-combinations-of-case-and-question-and-choice choice-results-]
 -----
 
 
@@ -160,8 +164,8 @@ new-line
 
 
 template-for-list-named-case-results:
-[-copy-from-phrase-to-phrase createlist-parameter parameter-case-id-]
-[-template-for-list-named-case-results-if-[-ok-not-ok-for-[-parameter-case-id-]-]-]
+[-copy-from-phrase-to-phrase createlist-parameter parameter-case-]
+[-template-for-list-named-case-results-if-[-ok-not-ok-for-[-parameter-case-]-]-]
 -----
 
 
@@ -169,7 +173,7 @@ template-for-list-named-case-results:
 template-for-list-named-case-results-if-not-ok:
 [-case-heading-]
 <warning> delayed-nospace
-no-calculations-done-for-case no-space &nbsp; reason-is no-space :&nbsp; [-[-parameter-case-id-]-warning-message-]
+no-calculations-done-for-case no-space &nbsp; reason-is no-space :&nbsp; [-[-parameter-case-]-warning-message-]
 delayed-nospace </warning>
 -----
 
@@ -177,7 +181,7 @@ delayed-nospace </warning>
 
 template-for-list-named-case-results-if-ok:
 [-case-heading-]
-content-questions-for-[-parameter-case-id-]
+content-questions-for-[-parameter-case-]
 delayed-newline
 new-line
 delayed-newline
@@ -187,9 +191,9 @@ new-line
 
 
 case-heading:
-<casenumber> delayed-nospace [-parameter-case-id-]-case-number delayed-nospace </casenumber>
+<casenumber> delayed-nospace [-parameter-case-]-case-number delayed-nospace </casenumber>
 new-line
-<casetitle> delayed-nospace [-parameter-case-id-]-casetitle delayed-nospace </casetitle>
+<casetitle> delayed-nospace [-parameter-case-]-casetitle delayed-nospace </casetitle>
 new-line
 delayed-newline
 -----
@@ -198,7 +202,7 @@ delayed-newline
 
 template-for-list-named-question-results:
 
-[-copy-from-phrase-to-phrase createlist-parameter parameter-case-and-question-id-]
+[-copy-from-phrase-to-phrase createlist-parameter parameter-case-and-question-]
 [-arrangement-for-question-specific-results-]
 -----
 
@@ -206,7 +210,7 @@ template-for-list-named-question-results:
 
 template-for-list-named-choice-results:
 
-[-copy-from-phrase-to-phrase createlist-parameter parameter-case-and-question-and-choice-id-]
+[-copy-from-phrase-to-phrase createlist-parameter parameter-case-and-question-and-choice-]
 [-arrangement-for-choice-specific-results-]
 -----
 
