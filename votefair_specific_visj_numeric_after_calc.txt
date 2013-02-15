@@ -27,25 +27,6 @@ extra-actions-at-beginning-of-case:
 -----
 
 
-output-voteinfo-code-for-skip-case:
-ok-not-ok-for-case-[-case-number-]:
-not-ok
-new-line
-[-dashed-line-]
-new-line
------
-
-
-
-
-output-voteinfo-code-for-skip-question:
-ok-not-ok-for-case-[-case-number-]-question-[-question-number-]:
-not-ok
-new-line
-[-dashed-line-]
-new-line
------
-
 
 
 
