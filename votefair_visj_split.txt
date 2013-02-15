@@ -11,10 +11,10 @@ Vote-Info-Split-Join, Dashrep top-level actions for split
 
 
 *------------------------------------------------------------
-Version: 2.00  (2011-December-27)
+Version: 2.00  (2013-February-13)
 
 Requires:
-    version 2.33 of Language::Dashrep
+    version 3.00 of Language::Dashrep
     version 5.01 of Voting::VoteFairRanking
 
 ------------------------------------------------------------*
@@ -43,6 +43,8 @@ phrases, and ignore the unneeded XML-based phrases.
 get-definitions-from-file  vote_info_dashrep_definitions_prefilter.txt
 [-dashrep-xml-yes-ignore-if-no-tag-replacement = yes-]
 linewise-translate-xml-tags-in-file-to-dashrep-phrases-in-file  input_vote_info_sample_data.txt  output_visj_step_01_data_xml_based_phrases.txt
+
+write-all-dashrep-definitions-to-file  output_debug_definitions_after_step_01.txt
 
 clear-all-dashrep-phrases
 
