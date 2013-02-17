@@ -30,7 +30,7 @@ Convert the XML (or EML) tags into Dashrep phrases.
 [-dashrep-first-xml-tag-name = xml-]
 [-dashrep-xml-yes-ignore-if-no-tag-replacement = yes-]
 get-definitions-from-file  vote_info_dashrep_definitions_prefilter.txt
-linewise-translate-xml-tags-in-file-to-dashrep-phrases-in-file  input_vote_info_shorter_version.txt  output_visj_step_01_data_prefiltered.txt
+linewise-translate-xml-tags-in-file-to-dashrep-phrases-in-file  input_vote_info_data.txt  output_visj_step_01_data_prefiltered.txt
 
 clear-all-dashrep-phrases
 
