@@ -44,7 +44,11 @@ number (where applicable).
 ------------------------------------------------------------*
 
 get-definitions-from-file  vote_info_dashrep_definitions_numeric_after_calc.txt
-linewise-translate-from-file-to-file  output_visj_step_07_calc_data_as_list.txt  output_visj_step_08_calc_results.txt
+linewise-read-from-file-and-use-template  output_visj_step_07_calc_data_as_list.txt  template-handle-one-data-line
+delete-file  output_visj_step_08_calc_results.txt
+write-dashrep-definitions-listed-in-phrase-to-file  list-of-new-data-based-phrase-names  output_visj_step_08_calc_results.txt
+
+write-all-dashrep-definitions-to-file  output_debug_definitions_after_step_08.txt
 
 clear-all-dashrep-phrases
 
