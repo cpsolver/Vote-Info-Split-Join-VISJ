@@ -49,11 +49,11 @@ handle-data-state-not-known:
 [-copy-from-phrase-to-phrase-only-word-at-position storage-input-line-from-file first-word-in-line 1 -]
 [-copy-from-phrase-to-phrase-and-replace-string-in-phrase-with-phrase first-word-in-line data-state string-output-voteinfo-code-for empty-phrase-]
 [-possible-handler-name = handle-data-state-[-data-state-]-]
-[-[-if-first-word-is-yes-then-keep-remainder-else-empty [-yes-or-no-empty-phrase [-possible-handler-name-]-] handle-data-immediate-]-]
+[-[-if-first-word-is-yes-then-keep-remainder-else-empty [-yes-or-no-empty-phrase [-possible-handler-name-]-] handle-data-immediate-generic-]-]
 -----
 
 
-handle-data-immediate:
+handle-data-immediate-generic:
 [-possible-immediate-handler-name = handle-data-immediate-[-data-state-]-]
 [-clear-phrase data-state-]
 [-[-if-first-word-is-no-then-keep-remainder-else-empty [-yes-or-no-empty-phrase [-possible-immediate-handler-name-]-] [-possible-immediate-handler-name-]-]-]
@@ -71,6 +71,11 @@ handle-data-state-case-number:
 [-new-phrase-name = ok-not-ok-for-case-[-case-number-]-]
 [-[-new-phrase-name-] = ok-]
 [-append-from-phrase-to-phrase new-phrase-name list-of-new-data-based-phrase-names-]
+[-extra-actions-at-beginning-of-case-]
+-----
+
+
+extra-actions-at-beginning-of-case:
 -----
 
 
@@ -206,7 +211,7 @@ of the book titled The Creative Problem Solver's Toolbox.
 
 COPYRIGHT & LICENSE
 
-Copyright 2011 Richard Fobes at www.Dashrep.org, all rights reserved.
+Copyright 2011 & 2013 Richard Fobes at www.Dashrep.org, all rights reserved.
 
 You can redistribute and/or modify this software
 under the Perl Artistic license, a copy
