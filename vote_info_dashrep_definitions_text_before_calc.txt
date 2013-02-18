@@ -38,6 +38,10 @@ begin-case:
 [-append-from-phrase-to-phrase  current-list-item  content-for-all-cases-]
 [-current-list-item = content-questions-for-case-[-case-number-]-]
 [-append-from-phrase-to-phrase  current-list-item  list-of-lists-to-export-]
+[-clear-phrase current-list-item-]
+[-current-list-item = ok-not-ok-for-case-[-case-number-]-]
+[-append-from-phrase-to-phrase  current-list-item  list-of-lists-to-export-]
+[-[-current-list-item-] = not-ok-]
 [-phrase-to-define = case-[-case-number-]-case-number-]
 [-phrase-to-define-]:
 new-line

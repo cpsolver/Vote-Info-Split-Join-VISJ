@@ -43,6 +43,7 @@ includes the case number, question number, and choice
 number (where applicable).
 ------------------------------------------------------------*
 
+[-dashrep-endless-loop-counter-limit = 9000000-]
 get-definitions-from-file  vote_info_dashrep_definitions_numeric_after_calc.txt
 linewise-read-from-file-and-use-template  output_visj_step_07_calc_data_as_list.txt  template-handle-one-data-line
 delete-file  output_visj_step_08_calc_results.txt
@@ -59,13 +60,13 @@ Step 9:
 Join the results with the text.
 ------------------------------------------------------------*
 
+[-dashrep-endless-loop-counter-limit = 9000000-]
 get-definitions-from-file  vote_info_dashrep_definitions_language_en.txt
 get-definitions-from-file  vote_info_dashrep_definitions_text_after_calc.txt
 get-definitions-from-file  output_visj_step_04a_definitions_text_part_1.txt
 get-definitions-from-file  output_visj_step_04b_definitions_text_part_2.txt
 get-definitions-from-file  output_visj_step_08_calc_results.txt
 get-definitions-from-file  output_from_vote_calc_sw_visj_possible_error_message.txt
-[-dashrep-endless-loop-counter-limit = 9000000-]
 expand-phrase-to-file  entire-content  output_visj_step_09_almost_final.txt
 
 write-all-dashrep-definitions-to-file  output_debug_definitions_after_step_09.txt
@@ -79,7 +80,7 @@ Step 10:
 Handle the spaces and newlines that have been postponed.
 ------------------------------------------------------------*
 
-
+[-dashrep-endless-loop-counter-limit = 90000-]
 [-delayed-nospace = no-space-]
 [-delayed-newline = new-line-]
 linewise-translate-phrases-only-from-file-to-file  output_visj_step_09_almost_final.txt  output_visj_step_10_final_results.txt
@@ -115,7 +116,7 @@ of the book titled The Creative Problem Solver's Toolbox.
 
 COPYRIGHT & LICENSE
 
-Copyright 2011 Richard Fobes at www.Dashrep.org, all rights reserved.
+Copyright 2011 & 2013 Richard Fobes at www.Dashrep.org, all rights reserved.
 
 You can redistribute and/or modify this software
 under the Perl Artistic license, a copy
