@@ -19,43 +19,53 @@ Normally you can leave these definitions unchanged.
 ------------------------------------------------------------*
 
 
+template-to-define-phrase-inline:
+[-phrase-to-define-inline-]:
+new-line
+[-[-phrase-to-define-inline-]-]
+new-line
+[-dashed-line-]
+new-line
+new-line
+-----
+
+
 begin-all-cases:
 dashrep hyphen-here definitions hyphen-here begin
 new-line
+new-line
 [-next-case-number = 1-]
+[-yes-or-no-within-ballots = no-]
 -----
 
 
 end-all-cases:
+[-phrase-to-define-inline = list-of-case-numbers-]
+[-template-to-define-phrase-inline-]
+[-phrase-to-define-inline = list-of-all-combinations-of-case-and-question-]
+[-template-to-define-phrase-inline-]
+[-phrase-to-define-inline = list-of-all-combinations-of-case-and-question-and-choice-]
+[-template-to-define-phrase-inline-]
 -----
 
 
 begin-case:
 [-case-number = [-next-case-number-]-]
-[-current-list-item = case-[-case-number-]-]
-[-append-from-phrase-to-phrase  current-list-item list-of-all-cases-]
-[-current-list-item = item-for-list-named-case-results-and-parameter-case-[-case-number-]-]
-[-append-from-phrase-to-phrase  current-list-item  content-for-all-cases-]
-[-current-list-item = content-questions-for-case-[-case-number-]-]
-[-append-from-phrase-to-phrase  current-list-item  list-of-lists-to-export-]
-[-clear-phrase current-list-item-]
-[-current-list-item = ok-not-ok-for-case-[-case-number-]-]
-[-append-from-phrase-to-phrase  current-list-item  list-of-lists-to-export-]
-[-[-current-list-item-] = not-ok-]
-[-phrase-to-define = case-[-case-number-]-case-number-]
-[-phrase-to-define-]:
-new-line
-[-case-number-]
-new-line
-[-dashed-line-]
-new-line
-[-append-from-phrase-to-phrase  phrase-to-define  list-of-lists-to-export-]
-[-auto-increment  next-case-number-]
+[-append-word-to-phrase [-case-number-] list-of-case-numbers-]
+[-phrase-to-define-inline = ok-not-ok-for-case-[-case-number-]-]
+[-[-phrase-to-define-inline-] = ok-]
+[-template-to-define-phrase-inline-]
+[-phrase-to-define-inline = case-[-case-number-]-case-number-]
+[-[-phrase-to-define-inline-] = [-case-number-]-]
+[-template-to-define-phrase-inline-]
+[-auto-increment next-case-number-]
 [-next-question-number = 1-]
 -----
 
 
 end-case:
+[-phrase-to-define-inline = case-[-case-number-]-list-of-question-numbers-]
+[-template-to-define-phrase-inline-]
 -----
 
 
@@ -84,32 +94,25 @@ new-line
 begin-question:
 [-question-number = [-next-question-number-]-]
 [-case-and-question = case-[-case-number-]-question-[-question-number-]-]
-[-append-from-phrase-to-phrase  case-and-question  list-of-all-combinations-of-case-and-question-]
-[-current-list-item = item-for-list-named-question-results-and-parameter-[-case-and-question-]-]
-[-target-list = content-questions-for-case-[-case-number-]-]
-[-append-from-phrase-to-phrase  current-list-item  [-target-list-]-]
-[-current-list-item = content-choices-for-[-case-and-question-]-]
-[-append-from-phrase-to-phrase  current-list-item  list-of-lists-to-export-]
-[-phrase-to-define = case-[-case-number-]-question-[-question-number-]-question-number-]
-[-phrase-to-define-]:
-new-line
-[-question-number-]
-new-line
-[-dashed-line-]
-new-line
-case-[-case-number-]-question-[-question-number-]-case-number:
-new-line
-[-case-number-]
-new-line
-[-dashed-line-]
-new-line
-[-append-from-phrase-to-phrase  phrase-to-define  list-of-lists-to-export-]
-[-auto-increment  next-question-number-]
+[-append-from-phrase-to-phrase case-and-question list-of-all-combinations-of-case-and-question-]
+[-append-word-to-phrase [-question-number-] case-[-case-number-]-list-of-question-numbers-]
+[-phrase-to-define-inline = ok-not-ok-for-case-[-case-and-question-]-]
+[-[-phrase-to-define-inline-] = ok-]
+[-template-to-define-phrase-inline-]
+[-phrase-to-define-inline = case-[-case-number-]-question-[-question-number-]-question-number-]
+[-[-phrase-to-define-inline-] = [-question-number-]-]
+[-template-to-define-phrase-inline-]
+[-phrase-to-define-inline = case-[-case-number-]-question-[-question-number-]-case-number-]
+[-[-phrase-to-define-inline-] = [-case-number-]-]
+[-template-to-define-phrase-inline-]
+[-auto-increment next-question-number-]
 [-next-choice-number = 1-]
 -----
 
 
 end-question:
+[-phrase-to-define-inline = [-case-and-question-]-list-of-choice-numbers-]
+[-template-to-define-phrase-inline-]
 -----
 
 
@@ -138,24 +141,15 @@ new-line
 begin-choicetext:
 [-choice-number = [-next-choice-number-]-]
 [-case-and-question-and-choice = case-[-case-number-]-question-[-question-number-]-choice-[-choice-number-]-]
-[-append-from-phrase-to-phrase  case-and-question-and-choice  list-of-all-combinations-of-case-and-question-and-choice-]
-[-current-list-item = choice-number-for-[-case-and-question-and-choice-]-]
-[-[-current-list-item-] = [-choice-number-]-]
-[-append-from-phrase-to-phrase  current-list-item  list-of-lists-to-export-]
-[-current-list-item = item-for-list-named-choice-results-and-parameter-[-case-and-question-and-choice-]-]
-[-target-list = content-choices-for-case-[-case-number-]-question-[-question-number-]-]
-[-append-from-phrase-to-phrase  current-list-item  [-target-list-]-]
-[-phrase-to-define = case-[-case-number-]-question-[-question-number-]-choice-[-choice-number-]-choice-number-]
-[-phrase-to-define-]:
-new-line
-[-choice-number-]
-new-line
-[-dashed-line-]
-new-line
-new-line
-[-append-from-phrase-to-phrase  phrase-to-define  list-of-lists-to-export-]
+[-append-from-phrase-to-phrase case-and-question-and-choice list-of-all-combinations-of-case-and-question-and-choice-]
+[-append-word-to-phrase [-choice-number-] [-case-and-question-]-list-of-choice-numbers-]
+[-item-to-append = [-case-and-question-and-choice-]-]
+[-append-from-phrase-to-phrase item-to-append [-case-and-question-]-list-of-choices-]
+[-phrase-to-define-inline = [-case-and-question-and-choice-]-choice-number-]
+[-[-phrase-to-define-inline-] = [-choice-number-]-]
+[-template-to-define-phrase-inline-]
+[-auto-increment next-choice-number-]
 case-[-case-number-]-question-[-question-number-]-choice-[-choice-number-]-choicetext:
-[-auto-increment  next-choice-number-]
 -----
 
 
@@ -166,12 +160,14 @@ new-line
 
 
 begin-ballots:
+[-yes-or-no-within-ballots = yes-]
 ignore-begin-here
 -----
 
 
 end-ballots:
 ignore-end-here
+[-yes-or-no-within-ballots = no-]
 -----
 
 
@@ -183,14 +179,6 @@ dashed-line:
 phrase-that-contains-new-line:
 delayed-newline
 new-line
------
-
-
-list-of-lists-to-export:
-list-of-all-cases
-list-of-all-combinations-of-case-and-question
-list-of-all-combinations-of-case-and-question-and-choice
-content-for-all-cases
 -----
 
 
