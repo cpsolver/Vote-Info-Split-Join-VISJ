@@ -43,12 +43,9 @@ handle-data-immediate-end-of-plurality-results:
 
 handle-data-state-tally-second-over-first:
 [-second-over-first = [-storage-input-line-from-file-]-]
-[-table-row = delayed-nospace <td>[-first-choice-]</td><td>[-second-choice-]</td> delayed-nospace <td>[-first-over-second-]</td><td>[-second-over-first-]</td> delayed-newline-]
+[-table-row = delayed-nospace <td>[-first-choice-]</td><td>[-second-choice-]</td><td>[-first-over-second-]</td><td>[-second-over-first-]</td> delayed-newline-]
 [-append-from-phrase-to-phrase table-row [-result-table-name-]-]
 -----
-
-
-
 
 
 handle-data-immediate-start-of-votefair-popularity-ranking-levels-results:
@@ -126,8 +123,6 @@ handle-data-immediate-end-of-votefair-party-ranking-sequence-results:
 -----
 
 
-
-
 xyz-handle-data-immediate-ranking-level:
 [-dashrep-tracking-on-or-off = off-]
 [-insert-phrase-with-brackets-after-next-top-line  results-line-after-ranking-level-for-[-ranking-type-]-ranking-]
@@ -135,7 +130,7 @@ capture-begin-here
 -----
 
 
-xyz-handle-choice-number-for-for-sequence-ranking:
+xyz-handle-choice-number-for-sequence-ranking:
 [-choice-number = [-captured-text-]-]
 no-space
 case-[-case-number-]-question-[-question-number-]-choice-at-[-ranking-type-]-sequence-[-sequence-number-]-is:
@@ -147,8 +142,6 @@ new-line
 [-append-from-phrase-to-phrase:  list-item  case-[-case-number-]-question-[-question-number-]-list-of-sequence-results-]
 [-auto-increment: sequence-number-]
 -----
-
-
 
 
 
