@@ -166,7 +166,7 @@ handle-data-state-tally-first-over-second:
 
 handle-data-state-tally-second-over-first:
 [-second-over-first = [-storage-input-line-from-file-]-]
-[-table-row = delayed-nospace <firstchoice>[-first-choice-]</firstchoice><secondchoice>[-second-choice-]</secondchoice> delayed-nospace <firstoversecond>[-first-over-second-]</firstoversecond><secondoverfirst>[-second-over-first-]</secondoverfirst> delayed-newline-]
+[-table-row = delayed-nospace <firstchoice> delayed-nospace case-[-case-number-]-question-[-question-number-]-choice-[-first-choice-]-choicetext delayed-nospace </firstchoice><secondchoice> delayed-nospace case-[-case-number-]-question-[-question-number-]-choice-[-second-choice-]-choicetext delayed-nospace </secondchoice> delayed-nospace <firstoversecond>[-first-over-second-]</firstoversecond><secondoverfirst>[-second-over-first-]</secondoverfirst> delayed-newline-]
 [-append-from-phrase-to-phrase table-row [-result-table-name-]-]
 -----
 
