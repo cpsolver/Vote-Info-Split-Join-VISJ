@@ -30,7 +30,7 @@ Convert the XML (or EML) tags into Dashrep phrases.
 [-dashrep-first-xml-tag-name = xml-]
 [-dashrep-xml-yes-ignore-if-no-tag-replacement = yes-]
 get-definitions-from-file  vote_info_dashrep_definitions_prefilter.txt
-linewise-translate-xml-tags-in-file-to-dashrep-phrases-in-file  input_vote_info_data.txt  output_visj_step_01_data_prefiltered.txt
+linewise-translate-xml-tags-in-file-to-dashrep-phrases-in-file  input_vote_info_truncated.txt  output_visj_step_01_data_prefiltered.txt
 
 clear-all-dashrep-phrases
 
@@ -57,10 +57,7 @@ case names, question names, and choice names).
 
 get-definitions-from-file  vote_info_dashrep_definitions_text_before_calc.txt
 get-definitions-from-file  output_from_vote_calc_sw_visj_codes.txt
-linewise-translate-from-file-to-file  output_visj_step_01_data_prefiltered.txt  output_visj_step_04a_definitions_text_part_1.txt
-
-write-dashrep-definitions-listed-in-phrase-to-file  list-of-lists-to-export  output_visj_step_04b_definitions_text_part_2.txt
-
+linewise-translate-from-file-to-file  output_visj_step_01_data_prefiltered.txt  output_visj_step_04_definitions_text.txt
 write-all-dashrep-definitions-to-file  output_debug_definitions_after_step_04.txt
 
 clear-all-dashrep-phrases
