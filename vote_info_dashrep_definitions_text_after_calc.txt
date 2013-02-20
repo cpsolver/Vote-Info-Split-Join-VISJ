@@ -24,19 +24,19 @@ arrangement-for-choice-specific-results:
 
 <choicenumber>
 delayed-nospace
-[-[-parameter-case-and-question-and-choice-]-choice-number-]
+[-[-case-and-question-and-choice-]-choice-number-]
 delayed-nospace
 </choicenumber>
 delayed-nospace
 <choicename>
 delayed-nospace
-[-[-parameter-case-and-question-and-choice-]-choicetext-]
+[-[-case-and-question-and-choice-]-choicetext-]
 delayed-nospace
 </choicename>
 delayed-nospace
 <pluralitycount>
 delayed-nospace
-[-[-parameter-case-and-question-and-choice-]-plurality-count-]
+[-[-case-and-question-and-choice-]-plurality-count-]
 delayed-nospace
 </pluralitycount>
 delayed-newline
@@ -48,7 +48,7 @@ arrangement-for-question-specific-results:
 
 <questionnumber>
 delayed-nospace
-[-[-parameter-case-and-question-]-question-number-]
+[-question-number-]
 delayed-nospace
 </questionnumber>
 delayed-newline
@@ -56,7 +56,7 @@ new-line
 
 <questiontext>
 delayed-nospace
-[-[-parameter-case-and-question-]-questiontext-]
+[-[-case-and-question-]-questiontext-]
 delayed-nospace
 </questiontext>
 delayed-newline
@@ -64,7 +64,7 @@ new-line
 
 <questiontype>
 delayed-nospace
-[-[-parameter-case-and-question-]-questiontype-]
+[-[-case-and-question-]-questiontype-]
 delayed-nospace
 </questiontype>
 delayed-newline
@@ -72,7 +72,7 @@ new-line
 
 <questionchoiceresults>
 delayed-newline
-[-content-choices-for-[-parameter-case-and-question-]-]
+[-[-case-and-question-]-choice-results-]
 </questionchoiceresults>
 delayed-newline
 new-line
@@ -80,8 +80,14 @@ new-line
 <tallytable>
 delayed-newline
 new-line
-[-parameter-case-and-question-]-tally-table-results
+delayed-nospace
+case-[-case-number-]-question-[-question-number-]-tally-table-results
+delayed-nospace
+delayed-newline
+new-line
 </tallytable>
+delayed-newline
+new-line
 delayed-newline
 new-line
 -----
@@ -95,7 +101,6 @@ Typically these definitions do not need to be changed.
 
 
 entire-content:
-
 [-content-if-error-message-empty-[-yes-or-no-empty-phrase output-error-message-]-]
 delayed-newline
 new-line
@@ -112,7 +117,7 @@ new-line
 <voteinforesults>
 delayed-newline
 new-line
-content-for-all-cases
+case-results
 </voteinforesults>
 delayed-newline
 new-line
@@ -123,9 +128,7 @@ new-line
 
 
 generate-lists-of-cases-questions-choices:
-[-use-template-and-parameters-to-create-full-list-with-name: template-for-list-named-case-results list-of-all-cases case-results-]
-[-use-template-and-parameters-to-create-full-list-with-name: template-for-list-named-question-results list-of-all-combinations-of-case-and-question question-results-]
-[-use-template-and-parameters-to-create-full-list-with-name: template-for-list-named-choice-results list-of-all-combinations-of-case-and-question-and-choice choice-results-]
+[-use-template-and-parameters-to-create-simple-list-with-name template-for-list-named-case-results list-of-case-numbers case-results-]
 -----
 
 
@@ -164,8 +167,20 @@ new-line
 
 
 template-for-list-named-case-results:
-[-copy-from-phrase-to-phrase createlist-parameter parameter-case-]
-[-template-for-list-named-case-results-if-[-ok-not-ok-for-[-parameter-case-]-]-]
+[-case-number = [-createlist-parameter-]-]
+[-template-for-list-named-case-results-if-[-ok-not-ok-for-case-[-case-number-]-]-]
+-----
+
+
+
+template-for-list-named-case-results-if-ok:
+[-case-heading-]
+delayed-newline
+new-line
+delayed-newline
+new-line
+[-use-template-and-parameters-to-create-simple-list-with-name template-for-list-named-question-results case-[-case-number-]-list-of-question-numbers case-[-case-number-]-question-results-]
+[-case-[-case-number-]-question-results-]
 -----
 
 
@@ -173,27 +188,16 @@ template-for-list-named-case-results:
 template-for-list-named-case-results-if-not-ok:
 [-case-heading-]
 <warning> delayed-nospace
-no-calculations-done-for-case no-space &nbsp; reason-is no-space :&nbsp; [-[-parameter-case-]-warning-message-]
+no-calculations-done-for-case no-space &nbsp; reason-is no-space :&nbsp; [-case-[-case-number-]-warning-message-]
 delayed-nospace </warning>
 -----
 
 
 
-template-for-list-named-case-results-if-ok:
-[-case-heading-]
-content-questions-for-[-parameter-case-]
-delayed-newline
-new-line
-delayed-newline
-new-line
------
-
-
-
 case-heading:
-<casenumber> delayed-nospace [-parameter-case-]-case-number delayed-nospace </casenumber>
+<casenumber> delayed-nospace [-case-number-] delayed-nospace </casenumber>
 new-line
-<casetitle> delayed-nospace [-parameter-case-]-casetitle delayed-nospace </casetitle>
+<casetitle> delayed-nospace case-[-case-number-]-casetitle delayed-nospace </casetitle>
 new-line
 delayed-newline
 -----
@@ -201,16 +205,17 @@ delayed-newline
 
 
 template-for-list-named-question-results:
-
-[-copy-from-phrase-to-phrase createlist-parameter parameter-case-and-question-]
+[-question-number = [-createlist-parameter-]-]
+[-case-and-question = case-[-case-number-]-question-[-question-number-]-]
+[-use-template-and-parameters-to-create-simple-list-with-name template-for-list-named-choice-results [-case-and-question-]-list-of-choice-numbers [-case-and-question-]-choice-results-]
 [-arrangement-for-question-specific-results-]
 -----
 
 
 
 template-for-list-named-choice-results:
-
-[-copy-from-phrase-to-phrase createlist-parameter parameter-case-and-question-and-choice-]
+[-choice-number = [-createlist-parameter-]-]
+[-case-and-question-and-choice = [-case-and-question-]-choice-[-choice-number-]-]
 [-arrangement-for-choice-specific-results-]
 -----
 
