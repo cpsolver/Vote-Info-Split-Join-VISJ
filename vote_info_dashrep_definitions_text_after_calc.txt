@@ -20,28 +20,93 @@ different arrangement of XML (or EML) output results.
 ------------------------------------------------------------*
 
 
-arrangement-for-choice-specific-results:
 
-<choicenumber>
+arrangement-for-entire-results:
+<xml>
+delayed-newline
+new-line
+<voteinforesults>
+delayed-newline
+new-line
+case-results
+</voteinforesults>
+delayed-newline
+new-line
+</xml>
+new-line
+-----
+
+
+
+arrangement-for-possible-error-message:
+<error>
 delayed-nospace
-[-[-case-and-question-and-choice-]-choice-number-]
+new-line
+output-error-message
 delayed-nospace
-</choicenumber>
-delayed-nospace
-<choicename>
-delayed-nospace
-[-[-case-and-question-and-choice-]-choicetext-]
-delayed-nospace
-</choicename>
-delayed-nospace
-<pluralitycount>
-delayed-nospace
-[-[-case-and-question-and-choice-]-plurality-count-]
-delayed-nospace
-</pluralitycount>
+new-line
+</error>
 delayed-newline
 new-line
 -----
+
+
+
+arrangement-for-possible-warning-message:
+
+<warning>
+delayed-newline
+new-line
+output-warning-message
+new-line
+delayed-newline
+</warning>
+delayed-newline
+new-line
+-----
+
+
+
+arrangement-for-case-heading:
+delayed-newline
+new-line
+delayed-newline
+new-line
+<casenumber> delayed-nospace [-case-number-] delayed-nospace </casenumber>
+new-line
+<casetitle> delayed-nospace case-[-case-number-]-casetitle delayed-nospace </casetitle>
+delayed-newline
+new-line
+delayed-newline
+new-line
+-----
+
+
+
+arrangement-for-case-specific-results-if-results-ok:
+
+case-[-case-number-]-question-results
+-----
+
+
+
+arrangement-for-case-specific-results-if-results-not-ok:
+
+<warning> delayed-nospace
+words-no-calculations-done-for-case no-space &nbsp; words-reason-is no-space :&nbsp; [-case-[-case-number-]-warning-message-]
+delayed-nospace </warning>
+-----
+
+
+
+arrangement-for-case-with-no-questions:
+
+<noquestions> delayed-nospace
+words-no-questions-for-case
+delayed-nospace </noquestions>
+delayed-newline new-line
+-----
+
 
 
 arrangement-for-question-specific-results:
@@ -70,12 +135,57 @@ delayed-nospace
 delayed-newline
 new-line
 
+[-arrangement-for-question-specific-results-if-choice-count-[-zero-or-nonzero [-if-word-is-yes-then-first-else-second [-yes-or-no-empty-phrase case-[-case-number-]-question-[-question-number-]-list-of-choice-numbers-] 0 [-count-of-words-in-phrase [-case-[-case-number-]-question-[-question-number-]-list-of-choice-numbers-]-]-]-]-]
+-----
+
+
+
+arrangement-for-question-specific-results-if-choice-count-zero:
+
+<choicecount>
+delayed-nospace
+words-no-choices-for-this-question
+delayed-nospace
+</choicecount>
+delayed-newline
+new-line
+delayed-newline
+new-line
+-----
+
+
+
+arrangement-for-question-specific-results-if-choice-count-nonzero:
+
+<ballotcount>
+delayed-nospace
+case-[-case-number-]-total-ballot-count
+delayed-nospace
+</ballotcount>
+delayed-newline
+new-line
+
 <questionchoiceresults>
 delayed-newline
 [-case-and-question-]-choice-results
 </questionchoiceresults>
 delayed-newline
 new-line
+
+<ballotcount>
+delayed-nospace
+case-[-case-number-]-total-ballot-count
+delayed-nospace
+</ballotcount>
+delayed-newline
+new-line
+
+[-arrangement-for-tally-table-if-choice-count-[-zero-or-nonzero [-case-[-case-number-]-question-[-question-number-]-total-ballot-count-]-]-]-]
+-----
+
+
+
+arrangement-for-tally-table-if-ballot-count-nonzero:
 
 <tallytable>
 delayed-newline
@@ -89,6 +199,85 @@ delayed-newline
 new-line
 -----
 
+
+
+arrangement-for-tally-table-if-ballot-count-zero:
+
+<noballots>
+delayed-nospace
+words-no-ballots-for-case
+delayed-nospace
+</noballots>
+delayed-newline
+new-line
+delayed-newline
+new-line
+-----
+
+
+
+arrangement-for-choice-specific-results:
+
+<choicenumber>
+delayed-nospace
+[-[-case-and-question-and-choice-]-choice-number-]
+delayed-nospace
+</choicenumber>
+delayed-nospace
+<choicename>
+delayed-nospace
+[-[-case-and-question-and-choice-]-choicetext-]
+delayed-nospace
+</choicename>
+delayed-nospace
+<pluralitycount>
+delayed-nospace
+[-[-case-and-question-and-choice-]-plurality-count-]
+delayed-nospace
+</pluralitycount>
+delayed-newline
+new-line
+-----
+
+
+tally-table-first-choice-name-begin:
+<firstchoice>
+-----
+
+
+tally-table-first-choice-name-end:
+</firstchoice>
+-----
+
+
+tally-table-second-choice-name-begin:
+<secondchoice>
+-----
+
+
+tally-table-second-choice-name-end:
+</secondchoice>
+-----
+
+
+tally-table-first-over-second-begin:
+<firstoversecond>
+-----
+
+
+tally-table-first-over-second-end:
+</firstoversecond>
+-----
+
+
+tally-table-second-over-first-begin:
+<secondoverfirst>
+-----
+
+
+tally-table-second-over-first-end:
+</secondoverfirst>
+-----
 
 
 *------------------------------------------------------------
@@ -106,40 +295,15 @@ new-line
 
 
 content-if-error-message-empty-yes:
-[-generate-lists-of-cases-questions-choices-]
-[-warning-if-warning-message-empty-[-yes-or-no-empty-phrase output-warning-message-]-]
-<xml>
-delayed-newline
-new-line
-<voteinforesults>
-delayed-newline
-new-line
-case-results
-</voteinforesults>
-delayed-newline
-new-line
-</xml>
-new-line
------
-
-
-
-generate-lists-of-cases-questions-choices:
 [-use-template-and-parameters-to-create-simple-list-with-name template-for-list-named-case-results list-of-case-numbers case-results-]
+[-warning-if-warning-message-empty-[-yes-or-no-empty-phrase output-warning-message-]-]
+[-arrangement-for-entire-results-]
 -----
 
 
 
 content-if-error-message-empty-no:
-<error>
-delayed-nospace
-new-line
-output-error-message
-delayed-nospace
-new-line
-</error>
-delayed-newline
-new-line
+arrangement-for-possible-error-message
 -----
 
 
@@ -150,51 +314,28 @@ warning-if-warning-message-empty-yes:
 
 
 warning-if-warning-message-empty-no:
-<warning>
-delayed-newline
-new-line
-[-output-warning-message-]
-new-line
-delayed-newline
-</warning>
-delayed-newline
-new-line
+arrangement-for-possible-warning-message
 -----
 
 
 
 template-for-list-named-case-results:
 [-case-number = [-createlist-parameter-]-]
-[-template-for-list-named-case-results-if-[-ok-not-ok-for-case-[-case-number-]-]-]
+[-arrangement-for-case-heading-]
+[-handle-case-with-no-questions-[-yes-or-no-empty-phrase case-[-case-number-]-list-of-question-numbers-]-]
 -----
 
 
 
-template-for-list-named-case-results-if-ok:
-[-case-heading-]
+handle-case-with-no-questions-yes:
+[-arrangement-for-case-with-no-questions-]
+-----
+
+
+
+handle-case-with-no-questions-no:
 [-use-template-and-parameters-to-create-simple-list-with-name template-for-list-named-question-results case-[-case-number-]-list-of-question-numbers case-[-case-number-]-question-results-]
-[-case-[-case-number-]-question-results-]
------
-
-
-
-template-for-list-named-case-results-if-not-ok:
-[-case-heading-]
-<warning> delayed-nospace
-no-calculations-done-for-case no-space &nbsp; reason-is no-space :&nbsp; [-case-[-case-number-]-warning-message-]
-delayed-nospace </warning>
------
-
-
-
-case-heading:
-<casenumber> delayed-nospace [-case-number-] delayed-nospace </casenumber>
-new-line
-<casetitle> delayed-nospace case-[-case-number-]-casetitle delayed-nospace </casetitle>
-delayed-newline
-new-line
-delayed-newline
-new-line
+[-arrangement-for-case-specific-results-if-results-[-ok-not-ok-for-case-[-case-number-]-]-]
 -----
 
 

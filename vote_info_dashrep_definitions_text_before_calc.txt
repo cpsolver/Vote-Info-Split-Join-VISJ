@@ -40,32 +40,29 @@ new-line
 
 
 end-all-cases:
-[-phrase-to-define-inline = list-of-case-numbers-]
-[-template-to-define-phrase-inline-]
-[-phrase-to-define-inline = list-of-all-combinations-of-case-and-question-]
-[-template-to-define-phrase-inline-]
-[-phrase-to-define-inline = list-of-all-combinations-of-case-and-question-and-choice-]
-[-template-to-define-phrase-inline-]
 -----
 
 
 begin-case:
 [-case-number = [-next-case-number-]-]
 [-append-word-to-phrase [-case-number-] list-of-case-numbers-]
+[-ok-not-ok-for-case-[-case-number-] = ok-]
 [-phrase-to-define-inline = ok-not-ok-for-case-[-case-number-]-]
-[-[-phrase-to-define-inline-] = ok-]
+[-template-to-define-phrase-inline-]
+[-case-[-case-number-]-total-ballot-count = 0 -]
+[-phrase-to-define-inline = case-[-case-number-]-total-ballot-count-]
 [-template-to-define-phrase-inline-]
 [-clear-phrase case-[-case-number-]-list-of-question-numbers-]
-[-phrase-to-define-inline = case-[-case-number-]-case-number-]
-[-[-phrase-to-define-inline-] = [-case-number-]-]
-[-template-to-define-phrase-inline-]
 [-auto-increment next-case-number-]
-[-next-question-number = 1-]
+[-next-question-number = 1 -]
 -----
 
 
 end-case:
 [-phrase-to-define-inline = case-[-case-number-]-list-of-question-numbers-]
+[-template-to-define-phrase-inline-]
+*--- following list is updated after each case to allow for the "end-all-cases" tag to be missing ---*
+[-phrase-to-define-inline = list-of-case-numbers-]
 [-template-to-define-phrase-inline-]
 -----
 
@@ -95,20 +92,16 @@ new-line
 begin-question:
 [-question-number = [-next-question-number-]-]
 [-case-and-question = case-[-case-number-]-question-[-question-number-]-]
-[-append-from-phrase-to-phrase case-and-question list-of-all-combinations-of-case-and-question-]
 [-append-word-to-phrase [-question-number-] case-[-case-number-]-list-of-question-numbers-]
+[-ok-not-ok-for-case-[-case-and-question-] = ok-]
 [-phrase-to-define-inline = ok-not-ok-for-case-[-case-and-question-]-]
-[-[-phrase-to-define-inline-] = ok-]
 [-template-to-define-phrase-inline-]
 [-clear-phrase case-[-case-and-question-]-list-of-choice-numbers-]
-[-phrase-to-define-inline = case-[-case-number-]-question-[-question-number-]-question-number-]
+[-phrase-to-define-inline = [-case-and-question-]-question-number-]
 [-[-phrase-to-define-inline-] = [-question-number-]-]
 [-template-to-define-phrase-inline-]
-[-phrase-to-define-inline = case-[-case-number-]-question-[-question-number-]-case-number-]
-[-[-phrase-to-define-inline-] = [-case-number-]-]
-[-template-to-define-phrase-inline-]
 [-auto-increment next-question-number-]
-[-next-choice-number = 1-]
+[-next-choice-number = 1 -]
 -----
 
 
@@ -119,7 +112,7 @@ end-question:
 
 
 begin-questiontype:
-case-[-case-number-]-question-[-question-number-]-questiontype:
+[-case-and-question-]-questiontype:
 -----
 
 
@@ -130,7 +123,7 @@ new-line
 
 
 begin-questiontext:
-case-[-case-number-]-question-[-question-number-]-questiontext:
+[-case-and-question-]-questiontext:
 -----
 
 
@@ -142,16 +135,13 @@ new-line
 
 begin-choicetext:
 [-choice-number = [-next-choice-number-]-]
-[-case-and-question-and-choice = case-[-case-number-]-question-[-question-number-]-choice-[-choice-number-]-]
-[-append-from-phrase-to-phrase case-and-question-and-choice list-of-all-combinations-of-case-and-question-and-choice-]
+[-case-and-question-and-choice = [-case-and-question-]-choice-[-choice-number-]-]
 [-append-word-to-phrase [-choice-number-] [-case-and-question-]-list-of-choice-numbers-]
-[-item-to-append = [-case-and-question-and-choice-]-]
-[-append-from-phrase-to-phrase item-to-append [-case-and-question-]-list-of-choices-]
 [-phrase-to-define-inline = [-case-and-question-and-choice-]-choice-number-]
 [-[-phrase-to-define-inline-] = [-choice-number-]-]
 [-template-to-define-phrase-inline-]
 [-auto-increment next-choice-number-]
-case-[-case-number-]-question-[-question-number-]-choice-[-choice-number-]-choicetext:
+[-case-and-question-and-choice-]-choicetext:
 -----
 
 
@@ -175,12 +165,6 @@ ignore-end-here
 
 dashed-line:
 [-hyphen-here-] [-hyphen-here-] [-hyphen-here-] [-hyphen-here-] [-hyphen-here-]
------
-
-
-phrase-that-contains-new-line:
-delayed-newline
-new-line
 -----
 
 

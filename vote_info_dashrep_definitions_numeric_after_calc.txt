@@ -6,7 +6,8 @@ See www.Dashrep.org for details about the Dashrep language.
 
 
 *------------------------------------------------------------
-Vote-Info-Split-Join, Dashrep definitions for result portion.
+Vote-Info-Split-Join, Dashrep definitions to handle numeric
+results after calculations.
 ------------------------------------------------------------*
 
 
@@ -31,8 +32,6 @@ output-voteinfo-code-for-
 
 
 template-handle-one-data-line:
-[-append-from-phrase-to-phrase storage-input-line-from-file accumulated-debug-text-]
-[-append-new-line-to-phrase accumulated-debug-text-]
 [-[-if-word-is-no-then-first-else-second [-yes-or-no-empty-phrase data-state-] handle-data-state-known handle-data-state-not-known-]-]
 -----
 
@@ -89,6 +88,7 @@ handle-data-state-skip-case:
 
 handle-data-state-question-number:
 [-question-number = [-storage-input-line-from-file-]-]
+[-tally-table-row-number = 1 -]
 -----
 
 
@@ -107,11 +107,6 @@ handle-data-state-choice:
 
 handle-data-state-first-choice:
 [-first-choice = [-storage-input-line-from-file-]-]
-[-append-new-line-to-phrase accumulated-debug-text-]
-[-append-new-line-to-phrase accumulated-debug-text-]
-[-append-from-phrase-to-phrase first-choice accumulated-debug-text-]
-[-append-new-line-to-phrase accumulated-debug-text-]
-[-append-new-line-to-phrase accumulated-debug-text-]
 -----
 
 
@@ -121,21 +116,26 @@ handle-data-state-second-choice:
 
 
 handle-data-state-total-ballot-count:
-[-plurality-count = [-storage-input-line-from-file-]-]
-[-new-phrase-name = case-[-case-number-]-question-[-question-number-]-choice-[-choice-number-]-total-ballot-count-]
-[-[-new-phrase-name-] = [-plurality-count-]-]
+[-total-ballot-count = [-storage-input-line-from-file-]-]
+[-new-phrase-name = case-[-case-number-]-total-ballot-count-]
+[-[-new-phrase-name-] = [-total-ballot-count-]-]
 [-append-from-phrase-to-phrase new-phrase-name list-of-new-data-based-phrase-names-]
 -----
 
 
 handle-data-immediate-start-of-plurality-results:
-[-clear-phrase do-nothing-but-not-empty-]
+[-empty-placeholder-do-not-remove-]
 -----
 
 
 handle-data-immediate-end-of-plurality-results:
-[-clear-phrase do-nothing-but-not-empty-]
+[-empty-placeholder-do-not-remove-]
 -----
+
+
+empty-placeholder-do-not-remove:
+-----
+
 
 
 handle-data-state-plurality-count:
@@ -166,8 +166,41 @@ handle-data-state-tally-first-over-second:
 
 handle-data-state-tally-second-over-first:
 [-second-over-first = [-storage-input-line-from-file-]-]
-[-table-row = delayed-nospace <firstchoice> delayed-nospace case-[-case-number-]-question-[-question-number-]-choice-[-first-choice-]-choicetext delayed-nospace </firstchoice><secondchoice> delayed-nospace case-[-case-number-]-question-[-question-number-]-choice-[-second-choice-]-choicetext delayed-nospace </secondchoice> delayed-nospace <firstoversecond>[-first-over-second-]</firstoversecond><secondoverfirst>[-second-over-first-]</secondoverfirst> delayed-newline-]
-[-append-from-phrase-to-phrase table-row [-result-table-name-]-]
+[-case-[-case-number-]-question-[-question-number-]-tally-row-[-tally-table-row-number-]-first-over-second = [-first-over-second-]-]
+[-case-[-case-number-]-question-[-question-number-]-tally-row-[-tally-table-row-number-]-second-over-first = [-second-over-first-]-]
+[-expand-phrase-to-phrase template-tally-table-one-row tally-table-row-]
+[-append-from-phrase-to-phrase tally-table-row [-result-table-name-]-]
+[-auto-increment tally-table-row-number-]
+-----
+
+
+template-tally-table-one-row:
+delayed-nospace
+tally-table-first-choice-name-begin
+delayed-nospace
+case-[-case-number-]-question-[-question-number-]-choice-[-first-choice-]-choicetext
+delayed-nospace
+tally-table-first-choice-name-end
+delayed-nospace
+tally-table-second-choice-name-begin
+delayed-nospace
+case-[-case-number-]-question-[-question-number-]-choice-[-second-choice-]-choicetext
+delayed-nospace
+tally-table-second-choice-name-end
+delayed-nospace
+tally-table-first-over-second-begin
+delayed-nospace
+case-[-case-number-]-question-[-question-number-]-tally-row-[-tally-table-row-number-]-first-over-second
+delayed-nospace
+tally-table-first-over-second-end
+delayed-nospace
+tally-table-second-over-first-begin
+delayed-nospace
+case-[-case-number-]-question-[-question-number-]-tally-row-[-tally-table-row-number-]-second-over-first
+delayed-nospace
+tally-table-second-over-first-end
+delayed-nospace
+delayed-newline
 -----
 
 

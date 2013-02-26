@@ -32,7 +32,6 @@ voteinfo-code-for-end-of-all-cases
 
 begin-case:
 [-case-number = [-next-case-number-]-]
-[-append-from-phrase-to-phrase: case-number list-of-cases-]
 [-auto-increment: next-case-number-]
 [-next-question-number = 1-]
 voteinfo-code-for-case-number
@@ -79,14 +78,6 @@ end-question:
 voteinfo-code-for-number-of-choices
 new-line
 [-choice-number-]
------
-
-
-begin-question-number:
------
-
-
-end-question-number:
 -----
 
 

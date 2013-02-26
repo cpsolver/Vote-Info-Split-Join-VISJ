@@ -9,11 +9,46 @@
 
 
 
-no-calculations-done-for-case:
+word-case-capitalized:
+Case
+-----
+
+
+word-question-capitalized:
+Question
+-----
+
+
+words-contains-no-questions:
+contains no questions
+-----
+
+
+words-contains-no-ballots:
+contains no ballots
+-----
+
+
+words-no-calculations-done-for-case:
 No calculations were done for this case
 -----
 
 
-reason-is:
+words-reason-is:
 The reason is
+-----
+
+
+words-no-questions-for-case:
+There are no questions for this case
+-----
+
+
+words-no-choices-for-this-question:
+There are no choices for this question
+-----
+
+
+words-no-ballots-for-case:
+There are no ballots for this case
 -----
