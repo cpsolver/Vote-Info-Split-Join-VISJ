@@ -67,8 +67,7 @@ get-definitions-from-file  vote_info_dashrep_definitions_language_en.txt
 get-definitions-from-file  vote_info_dashrep_definitions_text_after_calc.txt
 get-definitions-from-file  votefair_specific_visj_language_en.txt
 get-definitions-from-file  votefair_specific_visj_text_after_calc.txt
-get-definitions-from-file  output_visj_step_04a_definitions_text_part_1.txt
-get-definitions-from-file  output_visj_step_04b_definitions_text_part_2.txt
+get-definitions-from-file  output_visj_step_04definitions_text_part_1.txt
 get-definitions-from-file  output_visj_step_08_calc_results.txt
 get-definitions-from-file  output_from_vote_calc_sw_visj_possible_error_message.txt
 [-dashrep-endless-loop-counter-limit = 9000000-]
