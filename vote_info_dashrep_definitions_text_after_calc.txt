@@ -83,18 +83,22 @@ new-line
 
 
 
-arrangement-for-case-specific-results-if-results-ok:
+arrangement-for-case-with-warning-message:
 
-case-[-case-number-]-question-results
+<warning> delayed-nospace
+word-warning-capitalized no-space : case-[-case-number-]-warning-message
+delayed-nospace </warning>
+delayed-newline
+new-line
+delayed-newline
+new-line
 -----
 
 
 
-arrangement-for-case-specific-results-if-results-not-ok:
+arrangement-for-case-specific-results:
 
-<warning> delayed-nospace
-words-no-calculations-done-for-case no-space &nbsp; words-reason-is no-space :&nbsp; [-case-[-case-number-]-warning-message-]
-delayed-nospace </warning>
+case-[-case-number-]-question-results
 -----
 
 
@@ -135,7 +139,8 @@ delayed-nospace
 delayed-newline
 new-line
 
-[-arrangement-for-question-specific-results-if-choice-count-[-zero-or-nonzero [-if-word-is-yes-then-first-else-second [-yes-or-no-empty-phrase case-[-case-number-]-question-[-question-number-]-list-of-choice-numbers-] 0 [-count-of-words-in-phrase [-case-[-case-number-]-question-[-question-number-]-list-of-choice-numbers-]-]-]-]-]
+[-choice-count = [-count-of-words-in-phrase case-[-case-number-]-question-[-question-number-]-list-of-choice-numbers-]-]
+[-arrangement-for-question-specific-results-if-choice-count-[-zero-or-nonzero [-choice-count-]-]-]
 -----
 
 
@@ -157,14 +162,6 @@ new-line
 
 arrangement-for-question-specific-results-if-choice-count-nonzero:
 
-<ballotcount>
-delayed-nospace
-case-[-case-number-]-total-ballot-count
-delayed-nospace
-</ballotcount>
-delayed-newline
-new-line
-
 <questionchoiceresults>
 delayed-newline
 [-case-and-question-]-choice-results
@@ -180,7 +177,7 @@ delayed-nospace
 delayed-newline
 new-line
 
-[-arrangement-for-tally-table-if-choice-count-[-zero-or-nonzero [-case-[-case-number-]-question-[-question-number-]-total-ballot-count-]-]-]-]
+[-arrangement-for-tally-table-if-ballot-count-[-zero-or-nonzero [-case-[-case-number-]-total-ballot-count-]-]-]
 -----
 
 
@@ -216,7 +213,7 @@ new-line
 
 
 
-arrangement-for-choice-specific-results:
+arrangement-for-choice-specific-results-if-ballot-count-nonzero:
 
 <choicenumber>
 delayed-nospace
@@ -235,6 +232,24 @@ delayed-nospace
 [-[-case-and-question-and-choice-]-plurality-count-]
 delayed-nospace
 </pluralitycount>
+delayed-newline
+new-line
+-----
+
+
+arrangement-for-choice-specific-results-if-ballot-count-zero:
+
+<choicenumber>
+delayed-nospace
+[-[-case-and-question-and-choice-]-choice-number-]
+delayed-nospace
+</choicenumber>
+delayed-nospace
+<choicename>
+delayed-nospace
+[-[-case-and-question-and-choice-]-choicetext-]
+delayed-nospace
+</choicename>
 delayed-newline
 new-line
 -----
@@ -322,6 +337,18 @@ arrangement-for-possible-warning-message
 template-for-list-named-case-results:
 [-case-number = [-createlist-parameter-]-]
 [-arrangement-for-case-heading-]
+[-handle-case-with-warning-message-empty-[-yes-or-no-empty-phrase case-[-case-number-]-warning-message-]-]
+-----
+
+
+
+handle-case-with-warning-message-empty-no:
+[-arrangement-for-case-with-warning-message-]
+-----
+
+
+
+handle-case-with-warning-message-empty-yes:
 [-handle-case-with-no-questions-[-yes-or-no-empty-phrase case-[-case-number-]-list-of-question-numbers-]-]
 -----
 
@@ -335,7 +362,7 @@ handle-case-with-no-questions-yes:
 
 handle-case-with-no-questions-no:
 [-use-template-and-parameters-to-create-simple-list-with-name template-for-list-named-question-results case-[-case-number-]-list-of-question-numbers case-[-case-number-]-question-results-]
-[-arrangement-for-case-specific-results-if-results-[-ok-not-ok-for-case-[-case-number-]-]-]
+[-arrangement-for-case-specific-results-]
 -----
 
 
@@ -352,7 +379,7 @@ template-for-list-named-question-results:
 template-for-list-named-choice-results:
 [-choice-number = [-createlist-parameter-]-]
 [-case-and-question-and-choice = [-case-and-question-]-choice-[-choice-number-]-]
-[-arrangement-for-choice-specific-results-]
+[-arrangement-for-choice-specific-results-if-ballot-count-[-zero-or-nonzero [-case-[-case-number-]-total-ballot-count-]-]-]
 -----
 
 
