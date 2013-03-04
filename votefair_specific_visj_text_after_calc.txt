@@ -18,7 +18,8 @@ dashrep-definitions-begin
 VoteFair-specific definitions.
 ------------------------------------------------------------*
 
-entire-content:
+
+arrangement-for-entire-results:
 
 <html>
 delayed-newline new-line
@@ -28,7 +29,7 @@ delayed-newline new-line
 delayed-newline new-line
 <body style="background-color:#E0F0FF">
 delayed-newline new-line
-[-content-if-error-message-empty-[-yes-or-no-empty-phrase output-error-message-]-]
+case-results
 delayed-newline new-line
 <p>&nbsp;</p>
 delayed-newline new-line
@@ -38,18 +39,7 @@ delayed-newline new-line
 -----
 
 
-content-if-error-message-empty-yes:
-[-generate-lists-of-cases-questions-choices-]
-<h1> no-space word-votefair word-ranking-capitalized word-results-capitalized no-space </h1>
-delayed-newline new-line
-[-warning-if-warning-message-empty-[-yes-or-no-empty-phrase output-warning-message-]-]
-delayed-newline new-line
-content-for-all-cases
-delayed-newline new-line
------
-
-
-content-if-error-message-empty-no:
+arrangement-for-possible-error-message:
 <h1> no-space word-error-all-caps no-space </h1>
 <p> delayed-nospace
 delayed-newline new-line
@@ -61,11 +51,7 @@ delayed-newline new-line
 -----
 
 
-warning-if-warning-message-empty-yes:
------
-
-
-warning-if-warning-message-empty-no:
+arrangement-for-possible-warning-message:
 <h1> no-space word-warnings-capitalized no-space </h1>
 begin-preserve-line-breaks
 delayed-nospace
@@ -80,34 +66,7 @@ delayed-newline new-line
 -----
 
 
-begin-preserve-line-breaks:
-<pre>
------
-
-end-preserve-line-breaks:
-</pre>
------
-
-begin-warning-case-specific:
-<p><b> delayed-nospace
------
-
-end-warning-case-specific:
-delayed-nospace </b></p>
------
-
-
-
-template-for-list-named-case-results-if-ok:
-[-case-heading-]
-content-questions-for-[-parameter-case-]
-<p>&nbsp;</p>
-delayed-newline new-line
-delayed-newline new-line
------
-
-
-template-for-list-named-case-results-if-not-ok:
+arrangement-for-case-with-warning-message:
 [-case-heading-]
 <p><b> delayed-nospace
 no-calculations-done-for-case
@@ -119,7 +78,7 @@ delayed-nospace </b></p>
 -----
 
 
-case-heading:
+arrangement-for-case-heading:
 delayed-newline new-line
 delayed-newline new-line
 <h2> no-space word-case-capitalized [-parameter-case-]-case-number delayed-nospace :&nbsp; [-parameter-case-]-casetitle delayed-nospace </h2>
@@ -130,11 +89,6 @@ delayed-newline new-line
 arrangement-for-question-specific-results:
 <h3> no-space word-question-capitalized [-parameter-case-and-question-]-question-number delayed-nospace :&nbsp; [-parameter-case-and-question-]-questiontext delayed-nospace </h3>
 delayed-newline new-line
-[-template-for-question-results-if-skip-empty-[-yes-or-no-empty-phrase [-ok-not-ok-for-[-parameter-case-and-question-]-]-]-]
------
-
-
-template-for-question-results-if-skip-empty-yes:
 [-question-specific-message-if-empty-[-yes-or-no-empty-phrase [-parameter-case-and-question-]-warning-message-]-]
 [-question-specific-popularity-message-if-empty-[-yes-or-no-empty-phrase [-parameter-case-and-question-]-results-type-popularity-warning-message-]-]
 [-question-specific-representation-message-if-empty-[-yes-or-no-empty-phrase [-parameter-case-and-question-]-results-type-representation-warning-message-]-]
@@ -166,7 +120,7 @@ delayed-newline new-line
 -----
 
 
-template-for-question-results-if-skip-empty-no:
+arrangement-for-question-specific-results-if-choice-count-multiple:
 <p> no-space no-calculations-done-for-question-for-reason-explained-above no-space </p>
 delayed-newline new-line
 <p>Question type: [-parameter-case-and-question-]-questiontype delayed-nospace </p>
@@ -195,10 +149,6 @@ delayed-newline new-line
 -----
 
 
-question-specific-message-if-empty-yes:
------
-
-
 question-specific-popularity-message-if-empty-yes:
 -----
 
@@ -208,13 +158,6 @@ question-specific-representation-message-if-empty-yes:
 
 
 question-specific-party-message-if-empty-yes:
------
-
-
-question-specific-message-if-empty-no:
-<h4> delayed-nospace
-[-parameter-case-and-question-]-warning-message
-delayed-nospace </h4>
 -----
 
 
@@ -239,11 +182,8 @@ delayed-nospace </h4>
 -----
 
 
-tally-table-empty-yes:
------
 
-
-tally-table-empty-no:
+arrangement-for-tally-table-if-ballot-count-nonzero:
 empty-html-line
 delayed-newline new-line
 <table border="2" cellpadding="5">
@@ -267,7 +207,7 @@ delayed-newline new-line
 -----
 
 
-arrangement-for-choice-specific-results:
+arrangement-for-choice-specific-results-if-ballot-count-nonzero:
 <tr>
 <td>
 delayed-nospace
@@ -365,6 +305,26 @@ no-space </b>
 
 empty-html-line:
 <p>&nbsp;</p>
+-----
+
+
+begin-preserve-line-breaks:
+<pre>
+-----
+
+
+end-preserve-line-breaks:
+</pre>
+-----
+
+
+begin-warning-case-specific:
+<p><b> delayed-nospace
+-----
+
+
+end-warning-case-specific:
+delayed-nospace </b></p>
 -----
 
 
