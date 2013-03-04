@@ -15,7 +15,7 @@ dashrep-definitions-begin
 
 
 *------------------------------------------------------------
-These first two definitions can be changed to produce a
+These first few definitions can be changed to produce a
 different arrangement of XML (or EML) output results.
 ------------------------------------------------------------*
 
@@ -140,7 +140,7 @@ delayed-newline
 new-line
 
 [-choice-count = [-count-of-words-in-phrase case-[-case-number-]-question-[-question-number-]-list-of-choice-numbers-]-]
-[-arrangement-for-question-specific-results-if-choice-count-[-zero-or-nonzero [-choice-count-]-]-]
+[-arrangement-for-question-specific-results-if-choice-count-[-zero-one-multiple [-choice-count-]-]-]
 -----
 
 
@@ -160,7 +160,37 @@ new-line
 
 
 
-arrangement-for-question-specific-results-if-choice-count-nonzero:
+arrangement-for-question-specific-results-if-choice-count-one:
+
+<questionchoiceresults>
+delayed-newline
+[-case-and-question-]-choice-results
+</questionchoiceresults>
+delayed-newline
+new-line
+
+<ballotcount>
+delayed-nospace
+case-[-case-number-]-total-ballot-count
+delayed-nospace
+</ballotcount>
+delayed-newline
+new-line
+
+<choicecount>
+delayed-nospace
+words-only-one-choice-for-this-question
+delayed-nospace
+</choicecount>
+delayed-newline
+new-line
+delayed-newline
+new-line
+-----
+
+
+
+arrangement-for-question-specific-results-if-choice-count-multiple:
 
 <questionchoiceresults>
 delayed-newline
