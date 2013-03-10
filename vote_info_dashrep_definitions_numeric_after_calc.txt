@@ -23,6 +23,7 @@ changed.
 
 list-of-new-data-based-phrase-names:
 list-of-data-not-recognized
+list-of-data-number-only
 -----
 
 
@@ -33,6 +34,7 @@ output-voteinfo-code-for-
 
 template-handle-one-data-line:
 [-[-if-word-is-no-then-first-else-second [-yes-or-no-empty-phrase data-state-] handle-data-state-known handle-data-state-not-known-]-]
+[-numeric-increment line-counter-]
 -----
 
 
@@ -62,6 +64,23 @@ handle-data-immediate-generic:
 
 handle-data-not-recognized:
 [-append-from-phrase-to-phrase storage-input-line-from-file list-of-data-not-recognized-]
+[-check-for-number-instead-of-text-]
+-----
+
+
+check-for-number-instead-of-text:
+[-copy-from-phrase-to-phrase-and-replace-digits-with-9s storage-input-line-from-file possible-number-only-]
+[-digit-9 = 9 -]
+[-copy-from-phrase-to-phrase-and-replace-string-in-phrase-with-phrase possible-number-only possible-number-only digit-9 empty-phrase-]
+[-[-if-first-word-is-yes-then-keep-remainder-else-empty [-yes-or-no-empty-phrase possible-number-only-] handle-number-only-]-]
+-----
+
+
+handle-number-only:
+[-new-phrase-name = case-[-case-number-]-question-[-question-number-]-contains-number-at-line-[-line-counter-]-]
+[-[-new-phrase-name-] = [-storage-input-line-from-file-]-]
+[-append-from-phrase-to-phrase new-phrase-name list-of-new-data-based-phrase-names-]
+[-append-from-phrase-to-phrase new-phrase-name list-of-data-number-only-]
 -----
 
 
@@ -78,7 +97,7 @@ extra-actions-at-beginning-of-case:
 -----
 
 
-handle-data-state-skip-case:
+handle-data-immediate-skip-case:
 [-new-phrase-name = skip-case-[-case-number-]-]
 [-[-new-phrase-name-] = skip-case-]
 [-append-from-phrase-to-phrase new-phrase-name list-of-new-data-based-phrase-names-]
@@ -88,6 +107,10 @@ handle-data-state-skip-case:
 
 handle-data-state-question-number:
 [-question-number = [-storage-input-line-from-file-]-]
+[-ranking-level = 1-]
+[-ranking-type = none-]
+[-sequence-or-levels = levels-]
+[-sequence-number = 1 -]
 [-tally-table-row-number = 1 -]
 -----
 
@@ -102,6 +125,41 @@ handle-data-state-skip-question:
 
 handle-data-state-choice:
 [-choice-number = [-storage-input-line-from-file-]-]
+[-handle-choice-for-[-sequence-or-levels-]-]
+-----
+
+
+handle-choice-for-levels:
+-----
+
+
+handle-choice-for-sequence:
+[-new-phrase-name = case-[-case-number-]-question-[-question-number-]-choice-[-choice-number-]-[-ranking-type-]-sequence-number-]
+[-[-new-phrase-name-] = [-sequence-number-]-]
+[-append-from-phrase-to-phrase new-phrase-name list-of-new-data-based-phrase-names-]
+[-numeric-increment sequence-number-]
+-----
+
+
+handle-data-state-ranking-level:
+[-ranking-level = [-storage-input-line-from-file-]-]
+[-new-phrase-name = case-[-case-number-]-question-[-question-number-]-choice-[-choice-number-]-[-ranking-type-]-ranking-level-]
+[-[-new-phrase-name-] = [-ranking-level-]-]
+[-append-from-phrase-to-phrase new-phrase-name list-of-new-data-based-phrase-names-]
+-----
+
+
+handle-data-immediate-next-ranking-level:
+[-numeric-increment ranking-level-]
+-----
+
+
+handle-data-immediate-tie:
+[-empty-placeholder-do-not-remove-]
+-----
+
+
+empty-placeholder-do-not-remove:
 -----
 
 
@@ -124,18 +182,14 @@ handle-data-state-total-ballot-count:
 
 
 handle-data-immediate-start-of-plurality-results:
-[-empty-placeholder-do-not-remove-]
+[-ranking-type = plurality-]
+[-sequence-or-levels = levels-]
 -----
 
 
 handle-data-immediate-end-of-plurality-results:
-[-empty-placeholder-do-not-remove-]
+[-ranking-type = none-]
 -----
-
-
-empty-placeholder-do-not-remove:
------
-
 
 
 handle-data-state-plurality-count:
@@ -170,7 +224,7 @@ handle-data-state-tally-second-over-first:
 [-case-[-case-number-]-question-[-question-number-]-tally-row-[-tally-table-row-number-]-second-over-first = [-second-over-first-]-]
 [-expand-phrase-to-phrase template-tally-table-one-row tally-table-row-]
 [-append-from-phrase-to-phrase tally-table-row [-result-table-name-]-]
-[-auto-increment tally-table-row-number-]
+[-numeric-increment tally-table-row-number-]
 -----
 
 
@@ -201,22 +255,6 @@ delayed-nospace
 tally-table-second-over-first-end
 delayed-nospace
 delayed-newline
------
-
-
-handle-data-state-ranking-level:
-[-ranking-level = [-storage-input-line-from-file-]-]
-[-new-phrase-name = case-[-case-number-]-question-[-question-number-]-choice-[-choice-number-]-ranking-level-]
-[-[-new-phrase-name-] = [-ranking-level-]-]
-[-append-from-phrase-to-phrase new-phrase-name list-of-new-data-based-phrase-names-]
------
-
-
-handle-data-state-next-ranking-level:
-[-auto-increment ranking-level-]
-[-new-phrase-name = case-[-case-number-]-question-[-question-number-]-choice-[-choice-number-]-ranking-level-]
-[-[-new-phrase-name-] = [-ranking-level-]-]
-[-append-from-phrase-to-phrase new-phrase-name list-of-new-data-based-phrase-names-]
 -----
 
 

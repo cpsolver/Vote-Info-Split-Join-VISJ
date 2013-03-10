@@ -61,9 +61,10 @@ handle-data-immediate-end-of-votefair-popularity-ranking-levels-results:
 
 
 handle-data-immediate-start-of-votefair-popularity-ranking-sequence-results:
+[-ranking-level = 1 -]
 [-ranking-type = popularity-]
 [-sequence-or-levels = sequence-]
-[-sequence-number = 1-]
+[-sequence-number = 1 -]
 [-popularity-results-missing = no-]
 -----
 
@@ -120,27 +121,6 @@ handle-data-immediate-start-of-votefair-party-ranking-sequence-results:
 
 handle-data-immediate-end-of-votefair-party-ranking-sequence-results:
 [-ranking-type = none-]
------
-
-
-xyz-handle-data-immediate-ranking-level:
-[-dashrep-tracking-on-or-off = off-]
-[-insert-phrase-with-brackets-after-next-top-line  results-line-after-ranking-level-for-[-ranking-type-]-ranking-]
-capture-begin-here
------
-
-
-xyz-handle-choice-number-for-sequence-ranking:
-[-choice-number = [-captured-text-]-]
-no-space
-case-[-case-number-]-question-[-question-number-]-choice-at-[-ranking-type-]-sequence-[-sequence-number-]-is:
-new-line
-[-choice-number-]
-new-line
-[-dashed-line-]
-[-list-item = case-[-case-number-]-question-[-question-number-]-sequence-[-sequence-number-]-[-ranking-type-]-rank-]
-[-append-from-phrase-to-phrase:  list-item  case-[-case-number-]-question-[-question-number-]-list-of-sequence-results-]
-[-auto-increment: sequence-number-]
 -----
 
 

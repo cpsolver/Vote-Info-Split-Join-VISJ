@@ -73,7 +73,7 @@ no-calculations-done-for-case
 no-space .&nbsp;
 reason-is
 no-space :&nbsp;
-[-[-parameter-case-]-warning-message-]
+case-[-case-number-]-warning-message
 delayed-nospace </b></p>
 -----
 
@@ -81,21 +81,18 @@ delayed-nospace </b></p>
 arrangement-for-case-heading:
 delayed-newline new-line
 delayed-newline new-line
-<h2> no-space word-case-capitalized [-parameter-case-]-case-number delayed-nospace :&nbsp; [-parameter-case-]-casetitle delayed-nospace </h2>
+<h2> no-space word-case-capitalized [-case-number-] delayed-nospace :&nbsp; case-[-case-number-]-casetitle delayed-nospace </h2>
 delayed-newline new-line
 -----
 
 
 arrangement-for-question-specific-results:
-<h3> no-space word-question-capitalized [-parameter-case-and-question-]-question-number delayed-nospace :&nbsp; [-parameter-case-and-question-]-questiontext delayed-nospace </h3>
+<h3> no-space word-question-capitalized [-question-number-] delayed-nospace :&nbsp; case-[-case-number-]-question-[-question-number-]-questiontext delayed-nospace </h3>
 delayed-newline new-line
-[-question-specific-message-if-empty-[-yes-or-no-empty-phrase [-parameter-case-and-question-]-warning-message-]-]
-[-question-specific-popularity-message-if-empty-[-yes-or-no-empty-phrase [-parameter-case-and-question-]-results-type-popularity-warning-message-]-]
-[-question-specific-representation-message-if-empty-[-yes-or-no-empty-phrase [-parameter-case-and-question-]-results-type-representation-warning-message-]-]
-[-question-specific-party-message-if-empty-[-yes-or-no-empty-phrase [-parameter-case-and-question-]-results-type-party-warning-message-]-]
-<p>Question type: [-parameter-case-and-question-]-questiontype delayed-nospace </p>
+[-possible-question-specific-messages-]
+<p>Question type: case-[-case-number-]-question-[-question-number-]-questiontype delayed-nospace </p>
 delayed-newline new-line
-<p> no-space words-ballot-count-capitalized no-space : case-[-[-parameter-case-and-question-]-case-number-]-ballot-count delayed-nospace </p>
+<p> no-space words-ballot-count-capitalized no-space : case-[-case-number-]-total-ballot-count delayed-nospace </p>
 delayed-newline new-line
 
 <table border="2" cellpadding="5">
@@ -112,10 +109,10 @@ delayed-newline new-line
 delayed-newline new-line
 <td><b> no-space word-party-capitalized no-space <br /> no-space word-rank no-space </b></td>
 delayed-newline new-line
-[-content-choices-for-[-parameter-case-and-question-]-]
+case-[-case-number-]-question-[-question-number-]-choice-results
 </table>
 delayed-newline new-line
-[-tally-table-empty-[-yes-or-no-empty-phrase [-parameter-case-and-question-]-tally-table-results-]-]
+[-tally-table-empty-[-yes-or-no-empty-phrase case-[-case-number-]-question-[-question-number-]-tally-table-results-]-]
 delayed-newline new-line
 -----
 
@@ -123,7 +120,7 @@ delayed-newline new-line
 arrangement-for-question-specific-results-if-choice-count-multiple:
 <p> no-space no-calculations-done-for-question-for-reason-explained-above no-space </p>
 delayed-newline new-line
-<p>Question type: [-parameter-case-and-question-]-questiontype delayed-nospace </p>
+<p>Question type: case-[-case-number-]-question-[-question-number-]-questiontype delayed-nospace </p>
 delayed-newline new-line
 <table border="2" cellpadding="5">
 delayed-newline new-line
@@ -140,7 +137,7 @@ delayed-newline new-line
 <td><b> no-space word-party-capitalized no-space <br /> no-space word-rank no-space </b></td>
 delayed-newline new-line
 delayed-newline new-line
-items-in-list-named-choice-results-for-[-parameter-case-and-question-]
+case-[-case-number-]-question-[-question-number-]-choice-results
 delayed-newline new-line
 delayed-newline new-line
 </table>
@@ -149,38 +146,27 @@ delayed-newline new-line
 -----
 
 
-question-specific-popularity-message-if-empty-yes:
+possible-question-specific-messages:
+[-message-type = warning-]
+[-question-specific-message-if-empty-[-yes-or-no-empty-phrase case-[-case-number-]-question-[-question-number-]-warning-message-]-]
+[-message-type = result-type-popularity-warning-]
+[-question-specific-message-if-empty-[-yes-or-no-empty-phrase case-[-case-number-]-question-[-question-number-]-results-type-popularity-warning-message-]-]
+[-message-type = result-type-representation-warning-]
+[-question-specific-message-if-empty-[-yes-or-no-empty-phrase case-[-case-number-]-question-[-question-number-]-results-type-representation-warning-message-]-]
+[-message-type = result-type-party-warning-]
+[-question-specific-message-if-empty-[-yes-or-no-empty-phrase case-[-case-number-]-question-[-question-number-]-results-type-party-warning-message-]-]
 -----
 
 
-question-specific-representation-message-if-empty-yes:
+question-specific-message-if-empty-yes:
 -----
 
 
-question-specific-party-message-if-empty-yes:
------
-
-
-question-specific-popularity-message-if-empty-no:
+question-specific-message-if-empty-no:
 <h4> delayed-nospace
-[-parameter-case-and-question-]-results-type-popularity-warning-message
+case-[-case-number-]-question-[-question-number-]-[-message-type-]-message
 delayed-nospace </h4>
 -----
-
-
-question-specific-representation-message-if-empty-no:
-<h4> delayed-nospace
-[-parameter-case-and-question-]-results-type-representation-warning-message
-delayed-nospace </h4>
------
-
-
-question-specific-party-message-if-empty-no:
-<h4> delayed-nospace
-[-parameter-case-and-question-]-results-type-party-warning-message
-delayed-nospace </h4>
------
-
 
 
 arrangement-for-tally-table-if-ballot-count-nonzero:
@@ -200,7 +186,7 @@ delayed-newline new-line
 delayed-newline new-line
 </tr>
 delayed-newline new-line
-[-parameter-case-and-question-]-tally-table-results
+case-[-case-number-]-question-[-question-number-]-tally-table-results
 delayed-newline new-line
 </table>
 delayed-newline new-line
@@ -211,12 +197,12 @@ arrangement-for-choice-specific-results-if-ballot-count-nonzero:
 <tr>
 <td>
 delayed-nospace
-[-parameter-case-and-question-and-choice-]-choice-number
+[-choice-number-]
 delayed-nospace
 </td>
 <td>
 delayed-nospace
-[-parameter-case-and-question-and-choice-]-choicetext
+case-[-case-number-]-question-[-question-number-]-choice-[-choice-number-]-choicetext
 delayed-nospace
 </td>
 delayed-nospace
@@ -253,33 +239,27 @@ delayed-newline new-line
 
 
 calculated-value-or-not-calculated:
-[-[-parameter-case-and-question-and-choice-]-[-calculation-type-]-]
-
-
-[-calculated-value-if-empty-[-yes-or-no-empty-phrase [-parameter-case-and-question-and-choice-]-[-calculation-type-]-]-]
+[-calculated-value-name = case-[-case-number-]-question-[-question-number-]-choice-[-choice-number-]-[-calculation-type-]-]
+[-calculated-value-if-empty-[-yes-or-no-empty-phrase [-calculated-value-name-]-]-]
 -----
 
 
 calculated-value-if-empty-yes:
+
+[-calculated-value-name-]
+
 &mdash;
 -----
 
 
 calculated-value-if-empty-no:
-[-[-parameter-case-and-question-and-choice-]-[-calculation-type-]-]
-
-[-zero-one-multiple [-[-parameter-case-and-question-and-choice-]-[-calculation-type-]-]-]
-
-
-
-[-calculated-value-if-[-zero-one-multiple [-[-parameter-case-and-question-and-choice-]-[-calculation-type-]-]-]-]
-
-
+[-calculated-value = [-[-calculated-value-name-]-]-]
+[-calculated-value-if-[-zero-one-multiple [-calculated-value-]-]-]
 -----
 
 
 calculated-value-if-multiple:
-[-[-parameter-case-and-question-and-choice-]-[-calculation-type-]-]
+[-calculated-value-]
 -----
 
 
