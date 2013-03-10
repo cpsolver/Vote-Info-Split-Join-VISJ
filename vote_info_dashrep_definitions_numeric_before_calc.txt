@@ -32,7 +32,7 @@ voteinfo-code-for-end-of-all-cases
 
 begin-case:
 [-case-number = [-next-case-number-]-]
-[-auto-increment: next-case-number-]
+[-numeric-increment next-case-number-]
 [-next-question-number = 1-]
 voteinfo-code-for-case-number
 new-line
@@ -66,7 +66,7 @@ ignore-end-here
 
 begin-question:
 [-question-number = [-next-question-number-]-]
-[-auto-increment: next-question-number-]
+[-numeric-increment next-question-number-]
 [-next-choice-number = 1-]
 voteinfo-code-for-question-number
 new-line
@@ -124,7 +124,7 @@ voteinfo-code-for-request-only-plurality-results
 
 begin-choicetext:
 [-choice-number = [-next-choice-number-]-]
-[-auto-increment: next-choice-number-]
+[-numeric-increment next-choice-number-]
 ignore-begin-here
 -----
 

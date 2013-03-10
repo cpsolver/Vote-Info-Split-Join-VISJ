@@ -53,7 +53,7 @@ begin-case:
 [-phrase-to-define-inline = case-[-case-number-]-total-ballot-count-]
 [-template-to-define-phrase-inline-]
 [-clear-phrase case-[-case-number-]-list-of-question-numbers-]
-[-auto-increment next-case-number-]
+[-numeric-increment next-case-number-]
 [-next-question-number = 1 -]
 -----
 
@@ -100,7 +100,7 @@ begin-question:
 [-phrase-to-define-inline = [-case-and-question-]-question-number-]
 [-[-phrase-to-define-inline-] = [-question-number-]-]
 [-template-to-define-phrase-inline-]
-[-auto-increment next-question-number-]
+[-numeric-increment next-question-number-]
 [-next-choice-number = 1 -]
 -----
 
@@ -140,7 +140,7 @@ begin-choicetext:
 [-phrase-to-define-inline = [-case-and-question-and-choice-]-choice-number-]
 [-[-phrase-to-define-inline-] = [-choice-number-]-]
 [-template-to-define-phrase-inline-]
-[-auto-increment next-choice-number-]
+[-numeric-increment next-choice-number-]
 [-case-and-question-and-choice-]-choicetext:
 -----
 
