@@ -67,7 +67,7 @@ delayed-newline new-line
 
 
 arrangement-for-case-with-warning-message:
-[-case-heading-]
+[-arrangement-for-case-heading-]
 <p><b> delayed-nospace
 no-calculations-done-for-case
 no-space .&nbsp;
@@ -112,7 +112,7 @@ delayed-newline new-line
 case-[-case-number-]-question-[-question-number-]-choice-results
 </table>
 delayed-newline new-line
-[-tally-table-empty-[-yes-or-no-empty-phrase case-[-case-number-]-question-[-question-number-]-tally-table-results-]-]
+[-arrangement-for-tally-table-if-ballot-count-[-zero-or-nonzero [-case-[-case-number-]-total-ballot-count-]-]-]
 delayed-newline new-line
 -----
 
@@ -150,11 +150,11 @@ possible-question-specific-messages:
 [-message-type = warning-]
 [-question-specific-message-if-empty-[-yes-or-no-empty-phrase case-[-case-number-]-question-[-question-number-]-warning-message-]-]
 [-message-type = result-type-popularity-warning-]
-[-question-specific-message-if-empty-[-yes-or-no-empty-phrase case-[-case-number-]-question-[-question-number-]-results-type-popularity-warning-message-]-]
+[-question-specific-message-if-empty-[-yes-or-no-empty-phrase case-[-case-number-]-question-[-question-number-]-result-type-popularity-warning-message-]-]
 [-message-type = result-type-representation-warning-]
-[-question-specific-message-if-empty-[-yes-or-no-empty-phrase case-[-case-number-]-question-[-question-number-]-results-type-representation-warning-message-]-]
+[-question-specific-message-if-empty-[-yes-or-no-empty-phrase case-[-case-number-]-question-[-question-number-]-result-type-representation-warning-message-]-]
 [-message-type = result-type-party-warning-]
-[-question-specific-message-if-empty-[-yes-or-no-empty-phrase case-[-case-number-]-question-[-question-number-]-results-type-party-warning-message-]-]
+[-question-specific-message-if-empty-[-yes-or-no-empty-phrase case-[-case-number-]-question-[-question-number-]-result-type-party-warning-message-]-]
 -----
 
 
@@ -166,6 +166,10 @@ question-specific-message-if-empty-no:
 <h4> delayed-nospace
 case-[-case-number-]-question-[-question-number-]-[-message-type-]-message
 delayed-nospace </h4>
+-----
+
+
+arrangement-for-tally-table-if-ballot-count-zero:
 -----
 
 
@@ -190,6 +194,46 @@ case-[-case-number-]-question-[-question-number-]-tally-table-results
 delayed-newline new-line
 </table>
 delayed-newline new-line
+-----
+
+
+tally-table-first-choice-name-begin:
+<tr><td>
+-----
+
+
+tally-table-first-choice-name-end:
+</td>
+-----
+
+
+tally-table-second-choice-name-begin:
+<td>
+-----
+
+
+tally-table-second-choice-name-end:
+</td>
+-----
+
+
+tally-table-first-over-second-begin:
+<td>
+-----
+
+
+tally-table-first-over-second-end:
+</td>
+-----
+
+
+tally-table-second-over-first-begin:
+<td>
+-----
+
+
+tally-table-second-over-first-end:
+</td></tr>
 -----
 
 

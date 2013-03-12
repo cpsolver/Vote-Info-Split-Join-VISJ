@@ -107,7 +107,7 @@ handle-data-immediate-skip-case:
 
 handle-data-state-question-number:
 [-question-number = [-storage-input-line-from-file-]-]
-[-ranking-level = 1-]
+[-ranking-level = 1 -]
 [-ranking-type = none-]
 [-sequence-or-levels = levels-]
 [-sequence-number = 1 -]
@@ -142,6 +142,16 @@ handle-choice-for-sequence:
 
 
 handle-data-state-ranking-level:
+[-[-if-first-word-is-no-then-keep-remainder-else-empty [-yes-or-no-same-two-phrase-definitions ranking-type word-none-] handle-ranking-level-of-known-type-]-]
+-----
+
+
+word-none:
+none
+-----
+
+
+handle-ranking-level-of-known-type:
 [-ranking-level = [-storage-input-line-from-file-]-]
 [-new-phrase-name = case-[-case-number-]-question-[-question-number-]-choice-[-choice-number-]-[-ranking-type-]-ranking-level-]
 [-[-new-phrase-name-] = [-ranking-level-]-]
@@ -197,64 +207,6 @@ handle-data-state-plurality-count:
 [-new-phrase-name = case-[-case-number-]-question-[-question-number-]-choice-[-choice-number-]-plurality-count-]
 [-[-new-phrase-name-] = [-plurality-count-]-]
 [-append-from-phrase-to-phrase new-phrase-name list-of-new-data-based-phrase-names-]
------
-
-
-handle-data-immediate-start-of-tally-table-results:
-[-result-table-name = case-[-case-number-]-question-[-question-number-]-tally-table-results-]
-[-append-from-phrase-to-phrase result-table-name list-of-new-data-based-phrase-names-]
-[-clear-phrase first-choice-]
-[-clear-phrase second-choice-]
------
-
-
-handle-data-immediate-end-of-tally-table-results:
-[-clear-phrase result-table-name-]
------
-
-
-handle-data-state-tally-first-over-second:
-[-first-over-second = [-storage-input-line-from-file-]-]
------
-
-
-handle-data-state-tally-second-over-first:
-[-second-over-first = [-storage-input-line-from-file-]-]
-[-case-[-case-number-]-question-[-question-number-]-tally-row-[-tally-table-row-number-]-first-over-second = [-first-over-second-]-]
-[-case-[-case-number-]-question-[-question-number-]-tally-row-[-tally-table-row-number-]-second-over-first = [-second-over-first-]-]
-[-expand-phrase-to-phrase template-tally-table-one-row tally-table-row-]
-[-append-from-phrase-to-phrase tally-table-row [-result-table-name-]-]
-[-numeric-increment tally-table-row-number-]
------
-
-
-template-tally-table-one-row:
-delayed-nospace
-tally-table-first-choice-name-begin
-delayed-nospace
-case-[-case-number-]-question-[-question-number-]-choice-[-first-choice-]-choicetext
-delayed-nospace
-tally-table-first-choice-name-end
-delayed-nospace
-tally-table-second-choice-name-begin
-delayed-nospace
-case-[-case-number-]-question-[-question-number-]-choice-[-second-choice-]-choicetext
-delayed-nospace
-tally-table-second-choice-name-end
-delayed-nospace
-tally-table-first-over-second-begin
-delayed-nospace
-case-[-case-number-]-question-[-question-number-]-tally-row-[-tally-table-row-number-]-first-over-second
-delayed-nospace
-tally-table-first-over-second-end
-delayed-nospace
-tally-table-second-over-first-begin
-delayed-nospace
-case-[-case-number-]-question-[-question-number-]-tally-row-[-tally-table-row-number-]-second-over-first
-delayed-nospace
-tally-table-second-over-first-end
-delayed-nospace
-delayed-newline
 -----
 
 

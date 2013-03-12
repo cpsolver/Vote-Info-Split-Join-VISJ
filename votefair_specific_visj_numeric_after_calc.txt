@@ -41,13 +41,6 @@ handle-data-immediate-end-of-plurality-results:
 -----
 
 
-handle-data-state-tally-second-over-first:
-[-second-over-first = [-storage-input-line-from-file-]-]
-[-table-row = delayed-nospace <td>[-first-choice-]</td><td>[-second-choice-]</td><td>[-first-over-second-]</td><td>[-second-over-first-]</td> delayed-newline-]
-[-append-from-phrase-to-phrase table-row [-result-table-name-]-]
------
-
-
 handle-data-immediate-start-of-votefair-popularity-ranking-levels-results:
 [-ranking-type = popularity-]
 [-sequence-or-levels = levels-]
@@ -121,6 +114,63 @@ handle-data-immediate-start-of-votefair-party-ranking-sequence-results:
 
 handle-data-immediate-end-of-votefair-party-ranking-sequence-results:
 [-ranking-type = none-]
+-----
+
+
+handle-data-immediate-start-of-tally-table-results:
+[-result-table-name = case-[-case-number-]-question-[-question-number-]-tally-table-results-]
+[-append-from-phrase-to-phrase result-table-name list-of-new-data-based-phrase-names-]
+[-clear-phrase first-choice-]
+[-clear-phrase second-choice-]
+-----
+
+
+handle-data-immediate-end-of-tally-table-results:
+[-clear-phrase result-table-name-]
+-----
+
+
+handle-data-state-tally-first-over-second:
+[-first-over-second = [-storage-input-line-from-file-]-]
+-----
+
+
+handle-data-state-tally-second-over-first:
+[-second-over-first = [-storage-input-line-from-file-]-]
+[-case-[-case-number-]-question-[-question-number-]-tally-choice-[-first-choice-]-over-choice-[-second-choice-] = [-first-over-second-]-]
+[-case-[-case-number-]-question-[-question-number-]-tally-choice-[-second-choice-]-over-choice-[-first-choice-] = [-second-over-first-]-]
+[-expand-phrase-to-phrase template-tally-table-one-row tally-table-row-]
+[-append-from-phrase-to-phrase tally-table-row [-result-table-name-]-]
+-----
+
+
+template-tally-table-one-row:
+delayed-nospace
+tally-table-first-choice-name-begin
+delayed-nospace
+case-[-case-number-]-question-[-question-number-]-choice-[-first-choice-]-choicetext
+delayed-nospace
+tally-table-first-choice-name-end
+delayed-nospace
+tally-table-second-choice-name-begin
+delayed-nospace
+case-[-case-number-]-question-[-question-number-]-choice-[-second-choice-]-choicetext
+delayed-nospace
+tally-table-second-choice-name-end
+delayed-nospace
+tally-table-first-over-second-begin
+delayed-nospace
+case-[-case-number-]-question-[-question-number-]-tally-choice-[-first-choice-]-over-choice-[-second-choice-]
+delayed-nospace
+tally-table-first-over-second-end
+delayed-nospace
+tally-table-second-over-first-begin
+delayed-nospace
+case-[-case-number-]-question-[-question-number-]-tally-choice-[-second-choice-]-over-choice-[-first-choice-]
+delayed-nospace
+tally-table-second-over-first-end
+delayed-nospace
+delayed-newline
 -----
 
 
