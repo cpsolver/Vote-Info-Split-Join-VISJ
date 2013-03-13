@@ -191,7 +191,6 @@ delayed-newline new-line
 </tr>
 delayed-newline new-line
 case-[-case-number-]-question-[-question-number-]-tally-table-results
-delayed-newline new-line
 </table>
 delayed-newline new-line
 -----
@@ -252,29 +251,29 @@ delayed-nospace
 delayed-nospace
 <td align="right">
 delayed-nospace
-[-calculation-type = plurality-count-]
-[-calculated-value-or-not-calculated-]
+[-ranking-type = plurality-count-]
+[-calculated-value-generic-]
 delayed-nospace
 </td>
 delayed-newline new-line
 <td align="right">
 delayed-nospace
-[-calculation-type = popularity-rank-]
-[-calculated-value-or-not-calculated-]
+[-ranking-type = popularity-rank-]
+[-calculated-value-generic-]
 delayed-nospace
 </td>
 delayed-newline new-line
 <td align="right">
 delayed-nospace
-[-calculation-type = representation-rank-]
-[-calculated-value-or-not-calculated-]
+[-ranking-type = representation-rank-]
+[-calculated-value-generic-]
 delayed-nospace
 </td>
 delayed-newline new-line
 <td align="right">
 delayed-nospace
-[-calculation-type = party-rank-]
-[-calculated-value-or-not-calculated-]
+[-ranking-type = party-rank-]
+[-calculated-value-generic-]
 delayed-nospace
 </td>
 </tr>
@@ -282,16 +281,13 @@ delayed-newline new-line
 -----
 
 
-calculated-value-or-not-calculated:
-[-calculated-value-name = case-[-case-number-]-question-[-question-number-]-choice-[-choice-number-]-[-calculation-type-]-]
+calculated-value-generic:
+[-calculated-value-name = case-[-case-number-]-question-[-question-number-]-choice-[-choice-number-]-[-ranking-type-]-]
 [-calculated-value-if-empty-[-yes-or-no-empty-phrase [-calculated-value-name-]-]-]
 -----
 
 
 calculated-value-if-empty-yes:
-
-[-calculated-value-name-]
-
 &mdash;
 -----
 

@@ -94,14 +94,12 @@ handle-data-state-case-number:
 
 
 extra-actions-at-beginning-of-case:
+[-plurality-results-missing = yes-]
 -----
 
 
 handle-data-immediate-skip-case:
-[-new-phrase-name = skip-case-[-case-number-]-]
-[-[-new-phrase-name-] = skip-case-]
-[-append-from-phrase-to-phrase new-phrase-name list-of-new-data-based-phrase-names-]
-[-clear-phrase data-state-]
+[-ok-not-ok-for-case-[-case-number-] = not-ok-]
 -----
 
 
@@ -112,14 +110,6 @@ handle-data-state-question-number:
 [-sequence-or-levels = levels-]
 [-sequence-number = 1 -]
 [-tally-table-row-number = 1 -]
------
-
-
-handle-data-state-skip-question:
-[-new-phrase-name = skip-case-[-case-number-]-question-[-question-number-]-]
-[-[-new-phrase-name-] = not-ok-]
-[-append-from-phrase-to-phrase new-phrase-name list-of-new-data-based-phrase-names-]
-[-clear-phrase data-state-]
 -----
 
 
@@ -134,7 +124,7 @@ handle-choice-for-levels:
 
 
 handle-choice-for-sequence:
-[-new-phrase-name = case-[-case-number-]-question-[-question-number-]-choice-[-choice-number-]-[-ranking-type-]-sequence-number-]
+[-new-phrase-name = case-[-case-number-]-question-[-question-number-]-choice-[-choice-number-]-[-ranking-type-]-]
 [-[-new-phrase-name-] = [-sequence-number-]-]
 [-append-from-phrase-to-phrase new-phrase-name list-of-new-data-based-phrase-names-]
 [-numeric-increment sequence-number-]
@@ -153,7 +143,7 @@ none
 
 handle-ranking-level-of-known-type:
 [-ranking-level = [-storage-input-line-from-file-]-]
-[-new-phrase-name = case-[-case-number-]-question-[-question-number-]-choice-[-choice-number-]-[-ranking-type-]-ranking-level-]
+[-new-phrase-name = case-[-case-number-]-question-[-question-number-]-choice-[-choice-number-]-[-ranking-type-]-]
 [-[-new-phrase-name-] = [-ranking-level-]-]
 [-append-from-phrase-to-phrase new-phrase-name list-of-new-data-based-phrase-names-]
 -----
@@ -192,8 +182,9 @@ handle-data-state-total-ballot-count:
 
 
 handle-data-immediate-start-of-plurality-results:
-[-ranking-type = plurality-]
+[-ranking-type = plurality-count-]
 [-sequence-or-levels = levels-]
+[-plurality-results-missing = no-]
 -----
 
 

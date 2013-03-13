@@ -206,39 +206,6 @@ delayed-nospace
 </ballotcount>
 delayed-newline
 new-line
-
-[-arrangement-for-tally-table-if-ballot-count-[-zero-or-nonzero [-case-[-case-number-]-total-ballot-count-]-]-]
------
-
-
-
-arrangement-for-tally-table-if-ballot-count-nonzero:
-
-<tallytable>
-delayed-newline
-new-line
-delayed-nospace
-[-case-and-question-]-tally-table-results
-</tallytable>
-delayed-newline
-new-line
-delayed-newline
-new-line
------
-
-
-
-arrangement-for-tally-table-if-ballot-count-zero:
-
-<noballots>
-delayed-nospace
-words-no-ballots-for-case
-delayed-nospace
-</noballots>
-delayed-newline
-new-line
-delayed-newline
-new-line
 -----
 
 

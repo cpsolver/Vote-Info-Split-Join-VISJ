@@ -27,22 +27,8 @@ extra-actions-at-beginning-of-case:
 -----
 
 
-handle-data-immediate-start-of-plurality-results:
-[-ranking-type = plurality-]
-[-sequence-or-levels = levels-]
-[-plurality-results-missing = no-]
-[-clear-phrase do-nothing-but-not-empty-]
------
-
-
-handle-data-immediate-end-of-plurality-results:
-[-ranking-type = none-]
-[-clear-phrase do-nothing-but-not-empty-]
------
-
-
 handle-data-immediate-start-of-votefair-popularity-ranking-levels-results:
-[-ranking-type = popularity-]
+[-ranking-type = popularity-rank-]
 [-sequence-or-levels = levels-]
 [-popularity-results-missing = no-]
 -----
@@ -55,7 +41,7 @@ handle-data-immediate-end-of-votefair-popularity-ranking-levels-results:
 
 handle-data-immediate-start-of-votefair-popularity-ranking-sequence-results:
 [-ranking-level = 1 -]
-[-ranking-type = popularity-]
+[-ranking-type = popularity-sequence-]
 [-sequence-or-levels = sequence-]
 [-sequence-number = 1 -]
 [-popularity-results-missing = no-]
@@ -68,7 +54,7 @@ handle-data-immediate-end-of-votefair-popularity-ranking-sequence-results:
 
 
 handle-data-immediate-start-of-votefair-representation-ranking-levels-results:
-[-ranking-type = representation-]
+[-ranking-type = representation-rank-]
 [-sequence-or-levels = levels-]
 [-representation-results-missing = no-]
 -----
@@ -80,7 +66,7 @@ handle-data-immediate-end-of-votefair-representation-ranking-levels-results:
 
 
 handle-data-immediate-start-of-votefair-representation-ranking-sequence-results:
-[-ranking-type = representation-]
+[-ranking-type = representation-sequence-]
 [-sequence-or-levels = sequence-]
 [-sequence-number = 1-]
 [-representation-results-missing = no-]
@@ -93,7 +79,7 @@ handle-data-immediate-end-of-votefair-representation-ranking-sequence-results:
 
 
 handle-data-immediate-start-of-votefair-party-ranking-levels-results:
-[-ranking-type = party-]
+[-ranking-type = party-rank-]
 [-sequence-or-levels = levels-]
 [-party-results-missing = no-]
 -----
@@ -105,7 +91,7 @@ handle-data-immediate-end-of-votefair-party-ranking-levels-results:
 
 
 handle-data-immediate-start-of-votefair-party-ranking-sequence-results:
-[-ranking-type = party-]
+[-ranking-type = party-sequence-]
 [-sequence-or-levels = sequence-]
 [-sequence-number = 1-]
 [-party-results-missing = no-]
