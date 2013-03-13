@@ -169,6 +169,51 @@ delayed-nospace </h4>
 -----
 
 
+arrangement-for-choice-specific-results-if-ballot-count-nonzero:
+<tr>
+<td>
+delayed-nospace
+[-choice-number-]
+delayed-nospace
+</td>
+<td>
+delayed-nospace
+case-[-case-number-]-question-[-question-number-]-choice-[-choice-number-]-choicetext
+delayed-nospace
+</td>
+delayed-nospace
+<td align="right">
+delayed-nospace
+[-ranking-type = plurality-count-]
+[-calculated-value-generic-]
+delayed-nospace
+</td>
+delayed-newline new-line
+<td align="right">
+delayed-nospace
+[-ranking-type = popularity-rank-]
+[-calculated-value-generic-]
+delayed-nospace
+</td>
+delayed-newline new-line
+<td align="right">
+delayed-nospace
+[-ranking-type = representation-rank-]
+[-calculated-value-generic-]
+delayed-nospace
+</td>
+delayed-newline new-line
+<td align="right">
+delayed-nospace
+[-ranking-type = party-rank-]
+[-calculated-value-generic-]
+delayed-nospace
+</td>
+</tr>
+delayed-newline new-line
+-----
+
+
 arrangement-for-tally-table-if-ballot-count-zero:
 -----
 
@@ -233,51 +278,6 @@ tally-table-second-over-first-begin:
 
 tally-table-second-over-first-end:
 </td></tr>
------
-
-
-arrangement-for-choice-specific-results-if-ballot-count-nonzero:
-<tr>
-<td>
-delayed-nospace
-[-choice-number-]
-delayed-nospace
-</td>
-<td>
-delayed-nospace
-case-[-case-number-]-question-[-question-number-]-choice-[-choice-number-]-choicetext
-delayed-nospace
-</td>
-delayed-nospace
-<td align="right">
-delayed-nospace
-[-ranking-type = plurality-count-]
-[-calculated-value-generic-]
-delayed-nospace
-</td>
-delayed-newline new-line
-<td align="right">
-delayed-nospace
-[-ranking-type = popularity-rank-]
-[-calculated-value-generic-]
-delayed-nospace
-</td>
-delayed-newline new-line
-<td align="right">
-delayed-nospace
-[-ranking-type = representation-rank-]
-[-calculated-value-generic-]
-delayed-nospace
-</td>
-delayed-newline new-line
-<td align="right">
-delayed-nospace
-[-ranking-type = party-rank-]
-[-calculated-value-generic-]
-delayed-nospace
-</td>
-</tr>
-delayed-newline new-line
 -----
 
 
