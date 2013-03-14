@@ -1,21 +1,14 @@
-*-----  Dashrep language -- phrase definitions  -----*
+*-----  Dashrep language (see www.Dashrep.org for details)  -----*
 
 *------------------------------------------------------------
-See www.Dashrep.org for details about the Dashrep language.
-------------------------------------------------------------*
-
-
-*------------------------------------------------------------
-Vote-Info-Split-Join, Dashrep definitions for result portion.
+    Vote-Info-Split-Join
+        Version 2.0
+    Numeric-related, after calculations
+        VoteFair-specific
 ------------------------------------------------------------*
 
 
 dashrep-definitions-begin
-
-
-*------------------------------------------------------------
-VoteFair-specific definitions
-------------------------------------------------------------*
 
 
 
