@@ -1,5 +1,7 @@
 #!/bin/bash
 
+# Version 3.0
+
 perl votefair_ranking_do.pl < input_empty_file.txt > output_empty_results.txt
 
 perl dashrep_do_translation.pl < votefair_visj_split.txt > output_split_messages.txt
