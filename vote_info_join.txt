@@ -1,14 +1,10 @@
-*-----  Dashrep language -- top-level actions  -----*
+*-----  Dashrep language (see www.Dashrep.org for details)  -----*
 
 *------------------------------------------------------------
-See www.Dashrep.org for details about the Dashrep language.
+    Vote-Info-Split-Join
+        Version 2.0
+    Join
 ------------------------------------------------------------*
-
-
-*------------------------------------------------------------
-Vote-Info-Split-Join, Dashrep top-level actions for join
-------------------------------------------------------------*
-
 
 
 *------------------------------------------------------------

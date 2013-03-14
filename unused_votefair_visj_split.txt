@@ -1,9 +1,22 @@
-*-----  Dashrep language (see www.Dashrep.org for details)  -----*
+*-----  Dashrep language -- top-level actions  -----*
 
 *------------------------------------------------------------
-    Vote-Info-Split-Join
-        Version 2.0
-    Split
+See www.Dashrep.org for details about the Dashrep language.
+------------------------------------------------------------*
+
+
+*------------------------------------------------------------
+Vote-Info-Split-Join, Dashrep top-level actions for split
+------------------------------------------------------------*
+
+
+*------------------------------------------------------------
+Version: 2.00  (2013-February-13)
+
+Requires:
+    version 3.00 of Language::Dashrep
+    version 5.01 of Voting::VoteFairRanking
+
 ------------------------------------------------------------*
 
 
@@ -21,29 +34,31 @@ numeric-only data):
 
 *------------------------------------------------------------
 Step 1:
-Convert the XML (or EML) tags into Dashrep phrases.
+Convert the XML (or EML) tags into Dashrep phrases,
+and immediately convert the needed phrases into meaningful
+phrases, and ignore the unneeded XML-based phrases.
 ------------------------------------------------------------*
 
 [-dashrep-first-xml-tag-name = xml-]
-[-dashrep-xml-yes-ignore-if-no-tag-replacement = yes-]
 get-definitions-from-file  vote_info_dashrep_definitions_prefilter.txt
-linewise-translate-xml-tags-in-file-to-dashrep-phrases-in-file  input_vote_info_truncated.txt  output_visj_step_01_data_prefiltered.txt
+[-dashrep-xml-yes-ignore-if-no-tag-replacement = yes-]
+linewise-translate-xml-tags-in-file-to-dashrep-phrases-in-file  input_vote_info_sample_data.txt  output_visj_step_01_data_xml_based_phrases.txt
+
+write-all-dashrep-definitions-to-file  output_debug_definitions_after_step_01.txt
 
 clear-all-dashrep-phrases
 
 
 *------------------------------------------------------------
 Step 2:
-No longer needed ...
+No longer needed ....
 ------------------------------------------------------------*
-
 
 
 *------------------------------------------------------------
 Step 3:
-No longer needed ...
+No longer needed ....
 ------------------------------------------------------------*
-
 
 
 *------------------------------------------------------------
@@ -54,7 +69,10 @@ case names, question names, and choice names).
 
 get-definitions-from-file  vote_info_dashrep_definitions_text_before_calc.txt
 get-definitions-from-file  output_from_vote_calc_sw_visj_codes.txt
-linewise-translate-from-file-to-file  output_visj_step_01_data_prefiltered.txt  output_visj_step_04_definitions_text.txt
+linewise-translate-from-file-to-file  output_visj_step_01_data_xml_based_phrases.txt  output_visj_step_04a_definitions_text_part_1.txt
+
+write-dashrep-definitions-listed-in-phrase-to-file  list-of-lists-to-export  output_visj_step_04b_definitions_text_part_2.txt
+
 write-all-dashrep-definitions-to-file  output_debug_definitions_after_step_04.txt
 
 clear-all-dashrep-phrases
@@ -68,8 +86,9 @@ supplied to the vote-counting software).
 ------------------------------------------------------------*
 
 get-definitions-from-file  vote_info_dashrep_definitions_numeric_before_calc.txt
+get-definitions-from-file  votefair_specific_visj_numeric_before_calc.txt
 get-definitions-from-file  output_from_vote_calc_sw_visj_codes.txt
-linewise-translate-from-file-to-file  output_visj_step_01_data_prefiltered.txt  output_visj_step_05_data_numeric_only.txt
+linewise-translate-from-file-to-file  output_visj_step_01_data_xml_based_phrases.txt  output_visj_step_05_data_numeric_only.txt
 
 write-all-dashrep-definitions-to-file  output_debug_definitions_after_step_05.txt
 
@@ -104,7 +123,7 @@ of the book titled The Creative Problem Solver's Toolbox.
 
 COPYRIGHT & LICENSE
 
-Copyright 2011 & 2013 Richard Fobes at www.Dashrep.org, all rights reserved.
+Copyright 2011 Richard Fobes at www.Dashrep.org, all rights reserved.
 
 You can redistribute and/or modify this software
 under the Perl Artistic license, a copy
