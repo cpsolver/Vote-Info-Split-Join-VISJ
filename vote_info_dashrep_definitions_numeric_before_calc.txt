@@ -1,13 +1,9 @@
-*-----  Dashrep language -- phrase definitions  -----*
+*-----  Dashrep language (see www.Dashrep.org for details)  -----*
 
 *------------------------------------------------------------
-See www.Dashrep.org for details about the Dashrep language.
-------------------------------------------------------------*
-
-
-*------------------------------------------------------------
-Vote-Info-Split-Join
-Dashrep definitions for numeric data, before calculations.
+    Vote-Info-Split-Join
+        Version 2.0
+    Numeric-related, before calculations
 ------------------------------------------------------------*
 
 
@@ -32,8 +28,7 @@ voteinfo-code-for-end-of-all-cases
 
 begin-case:
 [-case-number = [-next-case-number-]-]
-[-append-from-phrase-to-phrase: case-number list-of-cases-]
-[-auto-increment: next-case-number-]
+[-numeric-increment next-case-number-]
 [-next-question-number = 1-]
 voteinfo-code-for-case-number
 new-line
@@ -67,7 +62,7 @@ ignore-end-here
 
 begin-question:
 [-question-number = [-next-question-number-]-]
-[-auto-increment: next-question-number-]
+[-numeric-increment next-question-number-]
 [-next-choice-number = 1-]
 voteinfo-code-for-question-number
 new-line
@@ -79,14 +74,6 @@ end-question:
 voteinfo-code-for-number-of-choices
 new-line
 [-choice-number-]
------
-
-
-begin-question-number:
------
-
-
-end-question-number:
 -----
 
 
@@ -133,7 +120,7 @@ voteinfo-code-for-request-only-plurality-results
 
 begin-choicetext:
 [-choice-number = [-next-choice-number-]-]
-[-auto-increment: next-choice-number-]
+[-numeric-increment next-choice-number-]
 ignore-begin-here
 -----
 
@@ -226,7 +213,7 @@ of the book titled The Creative Problem Solver's Toolbox.
 
 COPYRIGHT & LICENSE
 
-Copyright 2011 Richard Fobes at www.Dashrep.org, all rights reserved.
+Copyright 2011 & 2013 Richard Fobes at www.Dashrep.org, all rights reserved.
 
 You can redistribute and/or modify this software
 under the Perl Artistic license, a copy

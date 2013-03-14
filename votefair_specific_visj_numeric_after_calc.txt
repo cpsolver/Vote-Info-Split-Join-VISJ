@@ -1,21 +1,14 @@
-*-----  Dashrep language -- phrase definitions  -----*
+*-----  Dashrep language (see www.Dashrep.org for details)  -----*
 
 *------------------------------------------------------------
-See www.Dashrep.org for details about the Dashrep language.
-------------------------------------------------------------*
-
-
-*------------------------------------------------------------
-Vote-Info-Split-Join, Dashrep definitions for result portion.
+    Vote-Info-Split-Join
+        Version 2.0
+    Numeric-related, after calculations
+        VoteFair-specific
 ------------------------------------------------------------*
 
 
 dashrep-definitions-begin
-
-
-*------------------------------------------------------------
-VoteFair-specific definitions
-------------------------------------------------------------*
 
 
 
@@ -27,314 +20,135 @@ extra-actions-at-beginning-of-case:
 -----
 
 
-output-voteinfo-code-for-skip-case:
-ok-not-ok-for-case-[-case-number-]:
-not-ok
-new-line
-[-dashed-line-]
-new-line
------
-
-
-
-
-output-voteinfo-code-for-skip-question:
-ok-not-ok-for-case-[-case-number-]-question-[-question-number-]:
-not-ok
-new-line
-[-dashed-line-]
-new-line
------
-
-
-
-
-output-voteinfo-code-for-start-of-votefair-popularity-ranking-levels-results:
-[-ranking-type = popularity-]
+handle-data-immediate-start-of-votefair-popularity-ranking-levels-results:
+[-ranking-type = popularity-rank-]
 [-sequence-or-levels = levels-]
 [-popularity-results-missing = no-]
 -----
 
 
-output-voteinfo-code-for-end-of-votefair-popularity-ranking-levels-results:
+handle-data-immediate-end-of-votefair-popularity-ranking-levels-results:
 [-ranking-type = none-]
 -----
 
 
-output-voteinfo-code-for-start-of-votefair-popularity-ranking-sequence-results:
-[-ranking-type = popularity-]
+handle-data-immediate-start-of-votefair-popularity-ranking-sequence-results:
+[-ranking-level = 1 -]
+[-ranking-type = popularity-sequence-]
 [-sequence-or-levels = sequence-]
-[-sequence-number = 1-]
+[-sequence-number = 1 -]
 [-popularity-results-missing = no-]
 -----
 
 
-output-voteinfo-code-for-end-of-votefair-popularity-ranking-sequence-results:
+handle-data-immediate-end-of-votefair-popularity-ranking-sequence-results:
 [-ranking-type = none-]
 -----
 
 
-
-
-
-output-voteinfo-code-for-start-of-votefair-representation-ranking-levels-results:
-[-ranking-type = representation-]
+handle-data-immediate-start-of-votefair-representation-ranking-levels-results:
+[-ranking-type = representation-rank-]
 [-sequence-or-levels = levels-]
 [-representation-results-missing = no-]
 -----
 
 
-output-voteinfo-code-for-end-of-votefair-representation-ranking-levels-results:
+handle-data-immediate-end-of-votefair-representation-ranking-levels-results:
 [-ranking-type = none-]
 -----
 
 
-output-voteinfo-code-for-start-of-votefair-representation-ranking-sequence-results:
-[-ranking-type = representation-]
+handle-data-immediate-start-of-votefair-representation-ranking-sequence-results:
+[-ranking-type = representation-sequence-]
 [-sequence-or-levels = sequence-]
 [-sequence-number = 1-]
 [-representation-results-missing = no-]
 -----
 
 
-output-voteinfo-code-for-end-of-votefair-representation-ranking-sequence-results:
+handle-data-immediate-end-of-votefair-representation-ranking-sequence-results:
 [-ranking-type = none-]
 -----
 
 
-
-
-
-output-voteinfo-code-for-start-of-votefair-party-ranking-levels-results:
-[-ranking-type = party-]
+handle-data-immediate-start-of-votefair-party-ranking-levels-results:
+[-ranking-type = party-rank-]
 [-sequence-or-levels = levels-]
 [-party-results-missing = no-]
 -----
 
 
-output-voteinfo-code-for-end-of-votefair-party-ranking-levels-results:
+handle-data-immediate-end-of-votefair-party-ranking-levels-results:
 [-ranking-type = none-]
 -----
 
 
-output-voteinfo-code-for-start-of-votefair-party-ranking-sequence-results:
-[-ranking-type = party-]
+handle-data-immediate-start-of-votefair-party-ranking-sequence-results:
+[-ranking-type = party-sequence-]
 [-sequence-or-levels = sequence-]
 [-sequence-number = 1-]
 [-party-results-missing = no-]
 -----
 
 
-output-voteinfo-code-for-end-of-votefair-party-ranking-sequence-results:
+handle-data-immediate-end-of-votefair-party-ranking-sequence-results:
 [-ranking-type = none-]
 -----
 
 
-
-
-
-output-voteinfo-code-for-start-of-plurality-results:
-[-ranking-type = plurality-]
-[-sequence-or-levels = levels-]
-[-plurality-results-missing = no-]
+handle-data-immediate-start-of-tally-table-results:
+[-result-table-name = case-[-case-number-]-question-[-question-number-]-tally-table-results-]
+[-append-from-phrase-to-phrase result-table-name list-of-new-data-based-phrase-names-]
+[-clear-phrase first-choice-]
+[-clear-phrase second-choice-]
 -----
 
 
-
-
-
-
-output-voteinfo-code-for-ranking-level:
-[-dashrep-tracking-on-or-off = off-]
-[-insert-phrase-with-brackets-after-next-top-line  results-line-after-ranking-level-for-[-ranking-type-]-ranking-]
-capture-begin-here
+handle-data-immediate-end-of-tally-table-results:
+[-clear-phrase result-table-name-]
 -----
 
 
-results-line-after-ranking-level-for-popularity-ranking:
-capture-end-here
-[-results-line-after-ranking-level-for-levels-ranking-]
+handle-data-state-tally-first-over-second:
+[-first-over-second = [-storage-input-line-from-file-]-]
 -----
 
 
-results-line-after-ranking-level-for-representation-ranking:
-capture-end-here
-[-results-line-after-ranking-level-for-levels-ranking-]
+handle-data-state-tally-second-over-first:
+[-second-over-first = [-storage-input-line-from-file-]-]
+[-case-[-case-number-]-question-[-question-number-]-tally-choice-[-first-choice-]-over-choice-[-second-choice-] = [-first-over-second-]-]
+[-case-[-case-number-]-question-[-question-number-]-tally-choice-[-second-choice-]-over-choice-[-first-choice-] = [-second-over-first-]-]
+[-expand-phrase-to-phrase template-tally-table-one-row tally-table-row-]
+[-append-from-phrase-to-phrase tally-table-row [-result-table-name-]-]
 -----
 
 
-results-line-after-ranking-level-for-party-ranking:
-capture-end-here
-[-results-line-after-ranking-level-for-levels-ranking-]
------
-
-
-results-line-after-ranking-level-for-plurality-ranking:
-capture-end-here
-[-results-line-after-ranking-level-for-levels-ranking-]
------
-
-
-results-line-after-ranking-level-for-levels-ranking:
-[-ranking-level = [-captured-text-]-]
-no-space
-case-[-case-number-]-question-[-question-number-]-choice-[-choice-number-]-[-ranking-type-]-rank:
-new-line
-[-ranking-level-]
-new-line
-[-dashed-line-]
------
-
-
-
-
-
-output-voteinfo-code-for-choice:
-[-insert-phrase-with-brackets-after-next-top-line  results-line-after-choice-number-for-[-ranking-type-]-[-sequence-or-levels-]-ranking-]
-capture-begin-here
------
-
-
-results-line-after-choice-number-for-popularity-levels-ranking:
-capture-end-here
-[-choice-number = [-captured-text-]-]
------
-
-
-results-line-after-choice-number-for-representation-levels-ranking:
-capture-end-here
-[-choice-number = [-captured-text-]-]
------
-
-
-results-line-after-choice-number-for-party-levels-ranking:
-capture-end-here
-[-choice-number = [-captured-text-]-]
------
-
-
-results-line-after-choice-number-for-plurality-levels-ranking:
-capture-end-here
-[-choice-number = [-captured-text-]-]
------
-
-
-results-line-after-choice-number-for-popularity-sequence-ranking:
-capture-end-here
-[-results-line-after-choice-number-for-sequence-ranking-]
------
-
-
-results-line-after-choice-number-for-representation-sequence-ranking:
-capture-end-here
-[-results-line-after-choice-number-for-sequence-ranking-]
------
-
-
-results-line-after-choice-number-for-party-sequence-ranking:
-capture-end-here
-[-results-line-after-choice-number-for-sequence-ranking-]
------
-
-
-results-line-after-choice-number-for-sequence-ranking:
-[-choice-number = [-captured-text-]-]
-no-space
-case-[-case-number-]-question-[-question-number-]-choice-at-[-ranking-type-]-sequence-[-sequence-number-]-is:
-new-line
-[-choice-number-]
-new-line
-[-dashed-line-]
-[-list-item = case-[-case-number-]-question-[-question-number-]-sequence-[-sequence-number-]-[-ranking-type-]-rank-]
-[-append-from-phrase-to-phrase:  list-item  case-[-case-number-]-question-[-question-number-]-list-of-sequence-results-]
-[-auto-increment: sequence-number-]
------
-
-
-output-voteinfo-code-for-next-ranking-level:
------
-
-
-output-voteinfo-code-for-tie:
------
-
-
-output-voteinfo-code-for-early-end-of-ranking:
------
-
-
-
-output-voteinfo-code-for-total-ballot-count:
-[-insert-phrase-with-brackets-after-next-top-line  results-line-after-total-ballot-count-]
-capture-begin-here
------
-
-
-results-line-after-total-ballot-count:
-capture-end-here
-[-total-ballot-count = [-captured-text-]-]
-no-space
-case-[-case-number-]-ballot-count:
-new-line
-[-total-ballot-count-]
-new-line
-[-dashed-line-]
-new-line
------
-
-
-
-results-line-after-first-choice:
-capture-end-here
-[-first-choice = [-captured-text-]-]
-<tr>
-delayed-newline
-<td>
+template-tally-table-one-row:
+delayed-nospace
+tally-table-first-choice-name-begin
 delayed-nospace
 case-[-case-number-]-question-[-question-number-]-choice-[-first-choice-]-choicetext
 delayed-nospace
-</td>
+tally-table-first-choice-name-end
 delayed-nospace
------
-
-
-results-line-after-second-choice:
-capture-end-here
-[-second-choice = [-captured-text-]-]
-delayed-nospace
-<td>
+tally-table-second-choice-name-begin
 delayed-nospace
 case-[-case-number-]-question-[-question-number-]-choice-[-second-choice-]-choicetext
 delayed-nospace
-</td>
+tally-table-second-choice-name-end
 delayed-nospace
------
-
-
-results-line-after-tally-first-over-second:
-capture-end-here
-[-first-over-second = [-captured-text-]-]
+tally-table-first-over-second-begin
 delayed-nospace
-<td>
+case-[-case-number-]-question-[-question-number-]-tally-choice-[-first-choice-]-over-choice-[-second-choice-]
 delayed-nospace
-[-first-over-second-]
+tally-table-first-over-second-end
 delayed-nospace
-</td>
+tally-table-second-over-first-begin
 delayed-nospace
------
-
-
-results-line-after-tally-second-over-first:
-capture-end-here
-[-second-over-first = [-captured-text-]-]
+case-[-case-number-]-question-[-question-number-]-tally-choice-[-second-choice-]-over-choice-[-first-choice-]
 delayed-nospace
-<td>
+tally-table-second-over-first-end
 delayed-nospace
-[-second-over-first-]
-delayed-nospace
-</td>
-delayed-newline
-</tr>
 delayed-newline
 -----
 
@@ -363,7 +177,7 @@ of the book titled The Creative Problem Solver's Toolbox.
 
 COPYRIGHT & LICENSE
 
-Copyright 2011 Richard Fobes at www.Dashrep.org, all rights reserved.
+Copyright 2011 and 2013 Richard Fobes at www.Dashrep.org, all rights reserved.
 
 You can redistribute and/or modify this software
 under the Perl Artistic license, a copy

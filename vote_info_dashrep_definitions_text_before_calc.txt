@@ -1,13 +1,9 @@
-*-----  Dashrep language -- phrase definitions  -----*
+*-----  Dashrep language (see www.Dashrep.org for details)  -----*
 
 *------------------------------------------------------------
-See www.Dashrep.org for details about the Dashrep language.
-------------------------------------------------------------*
-
-
-*------------------------------------------------------------
-Vote-Info-Split-Join
-Dashrep definitions for text, before calculations.
+    Vote-Info-Split-Join
+        Version 2.0
+    Text-related, before calculations
 ------------------------------------------------------------*
 
 
@@ -19,10 +15,23 @@ Normally you can leave these definitions unchanged.
 ------------------------------------------------------------*
 
 
+template-to-define-phrase-inline:
+[-phrase-to-define-inline-]:
+new-line
+[-[-phrase-to-define-inline-]-]
+new-line
+[-dashed-line-]
+new-line
+new-line
+-----
+
+
 begin-all-cases:
 dashrep hyphen-here definitions hyphen-here begin
 new-line
+new-line
 [-next-case-number = 1-]
+[-yes-or-no-within-ballots = no-]
 -----
 
 
@@ -32,22 +41,25 @@ end-all-cases:
 
 begin-case:
 [-case-number = [-next-case-number-]-]
-[-current-list-item = case-[-case-number-]-]
-[-append-from-phrase-to-phrase: current-list-item list-of-all-cases-]
-[-current-list-item = items-in-list-named-question-results-for-case-[-case-number-]-]
-[-append-from-phrase-to-phrase:  current-list-item  list-of-lists-to-export-]
-case-[-case-number-]-case-number:
-new-line
-[-case-number-]
-new-line
-[-dashed-line-]
-new-line
-[-auto-increment: next-case-number-]
-[-next-question-number = 1-]
+[-append-word-to-phrase [-case-number-] list-of-case-numbers-]
+[-ok-not-ok-for-case-[-case-number-] = ok-]
+[-phrase-to-define-inline = ok-not-ok-for-case-[-case-number-]-]
+[-template-to-define-phrase-inline-]
+[-case-[-case-number-]-total-ballot-count = 0 -]
+[-phrase-to-define-inline = case-[-case-number-]-total-ballot-count-]
+[-template-to-define-phrase-inline-]
+[-clear-phrase case-[-case-number-]-list-of-question-numbers-]
+[-numeric-increment next-case-number-]
+[-next-question-number = 1 -]
 -----
 
 
 end-case:
+[-phrase-to-define-inline = case-[-case-number-]-list-of-question-numbers-]
+[-template-to-define-phrase-inline-]
+*--- following list is updated after each case to allow for the "end-all-cases" tag to be missing ---*
+[-phrase-to-define-inline = list-of-case-numbers-]
+[-template-to-define-phrase-inline-]
 -----
 
 
@@ -76,34 +88,27 @@ new-line
 begin-question:
 [-question-number = [-next-question-number-]-]
 [-case-and-question = case-[-case-number-]-question-[-question-number-]-]
-[-append-from-phrase-to-phrase: case-and-question list-of-all-combinations-of-case-and-question-]
-[-current-list-item = item-for-list-question-results-and-parameter-case-[-case-number-]-question-[-question-number-]-]
-[-append-from-phrase-to-phrase:  current-list-item  items-in-list-named-question-results-for-case-[-case-number-]-]
-[-current-list-item = items-in-list-named-choice-results-for-case-[-case-number-]-question-[-question-number-]-]
-[-append-from-phrase-to-phrase:  current-list-item  list-of-lists-to-export-]
-case-[-case-number-]-question-[-question-number-]-question-number:
-new-line
-[-question-number-]
-new-line
-[-dashed-line-]
-new-line
-case-[-case-number-]-question-[-question-number-]-case-number:
-new-line
-[-case-number-]
-new-line
-[-dashed-line-]
-new-line
-[-auto-increment: next-question-number-]
-[-next-choice-number = 1-]
+[-append-word-to-phrase [-question-number-] case-[-case-number-]-list-of-question-numbers-]
+[-ok-not-ok-for-[-case-and-question-] = ok-]
+[-phrase-to-define-inline = ok-not-ok-for-[-case-and-question-]-]
+[-template-to-define-phrase-inline-]
+[-clear-phrase case-[-case-and-question-]-list-of-choice-numbers-]
+[-phrase-to-define-inline = [-case-and-question-]-question-number-]
+[-[-phrase-to-define-inline-] = [-question-number-]-]
+[-template-to-define-phrase-inline-]
+[-numeric-increment next-question-number-]
+[-next-choice-number = 1 -]
 -----
 
 
 end-question:
+[-phrase-to-define-inline = [-case-and-question-]-list-of-choice-numbers-]
+[-template-to-define-phrase-inline-]
 -----
 
 
 begin-questiontype:
-case-[-case-number-]-question-[-question-number-]-questiontype:
+[-case-and-question-]-questiontype:
 -----
 
 
@@ -114,7 +119,7 @@ new-line
 
 
 begin-questiontext:
-case-[-case-number-]-question-[-question-number-]-questiontext:
+[-case-and-question-]-questiontext:
 -----
 
 
@@ -126,20 +131,13 @@ new-line
 
 begin-choicetext:
 [-choice-number = [-next-choice-number-]-]
-[-current-list-item = item-for-list-choice-results-and-parameter-case-[-case-number-]-question-[-question-number-]-choice-[-choice-number-]-]
-[-append-from-phrase-to-phrase:  current-list-item  items-in-list-named-choice-results-for-case-[-case-number-]-question-[-question-number-]-]
-[-case-and-question-and-choice = case-[-case-number-]-question-[-question-number-]-choice-[-choice-number-]-]
-[-append-from-phrase-to-phrase: case-and-question-and-choice  list-of-all-combinations-of-case-and-question-and-choice-]
-[-choice-number-for-case-[-case-number-]-question-[-question-number-]-choice-[-choice-number-] = [-choice-number-]-]
-[-auto-increment: next-choice-number-]
-case-[-case-number-]-question-[-question-number-]-choice-[-choice-number-]-choice-number:
-new-line
-[-choice-number-]
-new-line
-[-dashed-line-]
-new-line
-new-line
-case-[-case-number-]-question-[-question-number-]-choice-[-choice-number-]-choicetext:
+[-case-and-question-and-choice = [-case-and-question-]-choice-[-choice-number-]-]
+[-append-word-to-phrase [-choice-number-] [-case-and-question-]-list-of-choice-numbers-]
+[-phrase-to-define-inline = [-case-and-question-and-choice-]-choice-number-]
+[-[-phrase-to-define-inline-] = [-choice-number-]-]
+[-template-to-define-phrase-inline-]
+[-numeric-increment next-choice-number-]
+[-case-and-question-and-choice-]-choicetext:
 -----
 
 
@@ -150,24 +148,19 @@ new-line
 
 
 begin-ballots:
+[-yes-or-no-within-ballots = yes-]
 ignore-begin-here
 -----
 
 
 end-ballots:
 ignore-end-here
+[-yes-or-no-within-ballots = no-]
 -----
 
 
 dashed-line:
 [-hyphen-here-] [-hyphen-here-] [-hyphen-here-] [-hyphen-here-] [-hyphen-here-]
------
-
-
-list-of-lists-to-export:
-list-of-all-cases
-list-of-all-combinations-of-case-and-question
-list-of-all-combinations-of-case-and-question-and-choice
 -----
 
 
@@ -195,7 +188,7 @@ of the book titled The Creative Problem Solver's Toolbox.
 
 COPYRIGHT & LICENSE
 
-Copyright 2011 Richard Fobes at www.Dashrep.org, all rights reserved.
+Copyright 2011 & 2013 Richard Fobes at www.Dashrep.org, all rights reserved.
 
 You can redistribute and/or modify this software
 under the Perl Artistic license, a copy

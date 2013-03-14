@@ -1,14 +1,10 @@
-*-----  Dashrep language -- top-level actions  -----*
+*-----  Dashrep language (see www.Dashrep.org for details)  -----*
 
 *------------------------------------------------------------
-See www.Dashrep.org for details about the Dashrep language.
+    Vote-Info-Split-Join
+        Version 2.0
+    Join
 ------------------------------------------------------------*
-
-
-*------------------------------------------------------------
-Vote-Info-Split-Join, Dashrep top-level actions for join
-------------------------------------------------------------*
-
 
 
 *------------------------------------------------------------
@@ -28,12 +24,10 @@ Convert the number-specific Dashrep phrases into meaningful
 names.
 ------------------------------------------------------------*
 
-[-dashrep-backwards-compatibility-keep-spaces-in-parameter-yes-or-no = yes-]
 get-definitions-from-file  output_from_vote_calc_sw_visj_codes.txt
 linewise-translate-from-file-to-file  output_from_vote_calc_sw_visj_results.txt  output_visj_step_07_calc_data_as_list.txt
 
 clear-all-dashrep-phrases
-[-dashrep-backwards-compatibility-keep-spaces-in-parameter-yes-or-no = yes-]
 
 
 
@@ -45,11 +39,15 @@ includes the case number, question number, and choice
 number (where applicable).
 ------------------------------------------------------------*
 
+[-dashrep-endless-loop-counter-limit = 9000000-]
 get-definitions-from-file  vote_info_dashrep_definitions_numeric_after_calc.txt
-linewise-translate-from-file-to-file  output_visj_step_07_calc_data_as_list.txt  output_visj_step_08_calc_results.txt
+linewise-read-from-file-and-use-template  output_visj_step_07_calc_data_as_list.txt  template-handle-one-data-line
+delete-file  output_visj_step_08_calc_results.txt
+write-dashrep-definitions-listed-in-phrase-to-file  list-of-new-data-based-phrase-names  output_visj_step_08_calc_results.txt
+
+write-all-dashrep-definitions-to-file  output_debug_definitions_after_step_08.txt
 
 clear-all-dashrep-phrases
-[-dashrep-backwards-compatibility-keep-spaces-in-parameter-yes-or-no = yes-]
 
 
 
@@ -58,9 +56,10 @@ Step 9:
 Join the results with the text.
 ------------------------------------------------------------*
 
+[-dashrep-endless-loop-counter-limit = 9000000-]
+get-definitions-from-file  vote_info_dashrep_definitions_language_en.txt
 get-definitions-from-file  vote_info_dashrep_definitions_text_after_calc.txt
-get-definitions-from-file  output_visj_step_04a_definitions_text_part_1.txt
-get-definitions-from-file  output_visj_step_04b_definitions_text_part_2.txt
+get-definitions-from-file  output_visj_step_04_definitions_text.txt
 get-definitions-from-file  output_visj_step_08_calc_results.txt
 get-definitions-from-file  output_from_vote_calc_sw_visj_possible_error_message.txt
 expand-phrase-to-file  entire-content  output_visj_step_09_almost_final.txt
@@ -68,22 +67,18 @@ expand-phrase-to-file  entire-content  output_visj_step_09_almost_final.txt
 write-all-dashrep-definitions-to-file  output_debug_definitions_after_step_09.txt
 
 clear-all-dashrep-phrases
-[-dashrep-backwards-compatibility-keep-spaces-in-parameter-yes-or-no = yes-]
 
 
 
 *------------------------------------------------------------
 Step 10:
-If there was an error message, insert it instead of the
-numeric results.
-Otherwise, handle the spaces and newlines that have been
-postponed.
+Handle the spaces and newlines that have been postponed.
 ------------------------------------------------------------*
 
-get-definitions-from-file  output_from_vote_calc_sw_visj_possible_error_message.txt
+[-dashrep-endless-loop-counter-limit = 90000-]
 [-delayed-nospace = no-space-]
 [-delayed-newline = new-line-]
-linewise-translate-from-file-to-file  output_visj_step_09_almost_final.txt  output_visj_step_10_final_results.txt
+linewise-translate-phrases-only-from-file-to-file  output_visj_step_09_almost_final.txt  output_visj_step_10_final_results.txt
 
 
 
@@ -116,7 +111,7 @@ of the book titled The Creative Problem Solver's Toolbox.
 
 COPYRIGHT & LICENSE
 
-Copyright 2011 Richard Fobes at www.Dashrep.org, all rights reserved.
+Copyright 2011 & 2013 Richard Fobes at www.Dashrep.org, all rights reserved.
 
 You can redistribute and/or modify this software
 under the Perl Artistic license, a copy

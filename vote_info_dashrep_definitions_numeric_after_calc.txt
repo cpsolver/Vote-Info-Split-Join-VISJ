@@ -1,12 +1,9 @@
-*-----  Dashrep language -- phrase definitions  -----*
+*-----  Dashrep language (see www.Dashrep.org for details)  -----*
 
 *------------------------------------------------------------
-See www.Dashrep.org for details about the Dashrep language.
-------------------------------------------------------------*
-
-
-*------------------------------------------------------------
-Vote-Info-Split-Join, Dashrep definitions for result portion.
+    Vote-Info-Split-Join
+        Version 2.0
+    Numeric-related, after calculations
 ------------------------------------------------------------*
 
 
@@ -19,216 +16,184 @@ changed.
 ------------------------------------------------------------*
 
 
-insert-text-dashrep-definitions-begin-for-case-one:
-no-space
-dashrep hyphen-here definitions hyphen-here begin
+
+list-of-new-data-based-phrase-names:
+list-of-data-not-recognized
+list-of-data-number-only
+-----
+
+
+string-output-voteinfo-code-for:
+output-voteinfo-code-for-
+-----
+
+
+template-handle-one-data-line:
+[-[-if-word-is-no-then-first-else-second [-yes-or-no-empty-phrase data-state-] handle-data-state-known handle-data-state-not-known-]-]
+[-numeric-increment line-counter-]
+-----
+
+
+handle-data-state-known:
+[-handler-name = handle-data-state-[-data-state-]-]
+[-[-handler-name-]-]
+[-clear-phrase data-state-]
+-----
+
+
+handle-data-state-not-known:
+[-clear-phrase data-state-]
+[-copy-from-phrase-to-phrase-only-word-at-position storage-input-line-from-file first-word-in-line 1 -]
+[-copy-from-phrase-to-phrase-and-replace-string-in-phrase-with-phrase first-word-in-line data-state string-output-voteinfo-code-for empty-phrase-]
+[-possible-handler-name = handle-data-state-[-data-state-]-]
+[-[-if-first-word-is-yes-then-keep-remainder-else-empty [-yes-or-no-empty-phrase [-possible-handler-name-]-] handle-data-immediate-generic-]-]
+-----
+
+
+handle-data-immediate-generic:
+[-possible-immediate-handler-name = handle-data-immediate-[-data-state-]-]
+[-clear-phrase data-state-]
+[-[-if-first-word-is-no-then-keep-remainder-else-empty [-yes-or-no-empty-phrase [-possible-immediate-handler-name-]-] [-possible-immediate-handler-name-]-]-]
+[-[-if-first-word-is-yes-then-keep-remainder-else-empty [-yes-or-no-empty-phrase [-possible-immediate-handler-name-]-] handle-data-not-recognized-]-]
+-----
+
+
+handle-data-not-recognized:
+[-append-from-phrase-to-phrase storage-input-line-from-file list-of-data-not-recognized-]
+[-check-for-number-instead-of-text-]
+-----
+
+
+check-for-number-instead-of-text:
+[-copy-from-phrase-to-phrase-and-replace-digits-with-9s storage-input-line-from-file possible-number-only-]
+[-digit-9 = 9 -]
+[-copy-from-phrase-to-phrase-and-replace-string-in-phrase-with-phrase possible-number-only possible-number-only digit-9 empty-phrase-]
+[-[-if-first-word-is-yes-then-keep-remainder-else-empty [-yes-or-no-empty-phrase possible-number-only-] handle-number-only-]-]
+-----
+
+
+handle-number-only:
+[-new-phrase-name = case-[-case-number-]-question-[-question-number-]-contains-number-at-line-[-line-counter-]-]
+[-[-new-phrase-name-] = [-storage-input-line-from-file-]-]
+[-append-from-phrase-to-phrase new-phrase-name list-of-new-data-based-phrase-names-]
+[-append-from-phrase-to-phrase new-phrase-name list-of-data-number-only-]
+-----
+
+
+handle-data-state-case-number:
+[-case-number = [-storage-input-line-from-file-]-]
+[-new-phrase-name = ok-not-ok-for-case-[-case-number-]-]
+[-[-new-phrase-name-] = ok-]
+[-append-from-phrase-to-phrase new-phrase-name list-of-new-data-based-phrase-names-]
 [-extra-actions-at-beginning-of-case-]
 -----
 
 
 extra-actions-at-beginning-of-case:
+[-plurality-results-missing = yes-]
 -----
 
 
-insert-text-dashrep-definitions-begin-for-case-zero:
+handle-data-immediate-skip-case:
+[-ok-not-ok-for-case-[-case-number-] = not-ok-]
 -----
 
 
-insert-text-dashrep-definitions-begin-for-case-multiple:
+handle-data-state-question-number:
+[-question-number = [-storage-input-line-from-file-]-]
+[-ranking-level = 1 -]
+[-ranking-type = none-]
+[-sequence-or-levels = levels-]
+[-sequence-number = 1 -]
+[-tally-table-row-number = 1 -]
 -----
 
 
-output-voteinfo-code-for-skip-case:
-ok-not-ok-for-case-[-case-number-]:
-not-ok
-new-line
-[-dashed-line-]
-new-line
+handle-data-state-choice:
+[-choice-number = [-storage-input-line-from-file-]-]
+[-handle-choice-for-[-sequence-or-levels-]-]
 -----
 
 
-output-voteinfo-code-for-skip-question:
-ok-not-ok-for-case-[-case-number-]-question-[-question-number-]:
-not-ok
-new-line
-[-dashed-line-]
-new-line
+handle-choice-for-levels:
 -----
 
 
-output-voteinfo-code-for-case-number:
-[-dashrep-tracking-on-or-off = off-]
-[-insert-phrase-with-brackets-after-next-top-line  results-line-after-case-number-]
-capture-begin-here
+handle-choice-for-sequence:
+[-new-phrase-name = case-[-case-number-]-question-[-question-number-]-choice-[-choice-number-]-[-ranking-type-]-]
+[-[-new-phrase-name-] = [-sequence-number-]-]
+[-append-from-phrase-to-phrase new-phrase-name list-of-new-data-based-phrase-names-]
+[-numeric-increment sequence-number-]
 -----
 
 
-results-line-after-case-number:
-capture-end-here
-[-case-number = [-captured-text-]-]
-[-insert-text-dashrep-definitions-begin-for-case-[-zero-one-multiple: [-case-number-]-]-]
-new-line
-ok-not-ok-for-case-[-case-number-]:
-ok
-new-line
-[-dashed-line-]
+handle-data-state-ranking-level:
+[-[-if-first-word-is-no-then-keep-remainder-else-empty [-yes-or-no-same-two-phrase-definitions ranking-type word-none-] handle-ranking-level-of-known-type-]-]
 -----
 
 
-output-voteinfo-code-for-question-number:
-[-dashrep-tracking-on-or-off = off-]
-[-insert-phrase-with-brackets-after-next-top-line  results-line-after-question-number-]
-capture-begin-here
+word-none:
+none
 -----
 
 
-results-line-after-question-number:
-capture-end-here
-[-question-number = [-captured-text-]-]
+handle-ranking-level-of-known-type:
+[-ranking-level = [-storage-input-line-from-file-]-]
+[-new-phrase-name = case-[-case-number-]-question-[-question-number-]-choice-[-choice-number-]-[-ranking-type-]-]
+[-[-new-phrase-name-] = [-ranking-level-]-]
+[-append-from-phrase-to-phrase new-phrase-name list-of-new-data-based-phrase-names-]
 -----
 
 
-output-voteinfo-code-for-choice:
-[-insert-phrase-with-brackets-after-next-top-line  results-line-after-choice-number-]
-capture-begin-here
+handle-data-immediate-next-ranking-level:
+[-numeric-increment ranking-level-]
 -----
 
 
-results-line-after-choice-number:
-capture-end-here
-[-choice-number = [-captured-text-]-]
+handle-data-immediate-tie:
+[-empty-placeholder-do-not-remove-]
 -----
 
 
-output-voteinfo-code-for-start-of-tally-table-results:
-case-[-case-number-]-question-[-question-number-]-tally-table-results:
+empty-placeholder-do-not-remove:
 -----
 
 
-output-voteinfo-code-for-first-choice:
-[-insert-phrase-with-brackets-after-next-top-line  results-line-after-first-choice-]
-capture-begin-here
+handle-data-state-first-choice:
+[-first-choice = [-storage-input-line-from-file-]-]
 -----
 
 
-results-line-after-first-choice:
-capture-end-here
-[-first-choice = [-captured-text-]-]
-no-space
-<firstchoice>
-delayed-nospace
-[-first-choice-]
-delayed-nospace
-</firstchoice>
-delayed-nospace
+handle-data-state-second-choice:
+[-second-choice = [-storage-input-line-from-file-]-]
 -----
 
 
-output-voteinfo-code-for-second-choice:
-[-insert-phrase-with-brackets-after-next-top-line  results-line-after-second-choice-]
-capture-begin-here
+handle-data-state-total-ballot-count:
+[-total-ballot-count = [-storage-input-line-from-file-]-]
+[-new-phrase-name = case-[-case-number-]-total-ballot-count-]
+[-[-new-phrase-name-] = [-total-ballot-count-]-]
+[-append-from-phrase-to-phrase new-phrase-name list-of-new-data-based-phrase-names-]
 -----
 
 
-results-line-after-second-choice:
-capture-end-here
-[-second-choice = [-captured-text-]-]
-no-space
-<secondchoice>
-delayed-nospace
-[-second-choice-]
-delayed-nospace
-</secondchoice>
-delayed-nospace
+handle-data-immediate-start-of-plurality-results:
+[-ranking-type = plurality-count-]
+[-sequence-or-levels = levels-]
+[-plurality-results-missing = no-]
 -----
 
 
-output-voteinfo-code-for-tally-first-over-second:
-[-insert-phrase-with-brackets-after-next-top-line  results-line-after-tally-first-over-second-]
-capture-begin-here
+handle-data-immediate-end-of-plurality-results:
+[-ranking-type = none-]
 -----
 
 
-results-line-after-tally-first-over-second:
-capture-end-here
-[-first-over-second = [-captured-text-]-]
-no-space
-<firstoversecond>
-delayed-nospace
-[-first-over-second-]
-delayed-nospace
-</firstoversecond>
-delayed-nospace
------
-
-
-output-voteinfo-code-for-tally-second-over-first:
-[-insert-phrase-with-brackets-after-next-top-line  results-line-after-tally-second-over-first-]
-capture-begin-here
------
-
-
-results-line-after-tally-second-over-first:
-capture-end-here
-[-second-over-first = [-captured-text-]-]
-no-space
-<secondoverfirst>
-delayed-nospace
-[-second-over-first-]
-delayed-nospace
-</secondoverfirst>
-delayed-newline
------
-
-
-output-voteinfo-code-for-end-of-tally-table-results:
-[-dashed-line-]
------
-
-
-output-voteinfo-code-for-start-of-plurality-results:
------
-
-
-output-voteinfo-code-for-plurality-count:
-[-insert-phrase-with-brackets-after-next-top-line  results-line-after-plurality-count-]
-capture-begin-here
------
-
-
-results-line-after-plurality-count:
-capture-end-here
-[-plurality-count = [-captured-text-]-]
-no-space
-case-[-case-number-]-question-[-question-number-]-choice-[-choice-number-]-plurality-count:
-new-line
-[-plurality-count-]
-new-line
-[-dashed-line-]
------
-
-
-output-voteinfo-code-for-end-of-plurality-results:
------
-
-
-output-voteinfo-code-for-skip-case:
-case-[-case-number-]-warning-message:
-new-line
-No calculations for this case for reason explained in warning message
-new-line
-[-dashed-line-]
------
-
-
-output-voteinfo-code-for-end-of-all-cases:
-dashrep hyphen-here definitions hyphen-here end
------
-
-
-dashed-line:
-hyphen-here hyphen-here hyphen-here hyphen-here hyphen-here
-new-line
+handle-data-state-plurality-count:
+[-plurality-count = [-storage-input-line-from-file-]-]
+[-new-phrase-name = case-[-case-number-]-question-[-question-number-]-choice-[-choice-number-]-plurality-count-]
+[-[-new-phrase-name-] = [-plurality-count-]-]
+[-append-from-phrase-to-phrase new-phrase-name list-of-new-data-based-phrase-names-]
 -----
 
 
@@ -256,7 +221,7 @@ of the book titled The Creative Problem Solver's Toolbox.
 
 COPYRIGHT & LICENSE
 
-Copyright 2011 Richard Fobes at www.Dashrep.org, all rights reserved.
+Copyright 2011 & 2013 Richard Fobes at www.Dashrep.org, all rights reserved.
 
 You can redistribute and/or modify this software
 under the Perl Artistic license, a copy

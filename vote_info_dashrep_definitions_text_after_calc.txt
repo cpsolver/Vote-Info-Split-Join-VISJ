@@ -1,13 +1,9 @@
-*-----  Dashrep language -- phrase definitions  -----*
+*-----  Dashrep language (see www.Dashrep.org for details)  -----*
 
 *------------------------------------------------------------
-See www.Dashrep.org for details about the Dashrep language.
-------------------------------------------------------------*
-
-
-*------------------------------------------------------------
-Vote-Info-Split-Join
-Dashrep definitions for text, after calculations.
+    Vote-Info-Split-Join
+        Version 2.0
+    Text-related, after calculations
 ------------------------------------------------------------*
 
 
@@ -15,104 +11,20 @@ dashrep-definitions-begin
 
 
 *------------------------------------------------------------
-These first two definitions can be changed to produce a
+These first few definitions can be changed to produce a
 different arrangement of XML (or EML) output results.
 ------------------------------------------------------------*
 
 
-arrangement-for-choice-specific-results:
 
-<choicenumber>
-delayed-nospace
-[-[-parameter-case-and-question-and-choice-id-]-choice-number-]
-delayed-nospace
-</choicenumber>
-delayed-nospace
-<choicename>
-delayed-nospace
-[-[-parameter-case-and-question-and-choice-id-]-choicetext-]
-delayed-nospace
-</choicename>
-delayed-nospace
-<pluralitycount>
-delayed-nospace
-[-[-parameter-case-and-question-and-choice-id-]-plurality-count-]
-delayed-nospace
-</pluralitycount>
-delayed-newline
-new-line
------
-
-
-arrangement-for-question-specific-results:
-
-<questionnumber>
-delayed-nospace
-[-[-parameter-case-and-question-id-]-question-number-]
-delayed-nospace
-</questionnumber>
-delayed-newline
-new-line
-
-<questiontext>
-delayed-nospace
-[-[-parameter-case-and-question-id-]-questiontext-]
-delayed-nospace
-</questiontext>
-delayed-newline
-new-line
-
-<questiontype>
-delayed-nospace
-[-[-parameter-case-and-question-id-]-questiontype-]
-delayed-nospace
-</questiontype>
-delayed-newline
-new-line
-
-<questionchoiceresults>
-delayed-newline
-[-items-in-list-named-choice-results-for-[-parameter-case-and-question-id-]-]
-</questionchoiceresults>
-delayed-newline
-new-line
-
-results-for-[-parameter-case-and-question-id-]
-delayed-newline
-new-line
------
-
-
-
-*------------------------------------------------------------
-Typically these definitions do not need to be changed.
-------------------------------------------------------------*
-
-
-
-entire-content:
-
-[-content-if-error-message-[-empty-or-nonempty-phrase output-error-message-]-]
-delayed-newline
-new-line
------
-
-
-
-content-if-error-message-empty:
-
-[-create-list-named: case-results-]
-[-create-list-named: question-results-]
-[-create-list-named: choice-results-]
-
-[-warning-if-warning-message-[-empty-or-nonempty-phrase output-warning-message-]-]
+arrangement-for-entire-results:
 <xml>
 delayed-newline
 new-line
 <voteinforesults>
 delayed-newline
 new-line
-[-generated-list-named-case-results-]
+case-results
 </voteinforesults>
 delayed-newline
 new-line
@@ -122,7 +34,7 @@ new-line
 
 
 
-content-if-error-message-nonempty:
+arrangement-for-possible-error-message:
 <error>
 delayed-nospace
 new-line
@@ -136,16 +48,12 @@ new-line
 
 
 
-warning-if-warning-message-empty:
------
+arrangement-for-possible-warning-message:
 
-
-
-warning-if-warning-message-nonempty:
 <warning>
 delayed-newline
 new-line
-[-output-warning-message-]
+output-warning-message
 new-line
 delayed-newline
 </warning>
@@ -155,116 +63,316 @@ new-line
 
 
 
-template-for-list-named-case-results:
-[-template-for-list-named-case-results-if-[-ok-not-ok-for-[-parameter-case-id-]-]-]
+arrangement-for-case-heading:
+delayed-newline
+new-line
+delayed-newline
+new-line
+<casenumber> delayed-nospace [-case-number-] delayed-nospace </casenumber>
+new-line
+<casetitle> delayed-nospace case-[-case-number-]-casetitle delayed-nospace </casetitle>
+delayed-newline
+new-line
+delayed-newline
+new-line
 -----
 
 
 
-template-for-list-named-case-results-if-ok:
-[-case-heading-]
-items-in-list-named-question-results-for-[-parameter-case-id-]
-<p>&nbsp;</p>
-new-line
-new-line
------
+arrangement-for-case-with-warning-message:
 
-
-
-template-for-list-named-case-results-if-not-ok:
-[-case-heading-]
 <warning> delayed-nospace
-No calculations were done for this case.&nbsp; The reason is:&nbsp; [-[-parameter-case-id-]-warning-message-]
+word-warning-capitalized no-space : case-[-case-number-]-warning-message
 delayed-nospace </warning>
------
-
-
-
-template-for-list-named-case-results-if-ok:
-<case>
 delayed-newline
 new-line
-[-case-heading-]
-delayed-newline
-new-line
-<caseresults>
-delayed-newline
-new-line
-[-items-in-list-named-question-results-for-[-parameter-case-id-]-]
-delayed-newline
-new-line
-</caseresults>
-delayed-newline
-new-line
-</case>
 delayed-newline
 new-line
 -----
 
 
 
-case-heading:
-<casenumber> delayed-nospace [-parameter-case-id-]-case-number delayed-nospace </casenumber>
+arrangement-for-case-specific-results:
+
+case-[-case-number-]-question-results
+-----
+
+
+
+arrangement-for-case-with-no-questions:
+
+<noquestions> delayed-nospace
+words-no-questions-for-case
+delayed-nospace </noquestions>
+delayed-newline new-line
+-----
+
+
+
+arrangement-for-question-specific-results:
+
+<questionnumber>
+delayed-nospace
+[-question-number-]
+delayed-nospace
+</questionnumber>
+delayed-newline
 new-line
-<casetitle> delayed-nospace [-parameter-case-id-]-casetitle delayed-nospace </casetitle>
+
+<questiontext>
+delayed-nospace
+[-case-and-question-]-questiontext
+delayed-nospace
+</questiontext>
+delayed-newline
+new-line
+
+<questiontype>
+delayed-nospace
+[-case-and-question-]-questiontype
+delayed-nospace
+</questiontype>
+delayed-newline
+new-line
+
+[-choice-count = [-count-of-words-in-phrase case-[-case-number-]-question-[-question-number-]-list-of-choice-numbers-]-]
+[-arrangement-for-question-specific-results-if-choice-count-[-zero-one-multiple [-choice-count-]-]-]
+-----
+
+
+
+arrangement-for-question-specific-results-if-choice-count-zero:
+
+<choicecount>
+delayed-nospace
+words-no-choices-for-this-question
+delayed-nospace
+</choicecount>
+delayed-newline
 new-line
 delayed-newline
+new-line
 -----
 
 
 
-list-of-parameter-values-for-list-named-case-results:
+arrangement-for-question-specific-results-if-choice-count-one:
 
-[-list-of-all-cases-]
+<questionchoiceresults>
+delayed-newline
+[-case-and-question-]-choice-results
+</questionchoiceresults>
+delayed-newline
+new-line
+
+<ballotcount>
+delayed-nospace
+case-[-case-number-]-total-ballot-count
+delayed-nospace
+</ballotcount>
+delayed-newline
+new-line
+
+<choicecount>
+delayed-nospace
+words-only-one-choice-for-this-question
+delayed-nospace
+</choicecount>
+delayed-newline
+new-line
+delayed-newline
+new-line
 -----
 
 
 
-parameter-name-for-list-named-case-results:
+arrangement-for-question-specific-results-if-choice-count-multiple:
 
-parameter-case-id
+<questionchoiceresults>
+delayed-newline
+[-case-and-question-]-choice-results
+</questionchoiceresults>
+delayed-newline
+new-line
+
+<ballotcount>
+delayed-nospace
+case-[-case-number-]-total-ballot-count
+delayed-nospace
+</ballotcount>
+delayed-newline
+new-line
+-----
+
+
+
+arrangement-for-choice-specific-results-if-ballot-count-nonzero:
+
+<choicenumber>
+delayed-nospace
+[-[-case-and-question-and-choice-]-choice-number-]
+delayed-nospace
+</choicenumber>
+delayed-nospace
+<choicename>
+delayed-nospace
+[-[-case-and-question-and-choice-]-choicetext-]
+delayed-nospace
+</choicename>
+delayed-nospace
+<pluralitycount>
+delayed-nospace
+[-[-case-and-question-and-choice-]-plurality-count-]
+delayed-nospace
+</pluralitycount>
+delayed-newline
+new-line
+-----
+
+
+arrangement-for-choice-specific-results-if-ballot-count-zero:
+
+<choicenumber>
+delayed-nospace
+[-[-case-and-question-and-choice-]-choice-number-]
+delayed-nospace
+</choicenumber>
+delayed-nospace
+<choicename>
+delayed-nospace
+[-[-case-and-question-and-choice-]-choicetext-]
+delayed-nospace
+</choicename>
+delayed-newline
+new-line
+-----
+
+
+tally-table-first-choice-name-begin:
+<firstchoice>
+-----
+
+
+tally-table-first-choice-name-end:
+</firstchoice>
+-----
+
+
+tally-table-second-choice-name-begin:
+<secondchoice>
+-----
+
+
+tally-table-second-choice-name-end:
+</secondchoice>
+-----
+
+
+tally-table-first-over-second-begin:
+<firstoversecond>
+-----
+
+
+tally-table-first-over-second-end:
+</firstoversecond>
+-----
+
+
+tally-table-second-over-first-begin:
+<secondoverfirst>
+-----
+
+
+tally-table-second-over-first-end:
+</secondoverfirst>
+-----
+
+
+*------------------------------------------------------------
+Typically these definitions do not need to be changed.
+------------------------------------------------------------*
+
+
+
+entire-content:
+[-content-if-error-message-empty-[-yes-or-no-empty-phrase output-error-message-]-]
+delayed-newline
+new-line
+-----
+
+
+
+content-if-error-message-empty-yes:
+[-use-template-and-parameters-to-create-simple-list-with-name template-for-list-named-case-results list-of-case-numbers case-results-]
+[-warning-if-warning-message-empty-[-yes-or-no-empty-phrase output-warning-message-]-]
+[-arrangement-for-entire-results-]
+-----
+
+
+
+content-if-error-message-empty-no:
+arrangement-for-possible-error-message
+-----
+
+
+
+warning-if-warning-message-empty-yes:
+-----
+
+
+
+warning-if-warning-message-empty-no:
+arrangement-for-possible-warning-message
+-----
+
+
+
+template-for-list-named-case-results:
+[-case-number = [-createlist-parameter-]-]
+[-arrangement-for-case-heading-]
+[-handle-case-with-warning-message-empty-[-yes-or-no-empty-phrase case-[-case-number-]-warning-message-]-]
+-----
+
+
+
+handle-case-with-warning-message-empty-no:
+[-arrangement-for-case-with-warning-message-]
+-----
+
+
+
+handle-case-with-warning-message-empty-yes:
+[-handle-case-with-no-questions-[-yes-or-no-empty-phrase case-[-case-number-]-list-of-question-numbers-]-]
+-----
+
+
+
+handle-case-with-no-questions-yes:
+[-arrangement-for-case-with-no-questions-]
+-----
+
+
+
+handle-case-with-no-questions-no:
+[-use-template-and-parameters-to-create-simple-list-with-name template-for-list-named-question-results case-[-case-number-]-list-of-question-numbers case-[-case-number-]-question-results-]
+[-arrangement-for-case-specific-results-]
 -----
 
 
 
 template-for-list-named-question-results:
-
+[-question-number = [-createlist-parameter-]-]
+[-case-and-question = case-[-case-number-]-question-[-question-number-]-]
+[-use-template-and-parameters-to-create-simple-list-with-name template-for-list-named-choice-results [-case-and-question-]-list-of-choice-numbers [-case-and-question-]-choice-results-]
 [-arrangement-for-question-specific-results-]
 -----
 
 
 
-list-of-parameter-values-for-list-named-question-results:
-
-[-list-of-all-combinations-of-case-and-question-]
------
-
-
-
-parameter-name-for-list-named-question-results:
-
-parameter-case-and-question-id
------
-
-
-
 template-for-list-named-choice-results:
-
-[-arrangement-for-choice-specific-results-]
------
-
-
-
-list-of-parameter-values-for-list-named-choice-results:
-
-[-list-of-all-combinations-of-case-and-question-and-choice-]
------
-
-
-
-parameter-name-for-list-named-choice-results:
-
-parameter-case-and-question-and-choice-id
+[-choice-number = [-createlist-parameter-]-]
+[-case-and-question-and-choice = [-case-and-question-]-choice-[-choice-number-]-]
+[-arrangement-for-choice-specific-results-if-ballot-count-[-zero-or-nonzero [-case-[-case-number-]-total-ballot-count-]-]-]
 -----
 
 
@@ -272,7 +380,6 @@ parameter-case-and-question-and-choice-id
 dashrep-endless-loop-counter-limit:
 900000
 -----
-
 
 
 
@@ -299,7 +406,7 @@ of the book titled The Creative Problem Solver's Toolbox.
 
 COPYRIGHT & LICENSE
 
-Copyright 2011 Richard Fobes at www.Dashrep.org, all rights reserved.
+Copyright 2011 & 2013 Richard Fobes at www.Dashrep.org, all rights reserved.
 
 You can redistribute and/or modify this software
 under the Perl Artistic license, a copy

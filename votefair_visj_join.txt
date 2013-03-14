@@ -28,6 +28,7 @@ Convert the number-specific Dashrep phrases into meaningful
 names.
 ------------------------------------------------------------*
 
+[-dashrep-endless-loop-counter-limit = 900000-]
 get-definitions-from-file  output_from_vote_calc_sw_visj_codes.txt
 linewise-translate-from-file-to-file  output_from_vote_calc_sw_visj_results.txt  output_visj_step_07_calc_data_as_list.txt
 
@@ -43,9 +44,14 @@ includes the case number, question number, and choice
 number (where applicable).
 ------------------------------------------------------------*
 
+[-dashrep-endless-loop-counter-limit = 900000-]
 get-definitions-from-file  vote_info_dashrep_definitions_numeric_after_calc.txt
 get-definitions-from-file  votefair_specific_visj_numeric_after_calc.txt
-linewise-translate-from-file-to-file  output_visj_step_07_calc_data_as_list.txt  output_visj_step_08_calc_results.txt
+linewise-read-from-file-and-use-template  output_visj_step_07_calc_data_as_list.txt  template-handle-one-data-line
+delete-file  output_visj_step_08_calc_results.txt
+write-dashrep-definitions-listed-in-phrase-to-file  list-of-new-data-based-phrase-names  output_visj_step_08_calc_results.txt
+
+write-all-dashrep-definitions-to-file  output_debug_definitions_after_step_08.txt
 
 clear-all-dashrep-phrases
 
@@ -53,17 +59,17 @@ clear-all-dashrep-phrases
 
 *------------------------------------------------------------
 Step 9:
-Merge the text with the numeric data, and merge the error
-and warning messages with the list of cases and questions.
+Join the results with the text.
 ------------------------------------------------------------*
 
-get-definitions-from-file  votefair_specific_visj_language_en.txt
+[-dashrep-endless-loop-counter-limit = 900000-]
+get-definitions-from-file  vote_info_dashrep_definitions_language_en.txt
 get-definitions-from-file  vote_info_dashrep_definitions_text_after_calc.txt
+get-definitions-from-file  votefair_specific_visj_language_en.txt
 get-definitions-from-file  votefair_specific_visj_text_after_calc.txt
-get-definitions-from-file  output_visj_step_04a_definitions_text_part_1.txt
-get-definitions-from-file  output_visj_step_04b_definitions_text_part_2.txt
-get-definitions-from-file  output_from_vote_calc_sw_visj_possible_error_message.txt
+get-definitions-from-file  output_visj_step_04_definitions_text.txt
 get-definitions-from-file  output_visj_step_08_calc_results.txt
+get-definitions-from-file  output_from_vote_calc_sw_visj_possible_error_message.txt
 [-dashrep-endless-loop-counter-limit = 9000000-]
 expand-phrase-to-file  entire-content  output_visj_step_09_almost_final.txt
 
@@ -78,6 +84,7 @@ Step 10:
 Handle the spaces and newlines that have been postponed.
 ------------------------------------------------------------*
 
+[-dashrep-endless-loop-counter-limit = 900000-]
 [-delayed-nospace = no-space-]
 [-delayed-newline = new-line-]
 linewise-translate-phrases-only-from-file-to-file  output_visj_step_09_almost_final.txt  output_visj_step_10_final_results.html
@@ -113,7 +120,7 @@ of the book titled The Creative Problem Solver's Toolbox.
 
 COPYRIGHT & LICENSE
 
-Copyright 2011 Richard Fobes at www.Dashrep.org, all rights reserved.
+Copyright 2011 & 2013 Richard Fobes at www.Dashrep.org, all rights reserved.
 
 You can redistribute and/or modify this software
 under the Perl Artistic license, a copy

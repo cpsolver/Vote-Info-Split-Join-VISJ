@@ -1,0 +1,63 @@
+*-----  Dashrep language (see www.Dashrep.org for details)  -----*
+
+*------------------------------------------------------------
+    Vote-Info-Split-Join
+        Version 2.0
+    Language-specific replacements
+    Language: English (en)
+------------------------------------------------------------*
+
+
+word-case-capitalized:
+Case
+-----
+
+
+word-question-capitalized:
+Question
+-----
+
+
+word-warning-capitalized:
+Warning
+-----
+
+
+words-contains-no-questions:
+contains no questions
+-----
+
+
+words-contains-no-ballots:
+contains no ballots
+-----
+
+
+words-no-calculations-done-for-case:
+No calculations were done for this case
+-----
+
+
+words-reason-is:
+The reason is
+-----
+
+
+words-no-questions-for-case:
+There are no questions for this case
+-----
+
+
+words-no-choices-for-this-question:
+There are no choices for this question
+-----
+
+
+words-only-one-choice-for-this-question:
+There is only one choice for this question, so votes are meaningless
+-----
+
+
+words-no-ballots-for-case:
+There are no ballots for this case
+-----
