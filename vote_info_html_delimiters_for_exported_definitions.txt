@@ -1,24 +1,19 @@
-*-----  Dashrep language -- phrase definitions  -----*
+*-----  Dashrep language (see www.Dashrep.org for details)  -----*
 
 *------------------------------------------------------------
-See www.Dashrep.org for details about the Dashrep language.
-------------------------------------------------------------*
+    Vote-Info-Split-Join
+        Version 3.0
+    Definitions for conversion of exported definitions into HTML
 
-
-*------------------------------------------------------------
-Vote-Info-Split-Join, Dashrep definitions for conversion of
-exported definitions into HTML.
-------------------------------------------------------------*
-
-
-dashrep-definitions-begin
-
-
-*------------------------------------------------------------
 Usually these definitions are not needed.
 They can be used to convert exported Dashrep definitions
 into HTML format (from their normal text format).
 ------------------------------------------------------------*
+
+
+
+dashrep-definitions-begin
+
 
 
 export-defs-all-begin:
